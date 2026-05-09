@@ -1,10 +1,5 @@
 @use 'utilities/colors' as colors;
 
-:host {
-  display: block;
-  width: 100%;
-}
-
 .public-footer {
   width: 100%;
   border-top: 1px solid colors.$color-gray-3;

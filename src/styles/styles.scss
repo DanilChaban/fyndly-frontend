@@ -17,6 +17,10 @@ body {
   font-family: 'Inter', sans-serif;
   background: colors.$color-gray-1;
   color: colors.$color-black-1;
+
+  a {
+    color: colors.$color-black-1;
+  }
 }
 
 * {
