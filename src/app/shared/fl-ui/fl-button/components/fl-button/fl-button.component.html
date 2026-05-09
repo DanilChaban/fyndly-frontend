@@ -1,1 +1,9 @@
-<button class="fl-button" [matButton]="appearance()" (click)="onClick()"><ng-content /></button>
+<button
+  class="fl-button"
+  [ngClass]="buttonClass()"
+  [matButton]="appearance()"
+  [disabled]="disabled()"
+  (click)="onClick()"
+>
+  <ng-content />
+</button>

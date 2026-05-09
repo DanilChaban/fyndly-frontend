@@ -1,0 +1,40 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.fl-button {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+
+  &--primary {
+    background-color: colors.$color-blue-1;
+    color: white !important;
+    border: none;
+  }
+
+  &--secondary {
+    background-color: colors.$color-white-1;
+    color: colors.$color-black-1 !important;
+    border: 1px solid colors.$color-gray-3 !important;
+
+    &:hover:not(:disabled) {
+      background-color: colors.$color-gray-1 !important;
+    }
+
+    &:active:not(:disabled) {
+      background-color: colors.$color-gray-6 !important;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
