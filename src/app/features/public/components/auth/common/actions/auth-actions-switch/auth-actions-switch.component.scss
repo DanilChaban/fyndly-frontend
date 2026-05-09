@@ -1,0 +1,17 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  text-align: center;
+}
+
+.auth-actions-switch {
+  &__text {
+    color: colors.$color-gray-7;
+    line-height: 20px;
+  }
+}

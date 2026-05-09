@@ -1,8 +1,13 @@
 @use 'utilities/colors' as colors;
 
 :host {
-  display: block;
-  width: 100%;
+  .fl-button {
+    &--text {
+      ::ng-deep .mat-mdc-button-persistent-ripple {
+        display: none !important;
+      }
+    }
+  }
 }
 
 .fl-button {
@@ -25,7 +30,7 @@
     border: 1px solid colors.$color-gray-3 !important;
 
     &:hover:not(:disabled) {
-      background-color: colors.$color-gray-1 !important;
+      opacity: 0.8;
     }
 
     &:active:not(:disabled) {
@@ -33,8 +38,34 @@
     }
   }
 
+  &--text {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: none;
+    color: colors.$color-blue-2 !important;
+    border: none;
+    font-weight: 500;
+    line-height: 20px;
+
+    &:hover:not(:disabled) {
+      opacity: 0.8;
+    }
+
+    &:active:not(:disabled) {
+      color: colors.$color-blue-3 !important;
+    }
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+
+  &__icon {
+    width: 20px !important;
+    height: 20px !important;;
+    margin-right: 12px !important;;
+    min-height: auto !important;;
   }
 }

@@ -3,7 +3,11 @@
   [ngClass]="buttonClass()"
   [matButton]="appearance()"
   [disabled]="disabled()"
+  [disableRipple]="variant() === 'text'"
   (click)="onClick()"
 >
+  @if (icon(); as icon) {
+    <mat-icon class="fl-button__icon" [svgIcon]="icon" />
+  }
   <ng-content />
 </button>

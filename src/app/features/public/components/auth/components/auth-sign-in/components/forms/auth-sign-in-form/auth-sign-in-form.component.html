@@ -14,5 +14,10 @@
     placeholder="Password"
     formControlName="password"
   />
-  <fl-button>Sign in</fl-button>
+
+  <fl-button type="submit" variant="primary">Sign in</fl-button>
 </fl-form>
+
+<app-auth-ui-divider />
+
+<fl-button type="button" variant="secondary" [icon]="'google'">Continue with Google</fl-button>
