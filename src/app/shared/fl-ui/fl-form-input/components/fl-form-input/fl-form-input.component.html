@@ -1,0 +1,19 @@
+<div class="fl-form-field__wrapper">
+  @if (label()) {
+    <label class="fl-form-field__wrapper__label" [for]="inputId()">
+      {{ label() }}
+    </label>
+  }
+
+  <mat-form-field class="fl-form-field" [appearance]="appearance()" subscriptSizing="dynamic">
+    <input
+      class="fl-form-field__input"
+      matInput
+      autocomplete="one-time-code"
+      [type]="type()"
+      [id]="inputId()"
+      [placeholder]="placeholder()"
+      [formControl]="control()"
+    />
+  </mat-form-field>
+</div>
