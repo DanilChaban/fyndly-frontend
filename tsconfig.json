@@ -20,7 +20,8 @@
       "@private/*": ["src/app/features/private/*"],
       "@auth/*": ["src/app/features/public/components/auth/*"],
       "@shared/*": ["src/app/shared/*"],
-      "@ui/*": ["src/app/shared/fl-ui/*"]
+      "@ui/*": ["src/app/shared/fl-ui/*"],
+      "@common/*": ["src/app/shared/fl-common/*"]
     }
   },
   "angularCompilerOptions": {
