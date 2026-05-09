@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SvgIconService } from '@core/icons/services/svg-icon.service';
 
 @Component({
   selector: 'fl-root',
@@ -7,4 +8,10 @@ import { RouterOutlet } from '@angular/router';
   template: '<router-outlet />',
   styleUrl: './app.scss',
 })
-export class App {}
+export class App {
+  private readonly svgIconService = inject(SvgIconService);
+
+  constructor() {
+    this.svgIconService.registerIcons();
+  }
+}

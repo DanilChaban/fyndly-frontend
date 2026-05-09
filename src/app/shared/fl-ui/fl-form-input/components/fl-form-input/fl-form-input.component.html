@@ -6,14 +6,26 @@
   }
 
   <mat-form-field class="fl-form-field" [appearance]="appearance()" subscriptSizing="dynamic">
+    @if (prefixSvgIcon(); as icon) {
+      <mat-icon class="fl-form-field__icon fl-form-field__icon--prefix" matPrefix [svgIcon]="icon" />
+    }
+
     <input
-      class="fl-form-field__input"
       matInput
       autocomplete="one-time-code"
-      [type]="type()"
+      [type]="currentInputType()"
       [id]="inputId()"
       [placeholder]="placeholder()"
       [formControl]="control()"
     />
+
+    @if (currentSuffixIcon(); as icon) {
+      <mat-icon
+        class="fl-form-field__icon fl-form-field__icon--suffix"
+        matSuffix
+        [svgIcon]="icon"
+        (click)="onSuffixIconClick()"
+      />
+    }
   </mat-form-field>
 </div>

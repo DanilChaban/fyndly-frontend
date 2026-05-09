@@ -1,6 +1,18 @@
 <fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <fl-form-input type="email" label="Email address" placeholder="Email address" formControlName="email" />
-  <fl-form-input type="password" label="Password" placeholder="Password" formControlName="password" />
-
+  <fl-form-input
+    type="email"
+    label="Email address"
+    [prefixSvgIcon]="'mail'"
+    placeholder="Email address"
+    formControlName="email"
+  />
+  <fl-form-input
+    type="password"
+    label="Password"
+    [prefixSvgIcon]="'lock'"
+    [suffixSvgIcon]="'eye'"
+    placeholder="Password"
+    formControlName="password"
+  />
   <fl-button>Sign in</fl-button>
 </fl-form>

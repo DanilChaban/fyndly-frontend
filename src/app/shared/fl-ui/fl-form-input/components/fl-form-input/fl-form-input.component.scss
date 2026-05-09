@@ -11,6 +11,10 @@
       display: none;
     }
 
+    .mat-mdc-form-field-icon-prefix, mat-mdc-form-field-icon-suffix {
+      padding: 0;
+    }
+
     .fl-form-field .mat-mdc-text-field-wrapper {
       background-color: colors.$color-white-1;
       border-radius: var(--mat-form-field-outlined-container-shape);
@@ -43,6 +47,21 @@
   --mat-form-field-outlined-focus-outline-width: 1px;
   --mat-form-field-outlined-input-text-color: #{colors.$color-black-1};
   --mat-form-field-outlined-input-text-placeholder-color: #{colors.$color-gray-2};
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    color: colors.$color-gray-7;
+
+    &--prefix {
+      padding: 0 12px 0 16px !important;
+    }
+
+    &--suffix {
+      cursor: pointer;
+      padding: 0 16px 0 12px !important;
+    }
+  }
 
   &__wrapper {
     &__label {

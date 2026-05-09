@@ -5,7 +5,7 @@ import { FormControl, FormGroupDirective } from '@angular/forms';
 export abstract class BasicComponent {
   formControlName = input.required<string>();
 
-  rootFormGroup = inject(FormGroupDirective);
+  private readonly rootFormGroup = inject(FormGroupDirective);
 
   control = computed(() => {
     return this.rootFormGroup.form.get(this.formControlName()) as FormControl;

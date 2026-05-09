@@ -12,7 +12,7 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthSignInFormComponent {
-  formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(FormBuilder);
 
   form = this.formBuilder.group({
     email: [''],
