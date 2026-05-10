@@ -8,4 +8,6 @@ export const SVG_ICONS = [
   'arrow-up-gray',
   'arrow-down-blue',
   'language',
+  'user-gray',
+  'arrow-forward',
 ] as const;

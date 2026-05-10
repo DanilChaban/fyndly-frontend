@@ -6,12 +6,12 @@
   },
   "auth": {
     "common": {
-      "divider": "або продовжити з"
+      "divider": "або продовжити через"
     },
     "signIn": {
       "title": "З поверненням",
       "description": "Увійдіть у свій акаунт Fyndly і продовжуйте з того місця, де зупинилися.",
-      "emailLabel": "Email адреса",
+      "emailLabel": "Електронна пошта",
       "emailPlaceholder": "you@example.com",
       "passwordLabel": "Пароль",
       "passwordPlaceholder": "Введіть пароль",
@@ -24,9 +24,18 @@
     },
     "signUp": {
       "title": "Створіть акаунт",
-      "description": "Приєднуйтесь до Fyndly і почніть налаштовувати свій профіль уже сьогодні.",
+      "description": "Створіть акаунт Fyndly і почніть уже сьогодні.",
+      "usernameLabel": "Ім’я користувача",
+      "usernamePlaceholder": "Оберіть ім’я користувача",
+      "emailLabel": "Електронна пошта",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Пароль",
+      "passwordPlaceholder": "Створіть надійний пароль",
+      "confirmPasswordLabel": "Підтвердження пароля",
+      "confirmPasswordPlaceholder": "Підтвердіть пароль",
       "submit": "Створити акаунт",
-      "switchText": "Уже маєте акаунт?",
+      "google": "Продовжити з Google",
+      "switchText": "Вже маєте акаунт?",
       "switchLink": "Увійти"
     }
   }

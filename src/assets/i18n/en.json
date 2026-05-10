@@ -24,8 +24,17 @@
     },
     "signUp": {
       "title": "Create your account",
-      "description": "Join Fyndly and start building your profile today.",
+      "description": "Create your Fyndly account and get started today.",
+      "usernameLabel": "Username",
+      "usernamePlaceholder": "Choose a username",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Create a strong password",
+      "confirmPasswordLabel": "Confirm password",
+      "confirmPasswordPlaceholder": "Confirm password",
       "submit": "Create account",
+      "google": "Continue with Google",
       "switchText": "Already have an account?",
       "switchLink": "Sign in"
     }

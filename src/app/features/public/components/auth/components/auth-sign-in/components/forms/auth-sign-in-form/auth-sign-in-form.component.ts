@@ -28,7 +28,7 @@ export class AuthSignInFormComponent {
   form = this.formBuilder.group({
     email: [''],
     password: [''],
-    rememberMe: [true],
+    rememberMe: [false],
   });
 
   onSubmit(): void {

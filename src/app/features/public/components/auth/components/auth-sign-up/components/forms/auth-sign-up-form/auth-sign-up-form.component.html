@@ -1,1 +1,37 @@
-<p>auth-sign-up-form works!</p>
+<fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <fl-form-input
+    [label]="'auth.signUp.usernameLabel' | transloco"
+    [prefixSvgIcon]="'user-gray'"
+    [placeholder]="'auth.signUp.usernamePlaceholder' | transloco"
+    formControlName="username"
+  />
+  <fl-form-input
+    type="email"
+    [label]="'auth.signUp.emailLabel' | transloco"
+    [prefixSvgIcon]="'mail'"
+    [placeholder]="'auth.signUp.emailPlaceholder' | transloco"
+    formControlName="email"
+  />
+  <fl-form-input
+    type="password"
+    [label]="'auth.signUp.passwordLabel' | transloco"
+    [prefixSvgIcon]="'lock'"
+    [suffixSvgIcon]="'eye'"
+    [placeholder]="'auth.signUp.passwordPlaceholder' | transloco"
+    formControlName="password"
+  />
+  <fl-form-input
+    type="password"
+    [label]="'auth.signUp.confirmPasswordLabel' | transloco"
+    [prefixSvgIcon]="'lock'"
+    [suffixSvgIcon]="'eye'"
+    [placeholder]="'auth.signUp.confirmPasswordPlaceholder' | transloco"
+    formControlName="confirmPassword"
+  />
+
+  <fl-button variant="primary" [suffixIcon]="'arrow-forward'">{{ 'auth.signUp.submit' | transloco }}</fl-button>
+</fl-form>
+
+<app-auth-ui-divider />
+
+<fl-button variant="secondary" [prefixIcon]="'google'">{{ 'auth.signUp.google' | transloco }}</fl-button>

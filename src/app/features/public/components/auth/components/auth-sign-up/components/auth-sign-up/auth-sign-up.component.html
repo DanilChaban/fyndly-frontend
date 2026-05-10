@@ -1,15 +1,15 @@
 <fl-card>
   <fl-card-header>
-    <fl-card-title>{{ 'Create your account' | transloco }}</fl-card-title>
-    <fl-card-subtitle>{{ 'Join Fyndly and start discovering today' | transloco }}</fl-card-subtitle>
+    <fl-card-title>{{ 'auth.signUp.title' | transloco }}</fl-card-title>
+    <fl-card-subtitle>{{ 'auth.signUp.description' | transloco }}</fl-card-subtitle>
   </fl-card-header>
   <fl-card-content>
     <app-auth-sign-up-form />
   </fl-card-content>
   <fl-card-actions>
     <app-auth-actions-switch
-      [text]="'Already have an account?' | transloco"
-      [linkText]="'Sign in' | transloco"
+      [text]="'auth.signUp.switchText' | transloco"
+      [linkText]="'auth.signUp.switchLink' | transloco"
       link="sign-in"
     />
   </fl-card-actions>
