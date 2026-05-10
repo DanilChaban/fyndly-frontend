@@ -4,7 +4,7 @@ import { MatInput, MatPrefix, MatSuffix } from '@angular/material/input';
 import { MatFormField, MatFormFieldAppearance } from '@angular/material/form-field';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { SvgIconName } from '@core/icons/types/svg-icon-name';
-import { InputType } from '@ui/fl-form-input/types/input-type';
+import { InputType } from '@ui/fl-form/components/fl-form-input/types/input-type';
 import { BasicComponent } from '@ui/abstract/basic.component';
 
 @Component({

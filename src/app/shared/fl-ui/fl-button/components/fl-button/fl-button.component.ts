@@ -18,6 +18,7 @@ export class FlButtonComponent {
   variant = input<ButtonVariant>('primary');
   disabled = input<boolean>(false);
   icon = input<SvgIconName | null>(null);
+  customStyles = input<string>('');
 
   btnClicked = output<void>();
 

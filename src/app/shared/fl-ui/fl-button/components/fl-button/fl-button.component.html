@@ -1,6 +1,7 @@
 <button
   class="fl-button"
   [ngClass]="buttonClass()"
+  [style]="customStyles()"
   [matButton]="appearance()"
   [disabled]="disabled()"
   [disableRipple]="variant() === 'text'"

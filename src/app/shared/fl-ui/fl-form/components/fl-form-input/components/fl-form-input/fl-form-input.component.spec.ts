@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FlFormInputComponent } from '@ui/fl-form-input/components/fl-form-input/fl-form-input.component';
+import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 
 describe('FlFormInputComponent', () => {
   let component: FlFormInputComponent;

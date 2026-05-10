@@ -1,13 +1,21 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
-import { FlFormInputComponent } from '@ui/fl-form-input/components/fl-form-input/fl-form-input.component';
+import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
+import { FlFormCheckboxComponent } from '@ui/fl-form/components/tr-form-checkbox/components/fl-form-checkbox/fl-form-checkbox.component';
 import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-divider.component';
 
 @Component({
   selector: 'app-auth-sign-in-form',
-  imports: [FlFormComponent, FlFormInputComponent, ReactiveFormsModule, FlButtonComponent, AuthUiDividerComponent],
+  imports: [
+    FlFormComponent,
+    FlFormInputComponent,
+    ReactiveFormsModule,
+    FlButtonComponent,
+    FlFormCheckboxComponent,
+    AuthUiDividerComponent,
+  ],
   templateUrl: './auth-sign-in-form.component.html',
   styleUrl: './auth-sign-in-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,6 +26,7 @@ export class AuthSignInFormComponent {
   form = this.formBuilder.group({
     email: [''],
     password: [''],
+    rememberMe: [true],
   });
 
   onSubmit(): void {
