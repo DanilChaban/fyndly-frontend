@@ -1,0 +1,28 @@
+{
+  "auth": {
+    "common": {
+      "divider": "або продовжити з"
+    },
+    "signIn": {
+      "title": "З поверненням",
+      "description": "Увійдіть у свій акаунт Fyndly і продовжуйте з того місця, де зупинилися.",
+      "emailLabel": "Email адреса",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Пароль",
+      "passwordPlaceholder": "Введіть пароль",
+      "rememberMe": "Залишатися в системі 30 днів",
+      "forgotPassword": "Забули пароль?",
+      "submit": "Увійти",
+      "google": "Продовжити з Google",
+      "switchText": "Немає акаунта?",
+      "switchLink": "Створити"
+    },
+    "signUp": {
+      "title": "Створіть акаунт",
+      "description": "Приєднуйтесь до Fyndly і почніть налаштовувати свій профіль уже сьогодні.",
+      "submit": "Створити акаунт",
+      "switchText": "Уже маєте акаунт?",
+      "switchLink": "Увійти"
+    }
+  }
+}

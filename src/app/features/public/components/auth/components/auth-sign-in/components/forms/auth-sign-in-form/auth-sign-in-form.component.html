@@ -1,29 +1,31 @@
 <fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
   <fl-form-input
     type="email"
-    label="Email address"
+    [label]="'auth.signIn.emailLabel' | transloco"
     [prefixSvgIcon]="'mail'"
-    placeholder="you@example.com"
+    [placeholder]="'auth.signIn.emailPlaceholder' | transloco"
     formControlName="email"
   />
   <fl-form-input
     type="password"
-    label="Password"
+    [label]="'auth.signIn.passwordLabel' | transloco"
     [prefixSvgIcon]="'lock'"
     [suffixSvgIcon]="'eye'"
-    placeholder="Enter your password"
+    [placeholder]="'auth.signIn.passwordPlaceholder' | transloco"
     formControlName="password"
   />
 
   <div class="auth-sign-in-form__options">
-    <fl-form-checkbox formControlName="rememberMe">Remember me for 30 days</fl-form-checkbox>
+    <fl-form-checkbox formControlName="rememberMe">{{ 'auth.signIn.rememberMe' | transloco }}</fl-form-checkbox>
 
-    <fl-button variant="text" [customStyles]="'font-weight: 500'">Forgot password?</fl-button>
+    <fl-button variant="text" [customStyles]="'font-weight: 500'">
+      {{ 'auth.signIn.forgotPassword' | transloco }}
+    </fl-button>
   </div>
 
-  <fl-button type="submit" variant="primary">Sign in</fl-button>
+  <fl-button type="submit" variant="primary">{{ 'auth.signIn.submit' | transloco }}</fl-button>
 </fl-form>
 
 <app-auth-ui-divider />
 
-<fl-button type="button" variant="secondary" [icon]="'google'">Continue with Google</fl-button>
+<fl-button type="button" variant="secondary" [icon]="'google'">{{ 'auth.signIn.google' | transloco }}</fl-button>

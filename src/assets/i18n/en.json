@@ -1,0 +1,28 @@
+{
+  "auth": {
+    "common": {
+      "divider": "or continue with"
+    },
+    "signIn": {
+      "title": "Welcome back",
+      "description": "Access your Fyndly account and continue where you left off.",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Stay signed in for 30 days",
+      "forgotPassword": "Forgot password?",
+      "submit": "Sign in",
+      "google": "Continue with Google",
+      "switchText": "Don’t have an account?",
+      "switchLink": "Create one"
+    },
+    "signUp": {
+      "title": "Create your account",
+      "description": "Join Fyndly and start building your profile today.",
+      "submit": "Create account",
+      "switchText": "Already have an account?",
+      "switchLink": "Sign in"
+    }
+  }
+}

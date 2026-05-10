@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
@@ -9,9 +10,10 @@ import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-
 @Component({
   selector: 'app-auth-sign-in-form',
   imports: [
+    ReactiveFormsModule,
+    TranslocoPipe,
     FlFormComponent,
     FlFormInputComponent,
-    ReactiveFormsModule,
     FlButtonComponent,
     FlFormCheckboxComponent,
     AuthUiDividerComponent,

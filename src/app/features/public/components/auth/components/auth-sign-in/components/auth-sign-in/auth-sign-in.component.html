@@ -1,12 +1,16 @@
 <fl-card>
   <fl-card-header>
-    <fl-card-title>Welcome back</fl-card-title>
-    <fl-card-subtitle>Access your Fyndly account and continue where you left off.</fl-card-subtitle>
+    <fl-card-title>{{ 'auth.signIn.title' | transloco }}</fl-card-title>
+    <fl-card-subtitle>{{ 'auth.signIn.description' | transloco }}</fl-card-subtitle>
   </fl-card-header>
   <fl-card-content>
     <app-auth-sign-in-form />
   </fl-card-content>
   <fl-card-actions>
-    <app-auth-actions-switch text="Don't have an account?" linkText="Create account" link="sign-up" />
+    <app-auth-actions-switch
+      [text]="'auth.signIn.switchText' | transloco"
+      [linkText]="'auth.signIn.switchLink' | transloco"
+      link="sign-up"
+    />
   </fl-card-actions>
 </fl-card>
