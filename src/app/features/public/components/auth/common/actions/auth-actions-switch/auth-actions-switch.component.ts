@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { Router } from '@angular/router';
+import { LocalizedRouterService } from '@core/services/localized-router.service';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 
 @Component({
@@ -14,9 +14,9 @@ export class AuthActionsSwitchComponent {
   linkText = input<string>('');
   link = input<string>('');
 
-  private readonly router = inject(Router);
+  private readonly localizedRouterService = inject(LocalizedRouterService);
 
   navigate(): void {
-    void this.router.navigate([this.link()]);
+    void this.localizedRouterService.navigate([this.link()]);
   }
 }

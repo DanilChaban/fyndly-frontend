@@ -1,8 +1,27 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
+import { FlCardActionsComponent } from '@common/fl-card/components/fl-card-actions/fl-card-actions.component';
+import { FlCardComponent } from '@common/fl-card/components/fl-card/fl-card.component';
+import { FlCardContentComponent } from '@common/fl-card/components/fl-card-content/fl-card-content.component';
+import { FlCardHeaderComponent } from '@common/fl-card/components/fl-card-header/fl-card-header.component';
+import { FlCardSubtitleComponent } from '@common/fl-card/components/fl-card-subtitle/fl-card-subtitle.component';
+import { FlCardTitleComponent } from '@common/fl-card/components/fl-card-title/fl-card-title.component';
+import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-switch/auth-actions-switch.component';
+import { AuthSignUpFormComponent } from '@auth/components/auth-sign-up/components/forms/auth-sign-up-form/auth-sign-up-form.component';
 
 @Component({
   selector: 'app-auth-sign-up',
-  imports: [],
+  imports: [
+    TranslocoPipe,
+    FlCardActionsComponent,
+    FlCardComponent,
+    FlCardContentComponent,
+    FlCardHeaderComponent,
+    FlCardSubtitleComponent,
+    FlCardTitleComponent,
+    AuthActionsSwitchComponent,
+    AuthSignUpFormComponent,
+  ],
   templateUrl: './auth-sign-up.component.html',
   styleUrl: './auth-sign-up.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
