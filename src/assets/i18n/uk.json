@@ -1,4 +1,9 @@
 {
+  "public": {
+    "footer": {
+      "copyright": "© 2025 Fyndly. Усі права захищено."
+    }
+  },
   "auth": {
     "common": {
       "divider": "або продовжити з"

@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-public-footer',
-  imports: [],
+  imports: [TranslocoPipe],
   templateUrl: './public-footer.component.html',
   styleUrl: './public-footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
