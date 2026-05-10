@@ -1,4 +1,12 @@
 {
+  "global": {
+    "passwordStrength": {
+      "weak": "Слабкий",
+      "medium": "Середній",
+      "strong": "Надійний",
+      "veryStrong": "Дуже надійний"
+    }
+  },
   "public": {
     "footer": {
       "copyright": "© 2025 Fyndly. Усі права захищено."

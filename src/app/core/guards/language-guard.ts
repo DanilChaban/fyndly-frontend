@@ -1,5 +1,6 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
+import { TranslocoService } from '@jsverse/transloco';
 import { LanguageCode } from '@core/i18n/types/language-code';
 import { AVAILABLE_LANGUAGES } from '@core/i18n/constants/constants';
 
@@ -9,6 +10,7 @@ function isLanguageCode(value: string | null): value is LanguageCode {
 
 export const languageGuard: CanActivateFn = (route) => {
   const router = inject(Router);
+  const translocoService = inject(TranslocoService);
 
   const lang = route.paramMap.get('lang');
 
@@ -16,5 +18,6 @@ export const languageGuard: CanActivateFn = (route) => {
     return router.createUrlTree(['/en/sign-in']);
   }
 
+  translocoService.setActiveLang(lang);
   return true;
 };

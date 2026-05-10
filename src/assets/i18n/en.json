@@ -1,4 +1,12 @@
 {
+  "global": {
+    "passwordStrength": {
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong",
+      "veryStrong": "Very strong"
+    }
+  },
   "public": {
     "footer": {
       "copyright": "© 2025 Fyndly. All rights reserved."
