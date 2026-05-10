@@ -7,8 +7,13 @@
   [disableRipple]="variant() === 'text'"
   (click)="onClick()"
 >
-  @if (icon(); as icon) {
-    <mat-icon class="fl-button__icon" [svgIcon]="icon" />
+  @if (prefixIcon(); as icon) {
+    <mat-icon class="fl-button__icon fl-button__icon--prefix" [svgIcon]="icon" />
   }
+
   <ng-content />
+
+  @if (suffixIcon(); as icon) {
+    <mat-icon class="fl-button__icon fl-button__icon--suffix" iconPositionEnd [svgIcon]="icon" />
+  }
 </button>

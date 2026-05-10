@@ -5,6 +5,7 @@ import { MatButton } from '@angular/material/button';
 import { ButtonAppearance } from '@angular/material/button/testing';
 import { SvgIconName } from '@core/icons/types/svg-icon-name';
 import { ButtonVariant } from '@ui/fl-button/types/button-variant';
+import { ButtonSize } from '@ui/fl-button/types/button-size';
 
 @Component({
   selector: 'fl-button',
@@ -17,12 +18,17 @@ export class FlButtonComponent {
   appearance = input<ButtonAppearance>('outlined');
   variant = input<ButtonVariant>('primary');
   disabled = input<boolean>(false);
-  icon = input<SvgIconName | null>(null);
   customStyles = input<string>('');
+  prefixIcon = input<SvgIconName | null>(null);
+  suffixIcon = input<SvgIconName | null>(null);
+  size = input<ButtonSize>('large');
 
   btnClicked = output<void>();
 
-  buttonClass = computed(() => `fl-button fl-button--${this.variant()}`);
+  buttonClass = computed(() => ({
+    [`fl-button fl-button--${this.variant()}`]: true,
+    [`fl-button fl-button--${this.size()}`]: true,
+  }));
 
   onClick(): void {
     if (this.disabled()) {

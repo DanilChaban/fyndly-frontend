@@ -1,0 +1,18 @@
+<fl-button
+  [matMenuTriggerFor]="languageMenu.menu"
+  variant="secondary"
+  [size]="'small'"
+  [customStyles]="'font-weight: 500'"
+  [prefixIcon]="'language'"
+  [suffixIcon]="'arrow-down-gray'"
+>
+  {{ selectedLanguage }}
+</fl-button>
+
+<fl-menu #languageMenu>
+  @for (option of LANGUAGES_MENU; track option.code) {
+    <fl-menu-item (itemClicked)="selectLanguageItem(option)" [active]="selectedCode === option.code">
+      {{ option.name }}
+    </fl-menu-item>
+  }
+</fl-menu>
