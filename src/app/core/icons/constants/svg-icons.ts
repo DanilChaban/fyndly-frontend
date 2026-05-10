@@ -5,6 +5,7 @@ export const SVG_ICONS = [
   'eye-off',
   'google',
   'arrow-down-gray',
+  'arrow-up-gray',
   'arrow-down-blue',
   'language',
 ] as const;

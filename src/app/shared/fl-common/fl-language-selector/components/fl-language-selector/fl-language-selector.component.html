@@ -1,10 +1,11 @@
 <fl-button
+  #languageTrigger="matMenuTrigger"
   [matMenuTriggerFor]="languageMenu.menu"
   variant="secondary"
   [size]="'small'"
   [customStyles]="'font-weight: 500'"
   [prefixIcon]="'language'"
-  [suffixIcon]="'arrow-down-gray'"
+  [suffixIcon]="languageTrigger.menuOpen ? 'arrow-up-gray' : 'arrow-down-gray'"
 >
   {{ selectedLanguage }}
 </fl-button>
