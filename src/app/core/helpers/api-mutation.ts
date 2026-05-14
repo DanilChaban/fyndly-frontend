@@ -14,14 +14,16 @@ export function createApiMutation<TResponse, TPayload = void>(
   const request = signal<ApiMutationRequest<TPayload> | null>(null);
 
   const resource = httpResource<TResponse>(() => {
-    if (!request()) {
+    const currentRequest = request();
+
+    if (!currentRequest) {
       return undefined;
     }
 
     return {
       url: apiUrl(path),
       method,
-      body: request()?.payload,
+      body: currentRequest.payload,
     };
   });
 
