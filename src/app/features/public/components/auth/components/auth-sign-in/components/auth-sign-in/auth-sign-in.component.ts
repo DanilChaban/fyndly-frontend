@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { FlCardComponent } from '@common/fl-card/components/fl-card/fl-card.component';
 import { FlCardHeaderComponent } from '@common/fl-card/components/fl-card-header/fl-card-header.component';
@@ -8,6 +9,7 @@ import { FlCardContentComponent } from '@common/fl-card/components/fl-card-conte
 import { FlCardActionsComponent } from '@common/fl-card/components/fl-card-actions/fl-card-actions.component';
 import { AuthSignInFormComponent } from '@auth/components/auth-sign-in/components/forms/auth-sign-in-form/auth-sign-in-form.component';
 import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-switch/auth-actions-switch.component';
+import { AuthService } from '@auth/apis/auth.service';
 
 @Component({
   selector: 'app-auth-sign-in',
@@ -26,4 +28,10 @@ import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-sw
   styleUrl: './auth-sign-in.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthSignInComponent {}
+export class AuthSignInComponent {
+  private readonly authService = inject(AuthService);
+
+  onSubmit(form: FormGroup): void {
+    this.authService.signIn.execute(form.getRawValue());
+  }
+}

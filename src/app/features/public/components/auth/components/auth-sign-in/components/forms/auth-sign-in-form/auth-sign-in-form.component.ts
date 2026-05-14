@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
@@ -23,6 +23,8 @@ import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthSignInFormComponent {
+  submitClicked = output<FormGroup>();
+
   private readonly formBuilder = inject(FormBuilder);
 
   form = this.formBuilder.group({
@@ -32,6 +34,6 @@ export class AuthSignInFormComponent {
   });
 
   onSubmit(): void {
-    console.log(this.form.value);
+    this.submitClicked.emit(this.form);
   }
 }
