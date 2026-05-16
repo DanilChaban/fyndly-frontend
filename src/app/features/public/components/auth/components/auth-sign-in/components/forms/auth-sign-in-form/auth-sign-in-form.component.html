@@ -23,9 +23,9 @@
     </fl-button>
   </div>
 
-  <fl-button variant="primary">{{ 'auth.signIn.submit' | transloco }}</fl-button>
+  <fl-button type="submit" variant="primary">{{ 'auth.signIn.submit' | transloco }}</fl-button>
 </fl-form>
 
 <app-auth-ui-divider />
 
-<fl-button variant="secondary" [prefixIcon]="'google'">{{ 'auth.signIn.google' | transloco }}</fl-button>
+<app-auth-actions-google />

@@ -6,6 +6,7 @@ import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/compo
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 import { FlFormCheckboxComponent } from '@ui/fl-form/components/tr-form-checkbox/components/fl-form-checkbox/fl-form-checkbox.component';
 import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-divider.component';
+import { AuthActionsGoogleComponent } from '@auth/common/actions/auth-actions-google/auth-actions-google.component';
 
 @Component({
   selector: 'app-auth-sign-in-form',
@@ -17,6 +18,7 @@ import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-
     FlButtonComponent,
     FlFormCheckboxComponent,
     AuthUiDividerComponent,
+    AuthActionsGoogleComponent,
   ],
   templateUrl: './auth-sign-in-form.component.html',
   styleUrl: './auth-sign-in-form.component.scss',

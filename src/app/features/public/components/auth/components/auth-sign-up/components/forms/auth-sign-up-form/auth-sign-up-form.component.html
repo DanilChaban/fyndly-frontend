@@ -31,9 +31,11 @@
     formControlName="confirmPassword"
   />
 
-  <fl-button variant="primary" [suffixIcon]="'arrow-forward'">{{ 'auth.signUp.submit' | transloco }}</fl-button>
+  <fl-button type="submit" variant="primary" [suffixIcon]="'arrow-forward'">
+    {{ 'auth.signUp.submit' | transloco }}
+  </fl-button>
 </fl-form>
 
 <app-auth-ui-divider />
 
-<fl-button variant="secondary" [prefixIcon]="'google'">{{ 'auth.signUp.google' | transloco }}</fl-button>
+<app-auth-actions-google />

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, input, output } from '@an
 import { NgClass } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
-import { ButtonAppearance } from '@angular/material/button/testing';
+import { ButtonAppearance, ButtonType } from '@angular/material/button/testing';
 import { SvgIconName } from '@core/icons/types/svg-icon-name';
 import { ButtonVariant } from '@ui/fl-button/types/button-variant';
 import { ButtonSize } from '@ui/fl-button/types/button-size';
@@ -19,6 +19,7 @@ export class FlButtonComponent {
   variant = input<ButtonVariant>('primary');
   disabled = input<boolean>(false);
   customStyles = input<string>('');
+  type = input<ButtonType>('button');
   prefixIcon = input<SvgIconName | null>(null);
   suffixIcon = input<SvgIconName | null>(null);
   size = input<ButtonSize>('large');

@@ -6,6 +6,7 @@ import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.componen
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 import { FlFormPasswordStrengthComponent } from '@ui/fl-form/components/fl-form-password-strength/components/fl-form-password-strength.component';
 import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-divider.component';
+import { AuthActionsGoogleComponent } from '@auth/common/actions/auth-actions-google/auth-actions-google.component';
 
 @Component({
   selector: 'app-auth-sign-up-form',
@@ -18,6 +19,7 @@ import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-
     FlFormInputComponent,
     FlFormPasswordStrengthComponent,
     AuthUiDividerComponent,
+    AuthActionsGoogleComponent,
   ],
   templateUrl: './auth-sign-up-form.component.html',
   styleUrl: './auth-sign-up-form.component.scss',
