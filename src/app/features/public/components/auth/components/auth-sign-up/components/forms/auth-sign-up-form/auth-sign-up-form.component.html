@@ -20,7 +20,7 @@
     [placeholder]="'auth.signUp.passwordPlaceholder' | transloco"
     formControlName="password"
   />
-  <fl-form-password-strength [password]="form.controls.password.value ?? ''" />
+  <fl-form-password-strength [password]="form.controls.password.value" />
 
   <fl-form-input
     type="password"

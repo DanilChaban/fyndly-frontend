@@ -16,12 +16,14 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlFormPasswordStrengthComponent {
-  password = input<string>('');
+  password = input<string | null>('');
+
+  value = computed(() => this.password() ?? '');
 
   bars = Array.from({ length: 4 }, (_, index) => index);
 
-  hasPassword = computed(() => this.password().length > 0);
-  score = computed(() => getPasswordStrengthScore(this.password()));
+  hasPassword = computed(() => this.value().length > 0);
+  score = computed(() => getPasswordStrengthScore(this.value()));
   strength = computed(() => getPasswordStrength(this.score()));
   activeBars = computed(() => getPasswordStrengthBars(this.strength()));
   label = computed(() => getPasswordStrengthLabel(this.strength()));
