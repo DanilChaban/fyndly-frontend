@@ -1,3 +1,8 @@
+.cdk-global-overlay-wrapper:has(.fl-toast-panel),
+.cdk-overlay-pane:has(.fl-toast-panel) {
+  pointer-events: none;
+}
+
 .mat-mdc-snack-bar-container.fl-toast-panel {
   margin-top: calc(var(--public-header-height) + 16px) !important;
   margin-right: 16px;

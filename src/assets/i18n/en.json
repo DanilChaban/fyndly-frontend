@@ -21,6 +21,10 @@
         "validation_invalid": "Invalid value",
         "validation_email": "Please enter a valid email address",
         "validation_min_length": "This field is too short"
+      },
+      "server_success": {
+        "sign_in_success": "You have signed in successfully",
+        "sign_up_success": "Your account has been created successfully"
       }
     },
     "toast": {
@@ -30,6 +34,10 @@
         "warning": "Warning",
         "info": "Information"
       }
+    },
+    "relative_time": {
+      "just_now": "just now",
+      "seconds_ago": "{{ seconds }}s ago"
     }
   },
   "public": {
