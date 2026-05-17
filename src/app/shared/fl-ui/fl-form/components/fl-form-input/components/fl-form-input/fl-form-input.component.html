@@ -27,5 +27,9 @@
         (click)="onSuffixIconClick()"
       />
     }
+
+    @if (showError() && errorKey(); as key) {
+      <mat-error>{{ key | transloco }}</mat-error>
+    }
   </mat-form-field>
 </div>

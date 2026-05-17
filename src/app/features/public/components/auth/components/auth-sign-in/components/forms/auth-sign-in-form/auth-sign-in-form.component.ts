@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
@@ -30,8 +30,8 @@ export class AuthSignInFormComponent {
   private readonly formBuilder = inject(FormBuilder);
 
   form = this.formBuilder.group({
-    email: [''],
-    password: [''],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
     rememberMe: [false],
   });
 

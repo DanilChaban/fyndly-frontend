@@ -46,5 +46,10 @@
       "switchText": "Already have an account?",
       "switchLink": "Sign in"
     }
+  },
+  "validation": {
+    "required": "This field is required",
+    "email": "Enter a valid email address",
+    "passwordMismatch": "Passwords do not match"
   }
 }

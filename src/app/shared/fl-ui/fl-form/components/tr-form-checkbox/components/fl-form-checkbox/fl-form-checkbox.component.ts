@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, forwardRef } from '@angular/core';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { BasicComponent } from '@ui/abstract/basic.component';
+import { FlFormControlBase } from '@ui/abstract/fl-form-control-base/fl-form-control-base';
 
 @Component({
   selector: 'fl-form-checkbox',
@@ -17,7 +17,7 @@ import { BasicComponent } from '@ui/abstract/basic.component';
     },
   ],
 })
-export class FlFormCheckboxComponent extends BasicComponent {
+export class FlFormCheckboxComponent extends FlFormControlBase {
   writeValue(): void {}
 
   registerOnChange(): void {}
