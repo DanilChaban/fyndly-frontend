@@ -1,0 +1,75 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  display: block;
+}
+
+.fl-toast {
+  width: min(477px, calc(100vw - 32px));
+  min-height: 80px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid colors.$color-gray-3;
+  background: colors.$color-white-1;
+  box-shadow: colors.$box-shadow-1;
+  color: colors.$color-black-1;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    &--success {
+      background-color: colors.$color-green-2;
+    }
+
+    &--error {
+      background-color: colors.$color-red-2;
+    }
+
+    &--warning {
+      background-color: colors.$color-orange-2;
+    }
+
+    &--info {
+      background-color: colors.$color-blue-5;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  &__message {
+    margin: 0;
+    color: colors.$color-gray-2;
+    font-size: 14px;
+    line-height: 22.8px;
+  }
+
+  &__time {
+    color: colors.$color-gray-2;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

@@ -70,6 +70,7 @@
   }
 
   &--text {
+    min-width: 0;
     width: auto;
     height: auto;
     padding: 0;
@@ -85,6 +86,11 @@
 
     &:active:not(:disabled) {
       color: colors.$color-blue-3 !important;
+    }
+
+    .fl-button__icon--prefix, .fl-button__icon--suffix {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
     }
   }
 

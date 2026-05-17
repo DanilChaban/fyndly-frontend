@@ -1,0 +1,14 @@
+.mat-mdc-snack-bar-container.fl-toast-panel {
+  margin-top: calc(var(--public-header-height) + 16px) !important;
+  margin-right: 16px;
+
+  .mdc-snackbar__surface {
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .mat-mdc-snack-bar-label {
+    padding: 0 !important;
+  }
+}

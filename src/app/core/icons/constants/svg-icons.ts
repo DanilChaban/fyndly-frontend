@@ -10,4 +10,9 @@ export const SVG_ICONS = [
   'language',
   'user-gray',
   'arrow-forward',
+  'success-toast',
+  'error-toast',
+  'warning-toast',
+  'info-toast',
+  'close-gray',
 ] as const;

@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 @use 'utilities/colors' as colors;
+@use 'utilities/variables';
+@use 'overrides/fl-toast-panel';
 
 html {
   @include mat.theme((
