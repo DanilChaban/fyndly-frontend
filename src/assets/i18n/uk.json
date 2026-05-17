@@ -22,6 +22,14 @@
         "validation_email": "Введіть коректну email-адресу",
         "validation_min_length": "Значення занадто коротке"
       }
+    },
+    "toast": {
+      "title": {
+        "success": "Успіх",
+        "error": "Щось пішло не так",
+        "warning": "Попередження",
+        "info": "Інформація"
+      }
     }
   },
   "public": {

@@ -4,7 +4,7 @@
   </div>
   <div class="fl-toast__content">
     <div class="fl-toast__header">
-      <p class="fl-toast__title">{{ title() }}</p>
+      <p class="fl-toast__title">{{ title() | transloco }}</p>
       <span class="fl-toast__time">{{ data.createdAt | relativeTime: now() }}</span>
     </div>
     <p class="fl-toast__message">{{ data.message }}</p>

@@ -1,12 +1,10 @@
 import { ToastType } from '@ui/fl-toast/types/toast-type';
 
-export const TOAST_DEFAULT_DURATION = 20000;
-
-export const TOAST_TITLE: Record<string, string> = {
-  success: 'Success',
-  error: 'Something went wrong',
-  warning: 'Warning',
-  info: 'Information',
+export const TOAST_TITLE: Record<ToastType, string> = {
+  success: 'global.toast.title.success',
+  error: 'global.toast.title.error',
+  warning: 'global.toast.title.warning',
+  info: 'global.toast.title.info',
 };
 
 export const TOAST_ICON: Record<ToastType, string> = {
