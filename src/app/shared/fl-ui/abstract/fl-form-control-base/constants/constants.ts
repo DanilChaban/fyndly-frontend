@@ -15,10 +15,8 @@ export const getErrorKey = (errors: ValidationErrors | null): string | null => {
   }
 
   if (errors['server']) {
-    return errors['server'];
+    return `global.validation.server_error.${errors['server']}`;
   }
 
-  const firstErrorKey = Object.keys(errors)[0];
-
-  return VALIDATION_ERROR_KEYS[firstErrorKey];
+  return VALIDATION_ERROR_KEYS[Object.keys(errors)[0]];
 };

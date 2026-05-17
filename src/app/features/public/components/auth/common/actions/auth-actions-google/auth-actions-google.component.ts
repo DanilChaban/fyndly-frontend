@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
-import { apiUrl } from '@core/helpers/api-url';
+import { apiUrl } from '@core/helpers/api/api-url';
 import { API_ENDPOINTS } from '@core/constants/api-endpoints';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 

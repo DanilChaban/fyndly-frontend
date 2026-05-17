@@ -1,9 +1,9 @@
-import { ApiMutationMethod } from '@core/types/api-mutation-method';
 import { signal } from '@angular/core';
 import { httpResource } from '@angular/common/http';
-import { ApiMutation } from '@core/types/api-mutation';
-import { ApiMutationRequest } from '@core/types/api-mutation-request';
-import { apiUrl } from '@core/helpers/api-url';
+import { apiUrl } from '@core/helpers/api/api-url';
+import { ApiMutationMethod } from '@core/types/api/api-mutation-method';
+import { ApiMutation } from '@core/types/api/api-mutation';
+import { ApiMutationRequest } from '@core/types/api/api-mutation-request';
 
 export function createApiMutation<TResponse, TPayload = void>(
   method: ApiMutationMethod,

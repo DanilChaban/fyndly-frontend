@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { createApiMutation } from '@core/helpers/api-mutation';
+import { createApiMutation } from '@core/helpers/api/api-mutation';
 import { API_ENDPOINTS } from '@core/constants/api-endpoints';
 
 @Injectable()

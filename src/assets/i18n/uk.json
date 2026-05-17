@@ -16,8 +16,8 @@
       "server_error": {
         "invalid_credentials": "Неправильна email-адреса або пароль",
         "email_already_exists": "Користувач із такою email-адресою вже існує",
+        "username_already_exists": "Це ім’я користувача вже зайняте",
         "passwords_do_not_match": "Паролі не збігаються",
-        "request_body_required": "Тіло запиту є обов’язковим",
         "validation_invalid": "Некоректне значення",
         "validation_email": "Введіть коректну email-адресу",
         "validation_min_length": "Значення занадто коротке"

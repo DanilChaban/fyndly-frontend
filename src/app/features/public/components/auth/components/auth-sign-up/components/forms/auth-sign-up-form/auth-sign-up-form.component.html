@@ -31,7 +31,7 @@
     formControlName="confirmPassword"
   />
 
-  <fl-button type="submit" variant="primary" [suffixIcon]="'arrow-forward'">
+  <fl-button type="submit" variant="primary" [disabled]="!form.valid" [suffixIcon]="'arrow-forward'">
     {{ 'auth.sign_up.submit' | transloco }}
   </fl-button>
 </fl-form>

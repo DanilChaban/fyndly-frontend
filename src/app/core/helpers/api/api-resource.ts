@@ -1,5 +1,5 @@
 import { httpResource, HttpResourceRef } from '@angular/common/http';
-import { apiUrl } from '@core/helpers/api-url';
+import { apiUrl } from '@core/helpers/api/api-url';
 
 export function apiResource<TResponse>(pathFactory: () => string): HttpResourceRef<TResponse | undefined> {
   return httpResource<TResponse>(() => {

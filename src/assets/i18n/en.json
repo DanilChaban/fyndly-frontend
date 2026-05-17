@@ -16,8 +16,8 @@
       "server_error": {
         "invalid_credentials": "Invalid email or password",
         "email_already_exists": "User with this email already exists",
+        "username_already_exists": "This username is already taken",
         "passwords_do_not_match": "Passwords do not match",
-        "request_body_required": "Request body is required",
         "validation_invalid": "Invalid value",
         "validation_email": "Please enter a valid email address",
         "validation_min_length": "This field is too short"
