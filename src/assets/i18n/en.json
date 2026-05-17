@@ -1,10 +1,27 @@
 {
   "global": {
-    "passwordStrength": {
+    "password_strength": {
       "weak": "Weak",
       "medium": "Medium",
       "strong": "Strong",
-      "veryStrong": "Very strong"
+      "very_strong": "Very strong"
+    },
+    "validation": {
+      "invalid": "Invalid value",
+      "required": "This field is required",
+      "email": "Enter a valid email address",
+      "min_length": "This field is too short",
+      "max_length": "This field is too long",
+      "password_mismatch": "Passwords do not match",
+      "server_error": {
+        "invalid_credentials": "Invalid email or password",
+        "email_already_exists": "User with this email already exists",
+        "passwords_do_not_match": "Passwords do not match",
+        "request_body_required": "Request body is required",
+        "validation_invalid": "Invalid value",
+        "validation_email": "Please enter a valid email address",
+        "validation_min_length": "This field is too short"
+      }
     }
   },
   "public": {
@@ -16,40 +33,35 @@
     "common": {
       "divider": "or continue with"
     },
-    "signIn": {
+    "sign_in": {
       "title": "Welcome back",
       "description": "Access your Fyndly account and continue where you left off.",
-      "emailLabel": "Email address",
-      "emailPlaceholder": "you@example.com",
-      "passwordLabel": "Password",
-      "passwordPlaceholder": "Enter your password",
-      "rememberMe": "Stay signed in for 30 days",
-      "forgotPassword": "Forgot password?",
+      "email_label": "Email address",
+      "email_placeholder": "you@example.com",
+      "password_label": "Password",
+      "password_placeholder": "Enter your password",
+      "remember_me": "Stay signed in for 30 days",
+      "forgot_password": "Forgot password?",
       "submit": "Sign in",
       "google": "Continue with Google",
-      "switchText": "Don’t have an account?",
-      "switchLink": "Create account"
+      "switch_text": "Don’t have an account?",
+      "switch_link": "Create account"
     },
-    "signUp": {
+    "sign_up": {
       "title": "Create your account",
       "description": "Create your Fyndly account and get started today.",
-      "usernameLabel": "Username",
-      "usernamePlaceholder": "Choose a username",
-      "emailLabel": "Email address",
-      "emailPlaceholder": "you@example.com",
-      "passwordLabel": "Password",
-      "passwordPlaceholder": "Create a strong password",
-      "confirmPasswordLabel": "Confirm password",
-      "confirmPasswordPlaceholder": "Confirm password",
+      "username_label": "Username",
+      "username_placeholder": "Choose a username",
+      "email_label": "Email address",
+      "email_placeholder": "you@example.com",
+      "password_label": "Password",
+      "password_placeholder": "Create a strong password",
+      "confirm_password_label": "Confirm password",
+      "confirm_password_placeholder": "Confirm password",
       "submit": "Create account",
       "google": "Continue with Google",
-      "switchText": "Already have an account?",
-      "switchLink": "Sign in"
+      "switch_text": "Already have an account?",
+      "switch_link": "Sign in"
     }
-  },
-  "validation": {
-    "required": "This field is required",
-    "email": "Enter a valid email address",
-    "passwordMismatch": "Passwords do not match"
   }
 }

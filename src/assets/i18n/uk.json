@@ -1,10 +1,27 @@
 {
   "global": {
-    "passwordStrength": {
+    "password_strength": {
       "weak": "Слабкий",
       "medium": "Середній",
       "strong": "Надійний",
-      "veryStrong": "Дуже надійний"
+      "very_strong": "Дуже надійний"
+    },
+    "validation": {
+      "invalid": "Некоректне значення",
+      "required": "Це поле обов’язкове",
+      "email": "Введіть коректну електронну пошту",
+      "min_length": "Значення занадто коротке",
+      "max_length": "Значення занадто довге",
+      "password_mismatch": "Паролі не збігаються",
+      "server_error": {
+        "invalid_credentials": "Неправильна email-адреса або пароль",
+        "email_already_exists": "Користувач із такою email-адресою вже існує",
+        "passwords_do_not_match": "Паролі не збігаються",
+        "request_body_required": "Тіло запиту є обов’язковим",
+        "validation_invalid": "Некоректне значення",
+        "validation_email": "Введіть коректну email-адресу",
+        "validation_min_length": "Значення занадто коротке"
+      }
     }
   },
   "public": {
@@ -16,40 +33,35 @@
     "common": {
       "divider": "або продовжити через"
     },
-    "signIn": {
+    "sign_in": {
       "title": "З поверненням",
       "description": "Увійдіть у свій акаунт Fyndly і продовжуйте з того місця, де зупинилися.",
-      "emailLabel": "Електронна пошта",
-      "emailPlaceholder": "you@example.com",
-      "passwordLabel": "Пароль",
-      "passwordPlaceholder": "Введіть пароль",
-      "rememberMe": "Залишатися в системі 30 днів",
-      "forgotPassword": "Забули пароль?",
+      "email_label": "Електронна пошта",
+      "email_placeholder": "you@example.com",
+      "password_label": "Пароль",
+      "password_placeholder": "Введіть пароль",
+      "remember_me": "Залишатися в системі 30 днів",
+      "forgot_password": "Забули пароль?",
       "submit": "Увійти",
       "google": "Продовжити з Google",
-      "switchText": "Немає акаунта?",
-      "switchLink": "Створити"
+      "switch_text": "Немає акаунта?",
+      "switch_link": "Створити"
     },
-    "signUp": {
+    "sign_up": {
       "title": "Створіть акаунт",
       "description": "Створіть акаунт Fyndly і почніть уже сьогодні.",
-      "usernameLabel": "Ім’я користувача",
-      "usernamePlaceholder": "Оберіть ім’я користувача",
-      "emailLabel": "Електронна пошта",
-      "emailPlaceholder": "you@example.com",
-      "passwordLabel": "Пароль",
-      "passwordPlaceholder": "Створіть надійний пароль",
-      "confirmPasswordLabel": "Підтвердження пароля",
-      "confirmPasswordPlaceholder": "Підтвердіть пароль",
+      "username_label": "Ім’я користувача",
+      "username_placeholder": "Оберіть ім’я користувача",
+      "email_label": "Електронна пошта",
+      "email_placeholder": "you@example.com",
+      "password_label": "Пароль",
+      "password_placeholder": "Створіть надійний пароль",
+      "confirm_password_label": "Підтвердження пароля",
+      "confirm_password_placeholder": "Підтвердіть пароль",
       "submit": "Створити акаунт",
       "google": "Продовжити з Google",
-      "switchText": "Вже маєте акаунт?",
-      "switchLink": "Увійти"
+      "switch_text": "Вже маєте акаунт?",
+      "switch_link": "Увійти"
     }
-  },
-  "validation": {
-    "required": "Це поле обов’язкове",
-    "email": "Введіть коректну електронну пошту",
-    "passwordMismatch": "Паролі не збігаються"
   }
 }

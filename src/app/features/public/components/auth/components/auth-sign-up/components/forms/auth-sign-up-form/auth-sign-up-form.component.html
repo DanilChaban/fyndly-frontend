@@ -1,38 +1,38 @@
 <fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
   <fl-form-input
-    [label]="'auth.signUp.usernameLabel' | transloco"
+    [label]="'auth.sign_up.username_label' | transloco"
     [prefixSvgIcon]="'user-gray'"
-    [placeholder]="'auth.signUp.usernamePlaceholder' | transloco"
+    [placeholder]="'auth.sign_up.username_placeholder' | transloco"
     formControlName="username"
   />
   <fl-form-input
     type="email"
-    [label]="'auth.signUp.emailLabel' | transloco"
+    [label]="'auth.sign_up.email_label' | transloco"
     [prefixSvgIcon]="'mail'"
-    [placeholder]="'auth.signUp.emailPlaceholder' | transloco"
+    [placeholder]="'auth.sign_up.email_placeholder' | transloco"
     formControlName="email"
   />
   <fl-form-input
     type="password"
-    [label]="'auth.signUp.passwordLabel' | transloco"
+    [label]="'auth.sign_up.password_label' | transloco"
     [prefixSvgIcon]="'lock'"
     [suffixSvgIcon]="'eye'"
-    [placeholder]="'auth.signUp.passwordPlaceholder' | transloco"
+    [placeholder]="'auth.sign_up.password_placeholder' | transloco"
     formControlName="password"
   />
   <fl-form-password-strength [password]="form.controls.password.value" />
 
   <fl-form-input
     type="password"
-    [label]="'auth.signUp.confirmPasswordLabel' | transloco"
+    [label]="'auth.sign_up.confirm_password_label' | transloco"
     [prefixSvgIcon]="'lock'"
     [suffixSvgIcon]="'eye'"
-    [placeholder]="'auth.signUp.confirmPasswordPlaceholder' | transloco"
+    [placeholder]="'auth.sign_up.confirm_password_placeholder' | transloco"
     formControlName="confirmPassword"
   />
 
   <fl-button type="submit" variant="primary" [suffixIcon]="'arrow-forward'">
-    {{ 'auth.signUp.submit' | transloco }}
+    {{ 'auth.sign_up.submit' | transloco }}
   </fl-button>
 </fl-form>
 

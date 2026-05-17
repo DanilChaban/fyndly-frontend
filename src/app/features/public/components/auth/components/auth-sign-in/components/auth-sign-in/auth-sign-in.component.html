@@ -1,15 +1,15 @@
 <fl-card>
   <fl-card-header>
-    <fl-card-title>{{ 'auth.signIn.title' | transloco }}</fl-card-title>
-    <fl-card-subtitle>{{ 'auth.signIn.description' | transloco }}</fl-card-subtitle>
+    <fl-card-title>{{ 'auth.sign_in.title' | transloco }}</fl-card-title>
+    <fl-card-subtitle>{{ 'auth.sign_in.description' | transloco }}</fl-card-subtitle>
   </fl-card-header>
   <fl-card-content>
     <app-auth-sign-in-form (submitClicked)="onSubmit($event)" />
   </fl-card-content>
   <fl-card-actions>
     <app-auth-actions-switch
-      [text]="'auth.signIn.switchText' | transloco"
-      [linkText]="'auth.signIn.switchLink' | transloco"
+      [text]="'auth.sign_in.switch_text' | transloco"
+      [linkText]="'auth.sign_in.switch_link' | transloco"
       link="sign-up"
     />
   </fl-card-actions>

@@ -68,16 +68,16 @@ export function getPasswordStrengthBars(strength: PasswordStrength): number {
 export function getPasswordStrengthLabel(strength: PasswordStrength): string {
   switch (strength) {
     case PasswordStrength.VERY_STRONG:
-      return 'global.passwordStrength.veryStrong';
+      return 'global.password_strength.very_strong';
 
     case PasswordStrength.STRONG:
-      return 'global.passwordStrength.strong';
+      return 'global.password_strength.strong';
 
     case PasswordStrength.MEDIUM:
-      return 'global.passwordStrength.medium';
+      return 'global.password_strength.medium';
 
     case PasswordStrength.WEAK:
     default:
-      return 'global.passwordStrength.weak';
+      return 'global.password_strength.weak';
   }
 }
