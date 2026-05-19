@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { MatButton } from '@angular/material/button';
-import { ButtonAppearance, ButtonType } from '@angular/material/button/testing';
+import { MatButton, MatButtonAppearance } from '@angular/material/button';
 import { SvgIconName } from '@core/icons/types/svg-icon-name';
 import { ButtonVariant } from '@ui/fl-button/types/button-variant';
 import { ButtonSize } from '@ui/fl-button/types/button-size';
+import { ButtonType } from '@ui/fl-button/types/button-type';
 
 @Component({
   selector: 'fl-button',
@@ -15,7 +15,7 @@ import { ButtonSize } from '@ui/fl-button/types/button-size';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlButtonComponent {
-  appearance = input<ButtonAppearance>('outlined');
+  appearance = input<MatButtonAppearance>('text');
   variant = input<ButtonVariant>('primary');
   disabled = input<boolean>(false);
   customStyles = input<string>('');

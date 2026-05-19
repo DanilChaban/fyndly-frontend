@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
+import { setServerValidationErrors } from '@core/helpers/set-server-validation-errors';
 import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { FlCardComponent } from '@common/fl-card/components/fl-card/fl-card.component';
 import { FlCardHeaderComponent } from '@common/fl-card/components/fl-card-header/fl-card-header.component';
@@ -34,14 +35,20 @@ export class AuthSignInComponent {
   private readonly authService = inject(AuthService);
   private readonly flToastService = inject(FlToastService);
 
+  private form: FormGroup = new FormGroup({});
+
   constructor() {
     handleApiResourceState(this.authService.signIn.resource, {
       onSuccess: () => {
         this.flToastService.success(`global.validation.server_success.sign_in_success`);
       },
 
-      onError: (errorCode) => {
-        this.flToastService.error(`global.validation.server_error.${errorCode}`);
+      onError: (errorCode, error) => {
+        if (errorCode) {
+          this.flToastService.error(`global.validation.server_error.${errorCode}`);
+        } else {
+          setServerValidationErrors(this.form, error.error.fields);
+        }
       },
       onReset: () => {
         this.authService.signIn.reset();
@@ -50,6 +57,7 @@ export class AuthSignInComponent {
   }
 
   onSubmit(form: FormGroup): void {
+    this.form = form;
     this.authService.signIn.execute(form.getRawValue());
   }
 }

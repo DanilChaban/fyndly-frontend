@@ -33,7 +33,7 @@ export class FlToastService {
         createdAt: Date.now(),
       },
       duration: 12000,
-      horizontalPosition: 'right',
+      horizontalPosition: 'center',
       verticalPosition: 'top',
       panelClass: ['fl-toast-panel'],
     });

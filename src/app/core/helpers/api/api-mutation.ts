@@ -5,10 +5,10 @@ import { ApiMutationMethod } from '@core/types/api/api-mutation-method';
 import { ApiMutation } from '@core/types/api/api-mutation';
 import { ApiMutationRequest } from '@core/types/api/api-mutation-request';
 
-export function createApiMutation<TResponse, TPayload = void>(
+export function createApiMutation<TPayload, TResponse = void>(
   method: ApiMutationMethod,
   path: string,
-): ApiMutation<TResponse, TPayload> {
+): ApiMutation<TPayload, TResponse> {
   let requestId = 0;
 
   const request = signal<ApiMutationRequest<TPayload> | null>(null);

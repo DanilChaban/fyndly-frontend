@@ -1,15 +1,12 @@
 @use 'utilities/colors' as colors;
-
-:host {
-  display: block;
-}
+@use 'utilities/media' as *;
 
 .fl-toast {
   width: min(477px, calc(100vw - 32px));
   min-height: 80px;
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px;
   padding: 16px;
   border-radius: 12px;
   border: 1px solid colors.$color-gray-3;
@@ -71,5 +68,29 @@
     color: colors.$color-gray-2;
     font-size: 12px;
     line-height: 16px;
+  }
+
+  @include mobile(down) {
+    gap: 12px;
+    width: 100%;
+
+    .icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    &__header {
+      margin-bottom: 0;
+    }
+
+    &__message {
+      font-size: 12px;
+      line-height: 19.5px;
+    }
+
+    &__time {
+      font-size: 10px;
+      line-height: 24px;
+    }
   }
 }
