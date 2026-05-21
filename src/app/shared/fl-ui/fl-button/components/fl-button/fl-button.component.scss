@@ -42,6 +42,8 @@
 }
 
 .fl-button {
+  --fl-button-content-gap: 12px;
+
   width: 100%;
   border-radius: 8px;
   font-size: 14px;
@@ -51,10 +53,16 @@
   &__inner {
     display: inline-flex;
     align-items: center;
-    position: relative;
     justify-content: center;
-    gap: 12px;
     width: 100%;
+  }
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--fl-button-content-gap);
+    position: relative;
   }
 
   &__icon {
@@ -62,11 +70,9 @@
   }
 
   &--small {
-    @include button-size(38px, 16px);
+    --fl-button-content-gap: 8px;
 
-    .fl-button__inner {
-      gap: 8px;
-    }
+    @include button-size(38px, 16px);
   }
 
   &--large {
@@ -115,9 +121,10 @@
 
   &__spinner {
     position: absolute;
-    left: calc(50% - 48px);
+    right: calc(100% + var(--fl-button-content-gap));
     top: 50%;
     transform: translateY(-50%);
+    flex: 0 0 18px;
   }
 
   &:disabled {
@@ -126,16 +133,12 @@
   }
 
   @include mobile(down) {
-    &__inner {
-      gap: 8px;
-    }
+    --fl-button-content-gap: 8px;
 
     &--small {
-      @include button-size(34px, 16px);
+      --fl-button-content-gap: 4px;
 
-      .fl-button__inner {
-        gap: 4px;
-      }
+      @include button-size(34px, 16px);
     }
 
     &--large {
