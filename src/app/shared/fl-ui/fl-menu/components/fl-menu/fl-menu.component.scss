@@ -1,0 +1,23 @@
+@use 'utilities/colors' as colors;
+
+::ng-deep {
+  .cdk-overlay-pane:has(.mat-mdc-menu-panel.fl-menu) {
+    transform: translateY(19px);
+  }
+
+  .mat-mdc-menu-panel.fl-menu {
+    min-width: 224px;
+    padding: 8px;
+    border: 1px solid colors.$color-gray-3;
+    border-radius: 12px;
+    background-color: colors.$color-white-1;
+    box-shadow: colors.$box-shadow-1;
+  }
+
+  .mat-mdc-menu-panel.fl-menu .mat-mdc-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="fl-toast">
+  <div class="fl-toast__icon fl-toast__icon--{{ data.type }}">
+    <mat-icon [svgIcon]="icon()" />
+  </div>
+  <div class="fl-toast__content">
+    <div class="fl-toast__header">
+      <p class="fl-toast__title">{{ title() | transloco }}</p>
+      <span class="fl-toast__time">{{ data.createdAt | relativeTime: now() }}</span>
+    </div>
+    <p class="fl-toast__message">{{ data.message | transloco }}</p>
+  </div>
+  <fl-button [prefixIcon]="'close-gray'" [variant]="'text'" (btnClicked)="close()" />
+</div>

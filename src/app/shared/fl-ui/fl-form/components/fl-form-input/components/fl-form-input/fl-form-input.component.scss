@@ -1,0 +1,72 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  ::ng-deep {
+    .mat-mdc-form-field-infix {
+      display: flex;
+      align-items: center;
+    }
+
+    .mat-mdc-form-field-icon-prefix, mat-mdc-form-field-icon-suffix {
+      padding: 0;
+    }
+
+    .fl-form-field .mat-mdc-text-field-wrapper {
+      background-color: colors.$color-white-1;
+      border-radius: var(--mat-form-field-outlined-container-shape);
+    }
+
+    .mat-mdc-form-field.mat-form-field-disabled {
+      .mat-mdc-text-field-wrapper {
+        background: colors.$color-gray-5;
+        border-radius: var(--mat-form-field-outlined-container-shape);
+      }
+    }
+  }
+}
+
+.fl-form-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
+
+  --mat-form-field-container-height: 48px;
+  --mat-form-field-container-vertical-padding: 0;
+  --mat-form-field-container-text-line-height: 20px;
+  --mat-form-field-container-text-weight: 400;
+  --mat-form-field-container-text-tracking: 0;
+  --mat-form-field-outlined-container-shape: 8px;
+  --mat-form-field-outlined-outline-color: #{colors.$color-gray-3};
+  --mat-form-field-outlined-hover-outline-color: #{colors.$color-gray-4};
+  --mat-form-field-outlined-focus-outline-color: #{colors.$color-blue-1};
+  --mat-form-field-outlined-outline-width: 1px;
+  --mat-form-field-outlined-focus-outline-width: 1px;
+  --mat-form-field-outlined-input-text-color: #{colors.$color-black-1};
+  --mat-form-field-outlined-input-text-placeholder-color: #{colors.$color-gray-2};
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    color: colors.$color-gray-7;
+
+    &--prefix {
+      padding: 0 12px 0 16px !important;
+    }
+
+    &--suffix {
+      cursor: pointer;
+      padding: 0 16px 0 12px !important;
+    }
+  }
+
+  &__wrapper {
+    &__label {
+      display: inline-block;
+      color: colors.$color-black-1;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 8px;
+    }
+  }
+}

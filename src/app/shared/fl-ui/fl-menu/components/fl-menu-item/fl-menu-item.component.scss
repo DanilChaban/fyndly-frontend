@@ -1,0 +1,32 @@
+@use 'utilities/colors' as colors;
+
+.fl-menu-item {
+  width: 100%;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 10px;
+  color: colors.$color-black-1;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+
+  &--active {
+    font-weight: 500;
+    background: colors.$color-gray-5 !important;
+  }
+
+  &:hover:not(:disabled) {
+    background: colors.$color-gray-1;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 auto;
+  }
+}

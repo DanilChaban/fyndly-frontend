@@ -1,0 +1,18 @@
+export const SVG_ICONS = [
+  'mail',
+  'lock',
+  'eye',
+  'eye-off',
+  'google',
+  'arrow-down-gray',
+  'arrow-up-gray',
+  'arrow-down-blue',
+  'language',
+  'user-gray',
+  'arrow-forward',
+  'success-toast',
+  'error-toast',
+  'warning-toast',
+  'info-toast',
+  'close-gray',
+] as const;

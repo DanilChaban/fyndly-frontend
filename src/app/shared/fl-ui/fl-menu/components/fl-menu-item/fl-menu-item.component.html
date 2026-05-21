@@ -1,0 +1,16 @@
+<button
+  class="fl-menu-item"
+  type="button"
+  mat-menu-item
+  [disabled]="disabled()"
+  [class.fl-menu-item--active]="active()"
+  (click)="onClick()"
+>
+  <span class="fl-menu-item__content">
+    <ng-content />
+
+    @if (active()) {
+      <mat-icon class="fl-menu-item__icon" [svgIcon]="'arrow-down-blue'" />
+    }
+  </span>
+</button>

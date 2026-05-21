@@ -1,0 +1,20 @@
+.cdk-overlay-pane:has(.fl-toast-panel) {
+  position: absolute !important;
+  top: calc(var(--public-header-height) + 16px) !important;
+  right: 16px;
+  left: 16px;
+}
+
+.mat-mdc-snack-bar-container.fl-toast-panel {
+  margin: 0;
+
+  .mdc-snackbar__surface {
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .mat-mdc-snack-bar-label {
+    padding: 0 !important;
+  }
+}

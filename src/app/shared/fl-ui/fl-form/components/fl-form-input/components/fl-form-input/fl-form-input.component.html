@@ -1,0 +1,35 @@
+<div class="fl-form-field__wrapper">
+  @if (label()) {
+    <label class="fl-form-field__wrapper__label" [for]="inputId()">
+      {{ label() }}
+    </label>
+  }
+
+  <mat-form-field class="fl-form-field" [appearance]="appearance()" subscriptSizing="dynamic">
+    @if (prefixSvgIcon(); as icon) {
+      <mat-icon class="fl-form-field__icon fl-form-field__icon--prefix" matPrefix [svgIcon]="icon" />
+    }
+
+    <input
+      matInput
+      autocomplete="one-time-code"
+      [type]="currentInputType()"
+      [id]="inputId()"
+      [placeholder]="placeholder()"
+      [formControl]="control()"
+    />
+
+    @if (currentSuffixIcon(); as icon) {
+      <mat-icon
+        class="fl-form-field__icon fl-form-field__icon--suffix"
+        matSuffix
+        [svgIcon]="icon"
+        (click)="onSuffixIconClick()"
+      />
+    }
+
+    @if (showError() && errorKey(); as key) {
+      <mat-error>{{ key | transloco }}</mat-error>
+    }
+  </mat-form-field>
+</div>

@@ -1,0 +1,25 @@
+@use 'utilities/colors' as colors;
+
+.auth-ui-divider {
+  &__divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+
+    &__line {
+      flex: 1;
+      height: 1px;
+      background: colors.$color-gray-3;
+    }
+
+    &__text {
+      margin: 0;
+      color: colors.$color-gray-8;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 1.2px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+}
+
+.fl-card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  padding: 48px;
+  border-radius: 16px;
+  background: colors.$color-white-1;
+  border: 1px solid colors.$color-gray-3;
+  box-shadow: colors.$box-shadow-1;
+}

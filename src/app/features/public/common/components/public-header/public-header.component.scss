@@ -1,0 +1,30 @@
+@use 'utilities/colors' as colors;
+
+.public-header {
+  width: 100%;
+  border-bottom: 1px solid colors.$color-gray-3;
+
+  &__container {
+    min-height: var(--public-header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(24px, 4vw, 48px);
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  &__logo {
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+}

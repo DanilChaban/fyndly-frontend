@@ -1,0 +1,8 @@
+@use 'utilities/colors' as colors;
+
+.fl-card-subtitle {
+  font-weight: 400;
+  line-height: 20px;
+  color: colors.$color-gray-7;
+  letter-spacing: 0;
+}

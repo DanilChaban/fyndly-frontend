@@ -1,0 +1,13 @@
+:host {
+  ::ng-deep {
+    .mat-mdc-card-header-text:empty {
+      display: none;
+    }
+  }
+}
+
+.fl-card-header {
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+}
