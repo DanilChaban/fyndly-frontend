@@ -34,8 +34,12 @@ export class FlLanguageSelectorComponent {
 
     this.translocoService.setActiveLang(option.code);
 
-    const urlParts = this.router.url.split('/').filter(Boolean);
+    const urlTree = this.router.parseUrl(this.router.url);
+    const urlParts = urlTree.root.children['primary']?.segments.map((segment) => segment.path);
+
     urlParts[0] = option.code;
-    void this.router.navigate(['/', ...urlParts]);
+    void this.router.navigate(['/', ...urlParts], {
+      queryParams: urlTree.queryParams,
+    });
   }
 }

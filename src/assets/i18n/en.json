@@ -20,7 +20,8 @@
         "passwords_do_not_match": "Passwords do not match",
         "validation_invalid": "Invalid value",
         "validation_email": "Please enter a valid email address",
-        "validation_min_length": "This field is too short"
+        "validation_min_length": "This field is too short",
+        "email_not_verified": "Your account is not verified. Please verify your email to continue."
       },
       "server_success": {
         "sign_in_success": "You have signed in successfully",
