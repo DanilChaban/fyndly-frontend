@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
@@ -37,6 +37,7 @@ export class AuthSignInComponent implements OnInit {
   private readonly authService = inject(AuthService);
   private readonly flToastService = inject(FlToastService);
   private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly router = inject(Router);
 
   private form: FormGroup = new FormGroup({});
 
@@ -66,6 +67,11 @@ export class AuthSignInComponent implements OnInit {
       if (params.has('error')) {
         const errorCode = params.get('error');
         this.flToastService.error(`global.validation.server_error.${errorCode}`);
+
+        void this.router.navigate([], {
+          relativeTo: this.activatedRoute,
+          queryParams: {},
+        });
       }
     });
   }
