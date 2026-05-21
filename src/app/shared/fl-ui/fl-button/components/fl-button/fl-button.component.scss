@@ -1,6 +1,6 @@
 @use 'utilities/colors' as colors;
 
-@mixin button-size($height, $icon-size, $icon-gap) {
+@mixin button-size($height, $icon-size) {
   height: $height;
 
   .fl-button__icon {
@@ -10,21 +10,31 @@
     min-height: $icon-size !important;
     flex: 0 0 $icon-size;
   }
-
-  .fl-button__icon--prefix {
-    margin-right: $icon-gap !important;
-  }
-
-  .fl-button__icon--suffix {
-    margin-left: $icon-gap !important;
-  }
 }
 
 :host {
+  ::ng-deep {
+    .mdc-button__label {
+      display: inline-flex;
+    }
+  }
+
   .fl-button {
     &--text {
       ::ng-deep .mat-mdc-button-persistent-ripple {
         display: none !important;
+      }
+    }
+
+    &--primary {
+      ::ng-deep .mat-mdc-progress-spinner circle {
+        stroke: colors.$color-white-1;
+      }
+    }
+
+    &--secondary {
+      ::ng-deep .mat-mdc-progress-spinner circle {
+        stroke: colors.$color-blue-1;
       }
     }
   }
@@ -37,16 +47,28 @@
   font-weight: 600;
   letter-spacing: 0;
 
+  &__inner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+
   &__icon {
     min-height: auto !important;
   }
 
   &--small {
-    @include button-size(38px, 16px, 8px);
+    @include button-size(38px, 16px);
+
+    .fl-button__inner {
+      gap: 8px;
+    }
   }
 
   &--large {
-    @include button-size(48px, 20px, 12px);
+    @include button-size(48px, 20px);
   }
 
   &--primary {
@@ -86,11 +108,6 @@
 
     &:active:not(:disabled) {
       color: colors.$color-blue-3 !important;
-    }
-
-    .fl-button__icon--prefix, .fl-button__icon--suffix {
-      margin-right: 0 !important;
-      margin-left: 0 !important;
     }
   }
 
