@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 .public-header {
   width: 100%;
@@ -19,12 +20,24 @@
     text-decoration: none;
   }
 
-  &__logo {
-  }
-
   &__name {
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
+  }
+
+  @include mobile(down) {
+    &__container {
+      min-height: var(--public-header-height-mobile);
+    }
+
+    &__logo {
+      height: 32px;
+    }
+
+    &__name {
+      font-size: 18px;
+      line-height: 28px;
+    }
   }
 }

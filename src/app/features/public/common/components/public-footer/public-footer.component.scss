@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 .public-footer {
   width: 100%;
@@ -10,6 +11,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 clamp(24px, 4vw, 48px);
+
+    @include mobile(down) {
+      min-height: 65px;
+      justify-content: center;
+    }
   }
 
   &__copyright {
