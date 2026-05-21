@@ -1,6 +1,13 @@
+@use 'utilities/media' as *;
+
 .fl-card-title {
   font-size: 36px;
   font-weight: 700;
   line-height: 40px;
   letter-spacing: 1px;
+
+  @include mobile(down) {
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
