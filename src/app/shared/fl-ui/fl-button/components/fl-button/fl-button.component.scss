@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 @mixin button-size($height, $icon-size) {
   height: $height;
@@ -50,6 +51,7 @@
   &__inner {
     display: inline-flex;
     align-items: center;
+    position: relative;
     justify-content: center;
     gap: 12px;
     width: 100%;
@@ -111,8 +113,33 @@
     }
   }
 
+  &__spinner {
+    position: absolute;
+    left: calc(50% - 48px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+
+  @include mobile(down) {
+    &__inner {
+      gap: 8px;
+    }
+
+    &--small {
+      @include button-size(34px, 16px);
+
+      .fl-button__inner {
+        gap: 4px;
+      }
+    }
+
+    &--large {
+      @include button-size(44px, 16px);
+    }
   }
 }
