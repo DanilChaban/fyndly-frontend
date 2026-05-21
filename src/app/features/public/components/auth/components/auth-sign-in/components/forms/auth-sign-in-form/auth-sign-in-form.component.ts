@@ -5,6 +5,7 @@ import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.componen
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 import { FlFormCheckboxComponent } from '@ui/fl-form/components/tr-form-checkbox/components/fl-form-checkbox/fl-form-checkbox.component';
+import { AuthService } from '@auth/apis/auth.service';
 import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-divider.component';
 import { AuthActionsGoogleComponent } from '@auth/common/actions/auth-actions-google/auth-actions-google.component';
 
@@ -28,6 +29,9 @@ export class AuthSignInFormComponent {
   submitClicked = output<FormGroup>();
 
   private readonly formBuilder = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+
+  loading = this.authService.signIn.resource.isLoading;
 
   form = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],

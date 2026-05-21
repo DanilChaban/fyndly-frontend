@@ -23,7 +23,7 @@
     </fl-button>
   </div>
 
-  <fl-button [disabled]="!form.valid" type="submit" variant="primary">
+  <fl-button [disabled]="!form.valid" [loading]="loading()" type="submit" variant="primary">
     {{ 'auth.sign_in.submit' | transloco }}
   </fl-button>
 </fl-form>

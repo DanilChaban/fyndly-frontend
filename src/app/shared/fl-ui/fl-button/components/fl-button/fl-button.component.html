@@ -4,7 +4,7 @@
   [ngClass]="buttonClass()"
   [style]="customStyles()"
   [matButton]="appearance()"
-  [disabled]="disabled()"
+  [disabled]="disabled() || loading()"
   [disableRipple]="variant() === 'text'"
   (click)="onClick()"
 >
