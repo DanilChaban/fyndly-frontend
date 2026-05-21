@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 .auth-ui-divider {
   &__divider {
@@ -20,6 +21,10 @@
       font-weight: 600;
       line-height: 16px;
       letter-spacing: 1.2px;
+
+      @include mobile(down) {
+        font-weight: 400;
+      }
     }
   }
 }
