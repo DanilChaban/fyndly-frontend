@@ -8,6 +8,7 @@ import { FlFormCheckboxComponent } from '@ui/fl-form/components/tr-form-checkbox
 import { AuthService } from '@auth/apis/auth.service';
 import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-divider.component';
 import { AuthActionsGoogleComponent } from '@auth/common/actions/auth-actions-google/auth-actions-google.component';
+import { AuthSignInUnverifiedAccountComponent } from '@auth/components/auth-sign-in/components/auth-sign-in-unverified-account/auth-sign-in-unverified-account.component';
 
 @Component({
   selector: 'app-auth-sign-in-form',
@@ -20,6 +21,7 @@ import { AuthActionsGoogleComponent } from '@auth/common/actions/auth-actions-go
     FlFormCheckboxComponent,
     AuthUiDividerComponent,
     AuthActionsGoogleComponent,
+    AuthSignInUnverifiedAccountComponent,
   ],
   templateUrl: './auth-sign-in-form.component.html',
   styleUrl: './auth-sign-in-form.component.scss',
