@@ -63,6 +63,7 @@
     justify-content: center;
     gap: var(--fl-button-content-gap);
     position: relative;
+    white-space: nowrap;
   }
 
   &__icon {
@@ -70,9 +71,11 @@
   }
 
   &--small {
+    padding: 0 12px !important;
+    font-weight: 500;
     --fl-button-content-gap: 8px;
 
-    @include button-size(38px, 16px);
+    @include button-size(40px, 16px);
   }
 
   &--large {
@@ -138,7 +141,7 @@
     &--small {
       --fl-button-content-gap: 4px;
 
-      @include button-size(34px, 16px);
+      @include button-size(36px, 16px);
     }
 
     &--large {

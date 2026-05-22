@@ -21,7 +21,7 @@
         "validation_invalid": "Некоректне значення",
         "validation_email": "Введіть коректну email-адресу",
         "validation_min_length": "Значення занадто коротке",
-        "email_not_verified": "Ваш акаунт не підтверджено. Підтвердьте електронну пошту, щоб продовжити."
+        "email_not_verified": "Ваш акаунт не підтверджено"
       },
       "server_success": {
         "sign_in_success": "Ви успішно увійшли",
@@ -62,7 +62,10 @@
       "submit": "Увійти",
       "google": "Продовжити з Google",
       "switch_text": "Немає акаунта?",
-      "switch_link": "Створити"
+      "switch_link": "Створити",
+      "unverified_account_title": "Ваш акаунт не підтверджено",
+      "unverified_account_text": "Будь ласка, підтвердіть свою електронну пошту, щоб продовжити користуватися Fyndly.",
+      "unverified_account_action": "Підтвердити акаунт"
     },
     "sign_up": {
       "title": "Створіть акаунт",

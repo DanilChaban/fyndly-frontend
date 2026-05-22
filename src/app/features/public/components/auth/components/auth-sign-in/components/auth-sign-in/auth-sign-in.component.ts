@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
+import { ApiErrorCode } from '@core/types/api/api-error-code';
 import { setServerValidationErrors } from '@core/helpers/set-server-validation-errors';
 import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { FlCardComponent } from '@common/fl-card/components/fl-card/fl-card.component';
@@ -43,6 +44,8 @@ export class AuthSignInComponent implements OnInit {
 
   private queryParams$ = this.activatedRoute.queryParamMap.pipe(takeUntilDestroyed());
 
+  showUnverifiedWarning = signal(false);
+
   constructor() {
     handleApiResourceState(this.authService.signIn.resource, {
       onSuccess: () => {
@@ -50,6 +53,7 @@ export class AuthSignInComponent implements OnInit {
       },
 
       onError: (errorCode, error) => {
+        this.showWarning(errorCode);
         if (errorCode) {
           this.flToastService.error(`global.validation.server_error.${errorCode}`);
         } else {
@@ -65,7 +69,8 @@ export class AuthSignInComponent implements OnInit {
   ngOnInit(): void {
     this.queryParams$.subscribe((params) => {
       if (params.has('error')) {
-        const errorCode = params.get('error');
+        const errorCode = params.get('error') as ApiErrorCode;
+        this.showWarning(errorCode);
         this.flToastService.error(`global.validation.server_error.${errorCode}`);
 
         void this.router.navigate([], {
@@ -79,5 +84,9 @@ export class AuthSignInComponent implements OnInit {
   onSubmit(form: FormGroup): void {
     this.form = form;
     this.authService.signIn.execute(form.getRawValue());
+  }
+
+  private showWarning(errorCode: ApiErrorCode): void {
+    this.showUnverifiedWarning.set(errorCode === 'email_not_verified');
   }
 }

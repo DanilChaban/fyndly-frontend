@@ -21,7 +21,7 @@
         "validation_invalid": "Invalid value",
         "validation_email": "Please enter a valid email address",
         "validation_min_length": "This field is too short",
-        "email_not_verified": "Your account is not verified. Please verify your email to continue."
+        "email_not_verified": "Your account is not verified"
       },
       "server_success": {
         "sign_in_success": "You have signed in successfully",
@@ -62,7 +62,10 @@
       "submit": "Sign in",
       "google": "Continue with Google",
       "switch_text": "Don’t have an account?",
-      "switch_link": "Create account"
+      "switch_link": "Create account",
+      "unverified_account_title": "Your account is not verified",
+      "unverified_account_text": "Please verify your email address to continue using Fyndly.",
+      "unverified_account_action": "Verify account"
     },
     "sign_up": {
       "title": "Create your account",

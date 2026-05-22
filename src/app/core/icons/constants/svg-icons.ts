@@ -15,4 +15,6 @@ export const SVG_ICONS = [
   'warning-toast',
   'info-toast',
   'close-gray',
+  'unverified-email',
+  'verified-shield',
 ] as const;
