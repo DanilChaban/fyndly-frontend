@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
 import { setServerValidationErrors } from '@core/helpers/set-server-validation-errors';
@@ -31,11 +33,15 @@ import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-sw
   styleUrl: './auth-sign-in.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthSignInComponent {
+export class AuthSignInComponent implements OnInit {
   private readonly authService = inject(AuthService);
   private readonly flToastService = inject(FlToastService);
+  private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly router = inject(Router);
 
   private form: FormGroup = new FormGroup({});
+
+  private queryParams$ = this.activatedRoute.queryParamMap.pipe(takeUntilDestroyed());
 
   constructor() {
     handleApiResourceState(this.authService.signIn.resource, {
@@ -53,6 +59,20 @@ export class AuthSignInComponent {
       onReset: () => {
         this.authService.signIn.reset();
       },
+    });
+  }
+
+  ngOnInit(): void {
+    this.queryParams$.subscribe((params) => {
+      if (params.has('error')) {
+        const errorCode = params.get('error');
+        this.flToastService.error(`global.validation.server_error.${errorCode}`);
+
+        void this.router.navigate([], {
+          relativeTo: this.activatedRoute,
+          queryParams: {},
+        });
+      }
     });
   }
 
