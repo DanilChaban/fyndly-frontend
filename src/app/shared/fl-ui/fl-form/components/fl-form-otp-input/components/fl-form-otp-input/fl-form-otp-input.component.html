@@ -1,0 +1,31 @@
+<div
+  class="fl-form-otp-input"
+  [ngClass]="{
+    'fl-form-otp-input--invalid': showError(),
+    'fl-form-otp-input--disabled': disabled(),
+  }"
+>
+  @for (value of values(); track $index) {
+    <input
+      #otpInput
+      matInput
+      class="fl-form-otp-input__field"
+      type="text"
+      inputmode="numeric"
+      autocomplete="one-time-code"
+      maxlength="1"
+      [value]="value"
+      [disabled]="disabled()"
+      (input)="onInput($event, $index)"
+      (keydown)="onKeyDown($event, $index)"
+      (paste)="onPaste($event)"
+      (blur)="onBlur()"
+    />
+  }
+
+  @if (showError() && errorKey(); as key) {
+    <mat-error class="fl-form-otp-input__error">
+      {{ key | transloco }}
+    </mat-error>
+  }
+</div>

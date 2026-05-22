@@ -25,6 +25,13 @@ export const routes: Routes = [
             (c) => c.AuthSignUpComponent,
           ),
       },
+      {
+        path: 'verify-email',
+        loadComponent: () =>
+          import('@auth/components/auth-email-verification/components/auth-email-verification/auth-email-verification.component').then(
+            (c) => c.AuthEmailVerificationComponent,
+          ),
+      },
     ],
   },
 ];
