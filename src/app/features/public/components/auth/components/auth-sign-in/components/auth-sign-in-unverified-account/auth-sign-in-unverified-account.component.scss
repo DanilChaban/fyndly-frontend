@@ -1,0 +1,45 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.auth-sign-in-unverified-account {
+  &__container {
+    display: flex;
+    gap: 12px;
+    background-color: colors.$color-gray-1;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid colors.$color-gray-3;
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$color-gray-9;
+    min-width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  &__warning {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__title {
+      margin: 0 0 4px 0;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    &__text {
+      margin: 0;
+      color: colors.$color-gray-7;
+      line-height: 20px;
+    }
+  }
+}

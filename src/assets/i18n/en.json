@@ -62,7 +62,10 @@
       "submit": "Sign in",
       "google": "Continue with Google",
       "switch_text": "Don’t have an account?",
-      "switch_link": "Create account"
+      "switch_link": "Create account",
+      "unverified_account_title": "Your account is not verified",
+      "unverified_account_text": "Please verify your email address to continue using Fyndly.",
+      "unverified_account_action": "Verify account"
     },
     "sign_up": {
       "title": "Create your account",

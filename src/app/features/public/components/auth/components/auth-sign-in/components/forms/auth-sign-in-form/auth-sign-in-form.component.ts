@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
@@ -28,6 +28,8 @@ import { AuthSignInUnverifiedAccountComponent } from '@auth/components/auth-sign
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthSignInFormComponent {
+  showUnverifiedWarning = input(false);
+
   submitClicked = output<FormGroup>();
 
   private readonly formBuilder = inject(FormBuilder);

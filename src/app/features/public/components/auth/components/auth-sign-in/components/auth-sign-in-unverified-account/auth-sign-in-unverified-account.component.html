@@ -1,1 +1,23 @@
-<p>auth-sign-in-unverified-account works!</p>
+<div class="auth-sign-in-unverified-account__container">
+  <div class="auth-sign-in-unverified-account__icon-container">
+    <mat-icon class="auth-sign-in-unverified-account__icon" [svgIcon]="'unverified-email'" />
+  </div>
+  <div class="auth-sign-in-unverified-account__warning">
+    <div>
+      <p class="auth-sign-in-unverified-account__warning__title">
+        {{ 'auth.sign_in.unverified_account_title' | transloco }}
+      </p>
+      <p class="auth-sign-in-unverified-account__warning__text">
+        {{ 'auth.sign_in.unverified_account_text' | transloco }}
+      </p>
+    </div>
+    <fl-button
+      (btnClicked)="navigateToVerifyEmail()"
+      [prefixIcon]="'verified-shield'"
+      [customStyles]="'max-width: 187px;'"
+      size="small"
+    >
+      {{ 'auth.sign_in.unverified_account_action' | transloco }}
+    </fl-button>
+  </div>
+</div>

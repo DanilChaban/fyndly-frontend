@@ -15,7 +15,9 @@
     formControlName="password"
   />
 
-  <app-auth-sign-in-unverified-account />
+  @if (showUnverifiedWarning()) {
+    <app-auth-sign-in-unverified-account />
+  }
 
   <div class="auth-sign-in-form__options">
     <fl-form-checkbox formControlName="rememberMe">{{ 'auth.sign_in.remember_me' | transloco }}</fl-form-checkbox>

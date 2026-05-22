@@ -62,7 +62,10 @@
       "submit": "Увійти",
       "google": "Продовжити з Google",
       "switch_text": "Немає акаунта?",
-      "switch_link": "Створити"
+      "switch_link": "Створити",
+      "unverified_account_title": "Ваш акаунт не підтверджено",
+      "unverified_account_text": "Будь ласка, підтвердіть свою електронну пошту, щоб продовжити користуватися Fyndly.",
+      "unverified_account_action": "Підтвердити акаунт"
     },
     "sign_up": {
       "title": "Створіть акаунт",
