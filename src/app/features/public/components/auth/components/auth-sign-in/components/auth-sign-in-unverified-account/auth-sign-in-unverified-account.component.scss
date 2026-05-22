@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 :host {
   display: block;
@@ -7,8 +8,10 @@
 
 .auth-sign-in-unverified-account {
   &__container {
-    display: flex;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
     background-color: colors.$color-gray-1;
     padding: 16px;
     border-radius: 12px;
@@ -23,15 +26,17 @@
     min-width: 36px;
     height: 36px;
     border-radius: 8px;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   &__warning {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    grid-column: 2;
+    grid-row: 1;
 
     &__title {
       margin: 0 0 4px 0;
+      font-size: 16px;
       font-weight: 600;
       line-height: 20px;
     }
@@ -40,6 +45,20 @@
       margin: 0;
       color: colors.$color-gray-7;
       line-height: 20px;
+      max-width: 330px;
+    }
+  }
+
+  &__action {
+    display: block;
+    width: 100%;
+    max-width: 187px;
+    grid-column: 2;
+    grid-row: 2;
+
+    @include mobile(down) {
+      grid-column: 1 / -1;
+      max-width: none;
     }
   }
 }
