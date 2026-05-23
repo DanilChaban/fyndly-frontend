@@ -1,7 +1,9 @@
 import { Injectable, signal } from '@angular/core';
 import { VerificationStorage } from '@auth/types/verification-storage';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthSessionStorageVerificationService {
   private VERIFICATION_EMAIL_KEY = 'auth_verification_email';
 

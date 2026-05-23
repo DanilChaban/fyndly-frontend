@@ -51,6 +51,7 @@ export class AuthSignInComponent implements OnInit {
   constructor() {
     handleApiResourceState(this.authService.signIn.resource, {
       onSuccess: () => {
+        this.authSessionStorageVerificationService.clearVerificationData();
         this.flToastService.success(`global.validation.server_success.sign_in_success`);
       },
       onError: (errorCode, error) => {
