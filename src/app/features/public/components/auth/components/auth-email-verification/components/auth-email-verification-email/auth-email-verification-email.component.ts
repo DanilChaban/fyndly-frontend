@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
+import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
 
 @Component({
   selector: 'app-auth-email-verification-email',
@@ -8,4 +9,8 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './auth-email-verification-email.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthEmailVerificationEmailComponent {}
+export class AuthEmailVerificationEmailComponent {
+  private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
+
+  email = computed(() => this.authSessionStorageEmailService.verificationEmail());
+}

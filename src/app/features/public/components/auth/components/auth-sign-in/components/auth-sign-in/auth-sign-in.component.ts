@@ -16,6 +16,7 @@ import { FlCardActionsComponent } from '@common/fl-card/components/fl-card-actio
 import { AuthService } from '@auth/apis/auth.service';
 import { AuthSignInFormComponent } from '@auth/components/auth-sign-in/components/forms/auth-sign-in-form/auth-sign-in-form.component';
 import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-switch/auth-actions-switch.component';
+import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
 
 @Component({
   selector: 'app-auth-sign-in',
@@ -35,10 +36,11 @@ import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-sw
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthSignInComponent implements OnInit {
-  private readonly authService = inject(AuthService);
-  private readonly flToastService = inject(FlToastService);
-  private readonly activatedRoute = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly flToastService = inject(FlToastService);
+  private readonly authService = inject(AuthService);
+  private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
 
   private form: FormGroup = new FormGroup({});
 
@@ -54,6 +56,7 @@ export class AuthSignInComponent implements OnInit {
 
       onError: (errorCode, error) => {
         this.showWarning(errorCode);
+        this.setVerificationEmailToSessionStorage(errorCode);
         if (errorCode) {
           this.flToastService.error(`global.validation.server_error.${errorCode}`);
         } else {
@@ -70,7 +73,9 @@ export class AuthSignInComponent implements OnInit {
     this.queryParams$.subscribe((params) => {
       if (params.has('error')) {
         const errorCode = params.get('error') as ApiErrorCode;
+        const email = params.get('email');
         this.showWarning(errorCode);
+        this.setVerificationEmailToSessionStorage(errorCode, email);
         this.flToastService.error(`global.validation.server_error.${errorCode}`);
 
         void this.router.navigate([], {
@@ -88,5 +93,13 @@ export class AuthSignInComponent implements OnInit {
 
   private showWarning(errorCode: ApiErrorCode): void {
     this.showUnverifiedWarning.set(errorCode === 'email_not_verified');
+  }
+
+  private setVerificationEmailToSessionStorage(errorCode: ApiErrorCode, email?: string | null): void {
+    const isEmailNotVerified = errorCode === 'email_not_verified';
+
+    if (isEmailNotVerified) {
+      this.authSessionStorageEmailService.setVerificationEmail(this.form.getRawValue().email ?? email);
+    }
   }
 }
