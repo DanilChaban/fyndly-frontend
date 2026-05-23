@@ -5,6 +5,7 @@
   grid-template-columns: repeat(6, 52px);
   justify-content: center;
   gap: 8px;
+  margin-bottom: 24px;
 
   &__field {
     width: 100%;
@@ -26,6 +27,11 @@
       box-shadow: colors.$box-shadow-2;
     }
 
+    &::placeholder {
+      color: colors.$color-gray-2;
+      opacity: 1;
+    }
+
     &:disabled {
       cursor: not-allowed;
       background: colors.$color-gray-5;
@@ -33,14 +39,9 @@
     }
   }
 
-  //TODO
   &__error {
     grid-column: 1 / -1;
-    margin-top: 2px;
     color: colors.$color-red-3;
-    font-size: 13px;
-    line-height: 18px;
-    text-align: left;
   }
 
   &--invalid {

@@ -1,0 +1,14 @@
+@use 'utilities/colors' as colors;
+
+.auth-email-verification-icon-status {
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px auto;
+    background: colors.$color-gray-9;
+    border-radius: 16px;
+  }
+}

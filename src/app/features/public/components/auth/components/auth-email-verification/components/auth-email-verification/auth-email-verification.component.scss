@@ -1,0 +1,17 @@
+@use 'utilities/colors' as colors;
+:host {
+  ::ng-deep {
+    .fl-card {
+      gap: 28px !important;
+    }
+
+    .fl-card-title {
+      font-size: 24px !important;
+      text-align: center;
+    }
+
+    .fl-card-subtitle {
+      text-align: center;
+    }
+  }
+}

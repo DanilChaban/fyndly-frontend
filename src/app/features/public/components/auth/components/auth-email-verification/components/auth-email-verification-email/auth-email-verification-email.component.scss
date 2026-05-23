@@ -1,0 +1,25 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  margin: 8px auto 0 auto;
+}
+
+.auth-email-verification-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: colors.$color-gray-9;
+  border-radius: 8px;
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__email {
+    font-size: 13px;
+    font-weight: 600;
+    color: colors.$color-blue-3;
+  }
+}

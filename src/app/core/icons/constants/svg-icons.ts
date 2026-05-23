@@ -17,4 +17,9 @@ export const SVG_ICONS = [
   'close-gray',
   'unverified-email',
   'verified-shield',
+  'checkmark-green',
+  'clock-orange',
+  'email-blue',
+  'at',
+  'clock-gray',
 ] as const;
