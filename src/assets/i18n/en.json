@@ -82,6 +82,14 @@
       "google": "Continue with Google",
       "switch_text": "Already have an account?",
       "switch_link": "Sign in"
+    },
+    "email_verification": {
+      "title": "Verify your email",
+      "description": "We sent a 6-digit code to your email address.",
+      "submit": "Verify email",
+      "resend_text": "Didn't receive the code?",
+      "resend_action": "Resend code",
+      "notice": "The code is valid for 10 minutes."
     }
   }
 }

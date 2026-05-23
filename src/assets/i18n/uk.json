@@ -82,6 +82,14 @@
       "google": "Продовжити з Google",
       "switch_text": "Вже маєте акаунт?",
       "switch_link": "Увійти"
+    },
+    "email_verification": {
+      "title": "Підтвердіть email",
+      "description": "Ми надіслали 6-значний код на вашу email-адресу.",
+      "submit": "Підтвердити email",
+      "resend_text": "Не отримали код?",
+      "resend_action": "Надіслати повторно",
+      "notice": "Код дійсний протягом 10 хвилин."
     }
   }
 }
