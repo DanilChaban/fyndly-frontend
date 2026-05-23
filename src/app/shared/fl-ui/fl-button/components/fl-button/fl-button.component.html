@@ -16,7 +16,9 @@
         <mat-icon class="fl-button__icon fl-button__icon--prefix" [svgIcon]="icon" />
       }
 
-      <ng-content />
+      <span class="fl-button__projected-content">
+        <ng-content />
+      </span>
 
       @if (suffixIcon(); as icon) {
         <mat-icon class="fl-button__icon fl-button__icon--suffix" [svgIcon]="icon" />

@@ -26,7 +26,8 @@
       },
       "server_success": {
         "sign_in_success": "Ви успішно увійшли",
-        "sign_up_success": "Акаунт успішно створено"
+        "sign_up_success": "Акаунт успішно створено",
+        "verification_code_sent_success": "Код підтвердження успішно надіслано."
       }
     },
     "toast": {

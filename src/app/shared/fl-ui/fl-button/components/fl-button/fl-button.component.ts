@@ -31,6 +31,7 @@ export class FlButtonComponent {
   buttonClass = computed(() => ({
     [`fl-button fl-button--${this.variant()}`]: true,
     [`fl-button fl-button--${this.size()}`]: true,
+    'fl-button--text-loading': this.variant() === 'text' && this.loading(),
   }));
 
   onClick(): void {

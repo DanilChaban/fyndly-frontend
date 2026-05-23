@@ -26,7 +26,8 @@
       },
       "server_success": {
         "sign_in_success": "You have signed in successfully",
-        "sign_up_success": "Your account has been created successfully"
+        "sign_up_success": "Your account has been created successfully",
+        "verification_code_sent_success": "Verification code sent successfully."
       }
     },
     "toast": {

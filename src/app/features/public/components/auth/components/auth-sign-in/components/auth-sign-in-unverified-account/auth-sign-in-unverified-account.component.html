@@ -14,17 +14,20 @@
     class="auth-sign-in-unverified-account__action"
     [loading]="loading()"
     [disabled]="loading()"
-    (btnClicked)="navigateToVerifyEmail()"
+    (btnClicked)="resendVerificationCode()"
     [prefixIcon]="'verified-shield'"
     size="small"
   >
     {{ 'auth.sign_in.unverified_account_action' | transloco }}
   </fl-button>
 
-  <div class="auth-sign-in-unverified-account__retry-hint">
-    <mat-icon class="auth-sign-in-unverified-account__retry-hint__icon" svgIcon="clock-gray" />
-    <span class="auth-sign-in-unverified-account__retry-hint__text">
-      {{ 'auth.email_verification.retry_hint' | transloco: { sec: retryAfterSeconds() } }}
-    </span>
-  </div>
+  @if (retryAfterSeconds() !== 0) {
+    <div class="auth-sign-in-unverified-account__retry-hint">
+      <mat-icon class="auth-sign-in-unverified-account__retry-hint__icon" svgIcon="clock-gray" />
+
+      <span class="auth-sign-in-unverified-account__retry-hint__text">
+        {{ 'auth.email_verification.retry_hint' | transloco: { sec: retryAfterSeconds() } }}
+      </span>
+    </div>
+  }
 </div>

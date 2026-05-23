@@ -1,6 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
+import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
+import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
+import { AuthService } from '@auth/apis/auth.service';
 
 @Component({
   selector: 'app-auth-email-verification-resend-code',
@@ -9,4 +13,41 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
   styleUrl: './auth-email-verification-resend-code.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthEmailVerificationResendCodeComponent {}
+export class AuthEmailVerificationResendCodeComponent {
+  private readonly authService = inject(AuthService);
+  private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
+  private readonly flToastService = inject(FlToastService);
+
+  loading = this.authService.resendVerificationCode.resource.isLoading;
+
+  email = computed(() => this.authSessionStorageEmailService.verificationEmail());
+
+  retryAfterSeconds = signal<number>(0);
+
+  constructor() {
+    handleApiResourceState(this.authService.resendVerificationCode.resource, {
+      onSuccess: () => {
+        this.flToastService.success(`global.validation.server_success.verification_code_sent_success`);
+      },
+      onError: (errorCode, error) => {
+        if (errorCode) {
+          this.flToastService.error(`global.validation.server_error.${errorCode}`);
+        }
+        this.retryAfterSeconds.set(error.error.retryAfterSeconds);
+      },
+      onReset: () => {
+        this.authService.resendVerificationCode.reset();
+      },
+    });
+  }
+
+  resendVerificationCode(): void {
+    const email = this.email();
+
+    if (!email) {
+      return;
+    }
+
+    this.authService.resendVerificationCode.execute({ email });
+  }
+}

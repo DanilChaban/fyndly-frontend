@@ -44,7 +44,7 @@ export class AuthSignInUnverifiedAccountComponent {
     });
   }
 
-  navigateToVerifyEmail(): void {
+  resendVerificationCode(): void {
     const email = this.email();
 
     if (!email) {
