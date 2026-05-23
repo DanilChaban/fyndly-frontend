@@ -4,6 +4,7 @@ import {
   ElementRef,
   forwardRef,
   input,
+  OnInit,
   QueryList,
   signal,
   ViewChildren,
@@ -28,7 +29,7 @@ import { FlFormControlBase } from '@ui/abstract/fl-form-control-base/fl-form-con
     },
   ],
 })
-export class FlFormOtpInputComponent extends FlFormControlBase implements ControlValueAccessor {
+export class FlFormOtpInputComponent extends FlFormControlBase implements ControlValueAccessor, OnInit {
   length = input(6);
 
   @ViewChildren('otpInput')
@@ -38,6 +39,10 @@ export class FlFormOtpInputComponent extends FlFormControlBase implements Contro
 
   private onChange: (value: string) => void = () => {};
   private onTouched: () => void = () => {};
+
+  ngOnInit(): void {
+    this.markForCheckOnControlStatusChange();
+  }
 
   registerOnChange(fn: (value: string) => void): void {
     this.onChange = fn;

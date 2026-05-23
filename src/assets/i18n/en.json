@@ -22,12 +22,15 @@
         "validation_email": "Please enter a valid email address",
         "validation_min_length": "This field is too short",
         "email_not_verified": "Your account is not verified",
-        "verification_code_resend_too_soon": "You can request a new verification code in a few seconds"
+        "verification_code_resend_too_soon": "You can request a new verification code in a few seconds",
+        "invalid_verification_code": "Invalid verification code",
+        "verification_code_expired": "Verification code has expired. Please request a new code."
       },
       "server_success": {
         "sign_in_success": "You have signed in successfully",
         "sign_up_success": "Your account has been created successfully",
-        "verification_code_sent_success": "Verification code sent successfully."
+        "verification_code_sent_success": "Verification code sent successfully.",
+        "email_verified_success": "Email verified successfully."
       }
     },
     "toast": {
@@ -88,11 +91,17 @@
     "email_verification": {
       "title": "Verify your email",
       "description": "We sent a 6-digit code to your email address.",
+      "expired_title": "Code expired",
+      "expired_description": "For your security, verification codes expire after a short time.",
+      "verified_title": "Email verified",
+      "verified_description": "Your account has been verified successfully.",
       "submit": "Verify email",
+      "continue": "Continue",
       "resend_text": "Didn't receive the code?",
       "resend_action": "Resend code",
       "retry_hint": "You can request a new code in {{sec}} seconds.",
-      "notice": "The code is valid for 10 minutes."
+      "notice": "The code is valid for 10 minutes.",
+      "secured_notice": "Secured by Fyndly authentication"
     }
   }
 }

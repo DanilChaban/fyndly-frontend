@@ -5,6 +5,8 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
 import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
 import { AuthService } from '@auth/apis/auth.service';
+import { VerificationStatusService } from '@auth/components/auth-email-verification/services/verification-status.service';
+import { VerificationStatus } from '@auth/components/auth-email-verification/enums/verification-status';
 
 @Component({
   selector: 'app-auth-email-verification-resend-code',
@@ -17,6 +19,7 @@ export class AuthEmailVerificationResendCodeComponent {
   private readonly authService = inject(AuthService);
   private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
   private readonly flToastService = inject(FlToastService);
+  private readonly verificationStatusService = inject(VerificationStatusService);
 
   loading = this.authService.resendVerificationCode.resource.isLoading;
 
@@ -28,6 +31,7 @@ export class AuthEmailVerificationResendCodeComponent {
     handleApiResourceState(this.authService.resendVerificationCode.resource, {
       onSuccess: () => {
         this.flToastService.success(`global.validation.server_success.verification_code_sent_success`);
+        this.verificationStatusService.setStatus(VerificationStatus.NOT_VERIFIED);
       },
       onError: (errorCode, error) => {
         if (errorCode) {

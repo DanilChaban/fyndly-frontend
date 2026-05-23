@@ -15,7 +15,7 @@
       autocomplete="one-time-code"
       maxlength="1"
       [placeholder]="disabled() ? '—' : ''"
-      [value]="value"
+      [value]="disabled() ? '—' : value"
       [disabled]="disabled()"
       (input)="onInput($event, $index)"
       (keydown)="onKeyDown($event, $index)"

@@ -7,6 +7,7 @@ const VALIDATION_ERROR_KEYS: Record<string, string> = {
   minlength: 'global.validation.min_length',
   maxlength: 'global.validation.max_length',
   passwordMismatch: 'global.validation.password_mismatch',
+  validationCode: 'invalid_verification_code',
 };
 
 export const getErrorKey = (errors: ValidationErrors | null): string | null => {
