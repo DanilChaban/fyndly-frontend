@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 .fl-form-otp-input {
   display: grid;
@@ -42,6 +43,7 @@
   &__error {
     grid-column: 1 / -1;
     color: colors.$color-red-3;
+    font-size: 10.5px;
   }
 
   &--invalid {
@@ -52,6 +54,21 @@
       &:focus {
         box-shadow: colors.$box-shadow-3;
       }
+    }
+  }
+
+  @include mobile(down) {
+    width: 100%;
+    max-width: 292px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 6px;
+
+    &__field {
+      min-width: 0;
+      height: auto;
+      aspect-ratio: 1;
+      font-size: 20px;
+      border-radius: 8px;
     }
   }
 }

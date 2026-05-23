@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 .auth-email-verification-icon-status {
   display: flex;
@@ -9,9 +10,20 @@
   margin: 0 auto 16px auto;
   background: colors.$color-gray-9;
   border-radius: 16px;
+  border: 1px solid colors.$color-gray-3;
 
   &__icon {
     width: 28px;
     height: 28px;
+  }
+
+  @include mobile(down) {
+    width: 48px;
+    height: 48px;
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+    }
   }
 }

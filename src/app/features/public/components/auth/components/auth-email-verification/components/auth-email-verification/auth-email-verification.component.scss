@@ -1,8 +1,14 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
 :host {
   ::ng-deep {
     .fl-card {
       gap: 28px !important;
+
+      @include mobile(down) {
+        gap: 24px !important;
+      }
     }
 
     .fl-card-title {

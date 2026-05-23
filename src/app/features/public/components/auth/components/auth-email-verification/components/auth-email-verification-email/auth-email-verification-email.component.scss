@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 :host {
   margin: 8px auto 0 auto;
@@ -11,6 +12,7 @@
   padding: 12px;
   background-color: colors.$color-gray-9;
   border-radius: 8px;
+  border: 1px solid colors.$color-gray-3;
 
   &__icon {
     width: 14px;
@@ -21,5 +23,9 @@
     font-size: 13px;
     font-weight: 600;
     color: colors.$color-blue-3;
+
+    @include mobile(down) {
+      font-weight: 500;
+    }
   }
 }
