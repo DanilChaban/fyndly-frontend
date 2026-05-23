@@ -123,10 +123,6 @@
   }
 
   &__spinner {
-    position: absolute;
-    right: calc(100% + var(--fl-button-content-gap));
-    top: 50%;
-    transform: translateY(-50%);
     flex: 0 0 18px;
   }
 

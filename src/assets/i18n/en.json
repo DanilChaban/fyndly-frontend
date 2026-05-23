@@ -21,7 +21,8 @@
         "validation_invalid": "Invalid value",
         "validation_email": "Please enter a valid email address",
         "validation_min_length": "This field is too short",
-        "email_not_verified": "Your account is not verified"
+        "email_not_verified": "Your account is not verified",
+        "verification_code_resend_too_soon": "You can request a new verification code in a few seconds"
       },
       "server_success": {
         "sign_in_success": "You have signed in successfully",
@@ -89,6 +90,7 @@
       "submit": "Verify email",
       "resend_text": "Didn't receive the code?",
       "resend_action": "Resend code",
+      "retry_hint": "You can request a new code in {{sec}} seconds.",
       "notice": "The code is valid for 10 minutes."
     }
   }

@@ -21,7 +21,8 @@
         "validation_invalid": "Некоректне значення",
         "validation_email": "Введіть коректну email-адресу",
         "validation_min_length": "Значення занадто коротке",
-        "email_not_verified": "Ваш акаунт не підтверджено"
+        "email_not_verified": "Ваш акаунт не підтверджено",
+        "verification_code_resend_too_soon": "Ви можете запросити новий код підтвердження за кілька секунд"
       },
       "server_success": {
         "sign_in_success": "Ви успішно увійшли",
@@ -89,6 +90,7 @@
       "submit": "Підтвердити email",
       "resend_text": "Не отримали код?",
       "resend_action": "Надіслати повторно",
+      "retry_hint": "Ви можете запросити новий код через {{sec}} секунд.",
       "notice": "Код дійсний протягом 10 хвилин."
     }
   }
