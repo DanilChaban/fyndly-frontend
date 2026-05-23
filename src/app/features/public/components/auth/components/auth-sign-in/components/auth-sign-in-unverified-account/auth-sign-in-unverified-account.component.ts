@@ -6,7 +6,7 @@ import { LocalizedRouterService } from '@core/services/localized-router.service'
 import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 import { AuthService } from '@auth/apis/auth.service';
-import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
+import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-sign-in-unverified-account',
@@ -18,12 +18,12 @@ import { AuthSessionStorageEmailService } from '@auth/services/auth-session-stor
 export class AuthSignInUnverifiedAccountComponent {
   private readonly localizedRouterService = inject(LocalizedRouterService);
   private readonly authService = inject(AuthService);
-  private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
+  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
   private readonly flToastService = inject(FlToastService);
 
   loading = this.authService.resendVerificationCode.resource.isLoading;
 
-  email = computed(() => this.authSessionStorageEmailService.verificationEmail());
+  email = computed(() => this.authSessionStorageVerificationService.data()?.email);
 
   retryAfterSeconds = signal<number>(0);
 

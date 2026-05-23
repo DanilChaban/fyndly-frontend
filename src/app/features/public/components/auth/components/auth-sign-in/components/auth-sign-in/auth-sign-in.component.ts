@@ -16,7 +16,7 @@ import { FlCardActionsComponent } from '@common/fl-card/components/fl-card-actio
 import { AuthService } from '@auth/apis/auth.service';
 import { AuthSignInFormComponent } from '@auth/components/auth-sign-in/components/forms/auth-sign-in-form/auth-sign-in-form.component';
 import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-switch/auth-actions-switch.component';
-import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
+import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-sign-in',
@@ -40,7 +40,7 @@ export class AuthSignInComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly flToastService = inject(FlToastService);
   private readonly authService = inject(AuthService);
-  private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
+  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
 
   private form: FormGroup = new FormGroup({});
 
@@ -53,7 +53,6 @@ export class AuthSignInComponent implements OnInit {
       onSuccess: () => {
         this.flToastService.success(`global.validation.server_success.sign_in_success`);
       },
-
       onError: (errorCode, error) => {
         this.showWarning(errorCode);
         this.setVerificationEmailToSessionStorage(errorCode);
@@ -97,9 +96,10 @@ export class AuthSignInComponent implements OnInit {
 
   private setVerificationEmailToSessionStorage(errorCode: ApiErrorCode, email?: string | null): void {
     const isEmailNotVerified = errorCode === 'email_not_verified';
+    const verificationEmail = email ?? this.form.getRawValue().email;
 
-    if (isEmailNotVerified) {
-      this.authSessionStorageEmailService.setVerificationEmail(this.form.getRawValue().email ?? email);
+    if (isEmailNotVerified && verificationEmail) {
+      this.authSessionStorageVerificationService.setVerificationData(verificationEmail, false);
     }
   }
 }

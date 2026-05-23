@@ -6,6 +6,7 @@ import { FlFormOtpInputComponent } from '@ui/fl-form/components/fl-form-otp-inpu
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 import { VerificationStatus } from '@auth/components/auth-email-verification/enums/verification-status';
 import { VerificationStatusService } from '@auth/components/auth-email-verification/services/verification-status.service';
+import { AuthService } from '@auth/apis/auth.service';
 
 @Component({
   selector: 'app-auth-email-verification-form',
@@ -16,6 +17,9 @@ import { VerificationStatusService } from '@auth/components/auth-email-verificat
 })
 export class AuthEmailVerificationFormComponent {
   private readonly verificationStatusService = inject(VerificationStatusService);
+  private readonly authService = inject(AuthService);
+
+  loading = this.authService.verifyEmail.resource.isLoading;
 
   submitClicked = output<FormGroup>();
 

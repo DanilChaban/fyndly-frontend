@@ -14,7 +14,7 @@ import { FlCardTitleComponent } from '@common/fl-card/components/fl-card-title/f
 import { AuthService } from '@auth/apis/auth.service';
 import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-switch/auth-actions-switch.component';
 import { AuthSignUpFormComponent } from '@auth/components/auth-sign-up/components/forms/auth-sign-up-form/auth-sign-up-form.component';
-import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
+import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-sign-up',
@@ -37,14 +37,14 @@ export class AuthSignUpComponent {
   private readonly authService = inject(AuthService);
   private readonly flToastService = inject(FlToastService);
   private readonly localizedRouterService = inject(LocalizedRouterService);
-  private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
+  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
 
   private form: FormGroup = new FormGroup({});
 
   constructor() {
     handleApiResourceState(this.authService.signUp.resource, {
       onSuccess: () => {
-        this.authSessionStorageEmailService.setVerificationEmail(this.form.getRawValue().email);
+        this.authSessionStorageVerificationService.setVerificationData(this.form.getRawValue().email, false);
         this.flToastService.success(`global.validation.server_success.sign_up_success`);
         void this.localizedRouterService.navigate(['verify-email']);
       },

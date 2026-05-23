@@ -10,11 +10,11 @@ import { AuthEmailVerificationFormComponent } from '@auth/components/auth-email-
 import { AuthEmailVerificationResendCodeComponent } from '@auth/components/auth-email-verification/components/auth-email-verification-resend-code/auth-email-verification-resend-code.component';
 import { AuthEmailVarificationNoticeComponent } from '@auth/components/auth-email-verification/components/auth-email-varification-notice/auth-email-varification-notice.component';
 import { AuthService } from '@auth/apis/auth.service';
-import { AuthSessionStorageEmailService } from '@auth/services/auth-session-storage-email.service';
 import { VerificationStatusService } from '@auth/components/auth-email-verification/services/verification-status.service';
 import { VerificationStatus } from '@auth/components/auth-email-verification/enums/verification-status';
 import { AuthEmailVerificationHeaderComponent } from '@auth/components/auth-email-verification/components/auth-email-verification-header/auth-email-verification-header.component';
 import { AuthEmailVerificationActionsContinueComponent } from '@auth/components/auth-email-verification/components/actions/auth-email-verification-actions-continue/auth-email-verification-actions-continue.component';
+import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-email-verification',
@@ -34,11 +34,11 @@ import { AuthEmailVerificationActionsContinueComponent } from '@auth/components/
 })
 export class AuthEmailVerificationComponent {
   private readonly authService = inject(AuthService);
-  private readonly authSessionStorageEmailService = inject(AuthSessionStorageEmailService);
+  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
   private readonly flToastService = inject(FlToastService);
   private readonly verificationStatusService = inject(VerificationStatusService);
 
-  email = computed(() => this.authSessionStorageEmailService.verificationEmail());
+  email = computed(() => this.authSessionStorageVerificationService.data()?.email);
   status = this.verificationStatusService.status;
 
   private form: FormGroup = new FormGroup({});
@@ -48,8 +48,13 @@ export class AuthEmailVerificationComponent {
   constructor() {
     handleApiResourceState(this.authService.verifyEmail.resource, {
       onSuccess: () => {
+        const email = this.email();
+        if (!email) {
+          return;
+        }
+
         this.changeVerificationStatus();
-        this.authSessionStorageEmailService.clearVerificationEmail();
+        this.authSessionStorageVerificationService.setVerificationData(email, true);
         this.flToastService.success(`global.validation.server_success.email_verified_success`);
       },
       onError: (_, error) => {
