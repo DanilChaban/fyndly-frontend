@@ -1,0 +1,17 @@
+<div
+  class="auth-email-verification-notice"
+  [class.auth-email-verification-notice--verified]="status() === VerificationStatus.VERIFIED"
+>
+  <mat-icon
+    class="auth-email-verification-notice__icon auth-email-verification-notice--verified__icon"
+    [svgIcon]="status() !== VerificationStatus.VERIFIED ? 'clock-gray' : 'verified-shield-gray'"
+  />
+  <span class="auth-email-verification-notice__text">
+    {{
+      (status() !== VerificationStatus.VERIFIED
+        ? 'auth.email_verification.notice'
+        : 'auth.email_verification.secured_notice'
+      ) | transloco
+    }}
+  </span>
+</div>

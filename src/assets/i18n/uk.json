@@ -21,11 +21,16 @@
         "validation_invalid": "Некоректне значення",
         "validation_email": "Введіть коректну email-адресу",
         "validation_min_length": "Значення занадто коротке",
-        "email_not_verified": "Ваш акаунт не підтверджено"
+        "email_not_verified": "Ваш акаунт не підтверджено",
+        "verification_code_resend_too_soon": "Ви можете запросити новий код підтвердження за кілька секунд",
+        "invalid_verification_code": "Некоректний код підтвердження",
+        "verification_code_expired": "Код підтвердження вже недійсний. Будь ласка, запросіть новий."
       },
       "server_success": {
         "sign_in_success": "Ви успішно увійшли",
-        "sign_up_success": "Акаунт успішно створено"
+        "sign_up_success": "Акаунт успішно створено",
+        "verification_code_sent_success": "Код підтвердження успішно надіслано.",
+        "email_verified_success": "Email успішно підтверджено."
       }
     },
     "toast": {
@@ -82,6 +87,21 @@
       "google": "Продовжити з Google",
       "switch_text": "Вже маєте акаунт?",
       "switch_link": "Увійти"
+    },
+    "email_verification": {
+      "title": "Підтвердіть email",
+      "description": "Ми надіслали 6-значний код на вашу email-адресу.",
+      "expired_title": "Термін дії коду минув",
+      "expired_description": "З міркувань безпеки коди підтвердження діють лише короткий час.",
+      "verified_title": "Email підтверджено",
+      "verified_description": "Ваш акаунт успішно підтверджено.",
+      "submit": "Підтвердити email",
+      "continue": "Продовжити",
+      "resend_text": "Не отримали код?",
+      "resend_action": "Надіслати повторно",
+      "retry_hint": "Ви можете запросити новий код через {{sec}} секунд.",
+      "notice": "Код дійсний протягом 10 хвилин.",
+      "secured_notice": "Захищено автентифікацією Fyndly"
     }
   }
 }

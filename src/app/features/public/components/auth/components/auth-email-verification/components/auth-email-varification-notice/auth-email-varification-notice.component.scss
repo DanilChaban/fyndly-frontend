@@ -1,0 +1,32 @@
+@use 'utilities/colors' as colors;
+
+.auth-email-verification-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid colors.$color-gray-3;
+
+  &--verified {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 20px;
+
+    &__icon {
+      width: 14px !important;
+      height: 14px !important;
+    }
+  }
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__text {
+    color: colors.$color-gray-7;
+    font-size: 12px;
+  }
+}

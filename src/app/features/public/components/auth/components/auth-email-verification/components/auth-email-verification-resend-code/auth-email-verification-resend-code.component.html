@@ -1,0 +1,16 @@
+<div class="auth-email-verification-resend-code">
+  <div class="auth-email-verification-resend-code__action">
+    <span class="auth-email-verification-resend-code__action__text">
+      {{ 'auth.email_verification.resend_text' | transloco }}
+    </span>
+    <fl-button [loading]="loading()" (btnClicked)="resendVerificationCode()" variant="text">
+      {{ 'auth.email_verification.resend_action' | transloco }}
+    </fl-button>
+  </div>
+
+  @if (retryAfterSeconds() !== 0) {
+    <p class="auth-email-verification-resend-code__retry-hint">
+      {{ 'auth.email_verification.retry_hint' | transloco: { sec: retryAfterSeconds() } }}
+    </p>
+  }
+</div>

@@ -1,1 +1,12 @@
-<p>auth-email-verification works!</p>
+<fl-card>
+  <app-auth-email-verification-header />
+  <fl-card-content>
+    @if (status() === VerificationStatus.VERIFIED) {
+      <app-auth-email-verification-actions-continue />
+    } @else {
+      <app-auth-email-verification-form (submitClicked)="verifyEmail($event)" />
+      <app-auth-email-verification-resend-code />
+    }
+    <app-auth-email-varification-notice />
+  </fl-card-content>
+</fl-card>

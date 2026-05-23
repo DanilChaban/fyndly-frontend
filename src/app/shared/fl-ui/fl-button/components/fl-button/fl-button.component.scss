@@ -33,7 +33,7 @@
       }
     }
 
-    &--secondary {
+    &--secondary, &--text {
       ::ng-deep .mat-mdc-progress-spinner circle {
         stroke: colors.$color-blue-1;
       }
@@ -68,6 +68,10 @@
 
   &__icon {
     min-height: auto !important;
+  }
+
+  &__projected-content {
+    display: inline-flex;
   }
 
   &--small {
@@ -122,11 +126,13 @@
     }
   }
 
+  &--text-loading {
+    .fl-button__projected-content {
+      display: none;
+    }
+  }
+
   &__spinner {
-    position: absolute;
-    right: calc(100% + var(--fl-button-content-gap));
-    top: 50%;
-    transform: translateY(-50%);
     flex: 0 0 18px;
   }
 

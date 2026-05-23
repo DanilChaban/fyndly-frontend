@@ -1,0 +1,7 @@
+<fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <fl-form-otp-input formControlName="code" />
+
+  <fl-button [loading]="loading()" type="submit" [disabled]="!form.valid">
+    {{ 'auth.email_verification.submit' | transloco }}
+  </fl-button>
+</fl-form>

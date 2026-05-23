@@ -1,0 +1,26 @@
+@use 'utilities/colors' as colors;
+
+.auth-email-verification-resend-code {
+  display: flex;
+  flex-direction: column;
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 20px;
+
+    &__text {
+      color: colors.$color-gray-7;
+      font-size: 13px;
+    }
+  }
+
+  &__retry-hint {
+    color: colors.$color-gray-7;
+    font-size: 12px;
+    margin: 20px 0 0 0;
+    text-align: center;
+  }
+}
