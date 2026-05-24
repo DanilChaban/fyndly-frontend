@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { LocalizedRouterService } from '@core/services/localized-router.service';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
@@ -34,6 +35,7 @@ export class AuthSignInFormComponent {
 
   private readonly formBuilder = inject(FormBuilder);
   private readonly authService = inject(AuthService);
+  private readonly localizedRouterService = inject(LocalizedRouterService);
 
   loading = this.authService.signIn.resource.isLoading;
 
@@ -42,6 +44,10 @@ export class AuthSignInFormComponent {
     password: ['', [Validators.required]],
     rememberMe: [false],
   });
+
+  navigateToForgotPassword(): void {
+    void this.localizedRouterService.navigate(['forgot-password']);
+  }
 
   onSubmit(): void {
     this.submitClicked.emit(this.form);

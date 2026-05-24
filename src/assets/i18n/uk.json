@@ -102,6 +102,25 @@
       "retry_hint": "Ви можете запросити новий код через {{sec}} секунд.",
       "notice": "Код дійсний протягом 10 хвилин.",
       "secured_notice": "Захищено автентифікацією Fyndly"
+    },
+    "forgot_password": {
+      "title": "Скидання пароля",
+      "description": "Введіть свою email-адресу, і ми надішлемо код підтвердження для скидання пароля.",
+      "reset_title": "Створіть новий пароль",
+      "reset_description": "Ми надіслали код підтвердження на вашу email-адресу. Введіть код і задайте новий пароль.",
+      "email_label": "Електронна пошта",
+      "email_placeholder": "you@example.com",
+      "code_label": "Код підтвердження",
+      "code_placeholder": "6-значний код",
+      "password_label": "Новий пароль",
+      "password_placeholder": "Введіть новий пароль",
+      "confirm_password_label": "Підтвердження пароля",
+      "confirm_password_placeholder": "Підтвердіть новий пароль",
+      "submit": "Надіслати код",
+      "reset_submit": "Скинути пароль",
+      "resend_text": "Не отримали код?",
+      "resend_action": "Надіслати повторно",
+      "back_to_sign_in": "Назад до входу"
     }
   }
 }

@@ -5,13 +5,13 @@ import { AuthComponent } from '@auth/components/auth/components/auth/auth.compon
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'sign-in',
+  },
+  {
+    path: '',
     component: AuthComponent,
     children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'sign-in',
-      },
       {
         path: 'sign-in',
         loadComponent: () =>
@@ -32,6 +32,20 @@ export const routes: Routes = [
         loadComponent: () =>
           import('@auth/components/auth-email-verification/components/auth-email-verification/auth-email-verification.component').then(
             (c) => c.AuthEmailVerificationComponent,
+          ),
+      },
+      {
+        path: 'forgot-password',
+        loadComponent: () =>
+          import('@auth/components/auth-forgot-password/components/auth-forgot-password/auth-forgot-password.component').then(
+            (c) => c.AuthForgotPasswordComponent,
+          ),
+      },
+      {
+        path: 'reset-password',
+        loadComponent: () =>
+          import('@auth/components/auth-forgot-password/components/auth-forgot-password-reset/auth-forgot-password-reset.component').then(
+            (c) => c.AuthForgotPasswordResetComponent,
           ),
       },
     ],

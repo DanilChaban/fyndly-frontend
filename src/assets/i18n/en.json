@@ -102,6 +102,25 @@
       "retry_hint": "You can request a new code in {{sec}} seconds.",
       "notice": "The code is valid for 10 minutes.",
       "secured_notice": "Secured by Fyndly authentication"
+    },
+    "forgot_password": {
+      "title": "Reset your password",
+      "description": "Enter your email address and we'll send you a verification code to reset your password.",
+      "reset_title": "Create a new password",
+      "reset_description": "We sent a verification code to your email. Enter the code and set a new password.",
+      "email_label": "Email address",
+      "email_placeholder": "you@example.com",
+      "code_label": "Verification code",
+      "code_placeholder": "6-digit code",
+      "password_label": "New password",
+      "password_placeholder": "Enter new password",
+      "confirm_password_label": "Confirm password",
+      "confirm_password_placeholder": "Confirm new password",
+      "submit": "Send code",
+      "reset_submit": "Reset password",
+      "resend_text": "Didn't receive a code?",
+      "resend_action": "Resend code",
+      "back_to_sign_in": "Back to sign in"
     }
   }
 }

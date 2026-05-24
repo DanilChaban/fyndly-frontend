@@ -1,0 +1,5 @@
+<div class="auth-ui-icon-status" [ngClass]="iconClass()">
+  @if (iconName(); as icon) {
+    <mat-icon class="auth-ui-icon-status__icon" [svgIcon]="icon" />
+  }
+</div>

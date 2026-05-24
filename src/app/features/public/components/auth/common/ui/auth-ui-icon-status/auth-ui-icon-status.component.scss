@@ -1,0 +1,40 @@
+@use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
+.auth-ui-icon-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px auto;
+  background: colors.$color-gray-9;
+  border-radius: 16px;
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  @include mobile(down) {
+    width: 48px;
+    height: 48px;
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &--verified {
+    background: colors.$color-green-3;
+  }
+
+  &--not-verified {
+    background: colors.$color-blue-5;
+  }
+
+  &--expired {
+    background: colors.$color-orange-3;
+  }
+}
