@@ -21,8 +21,10 @@
         "validation_invalid": "Invalid value",
         "validation_email": "Please enter a valid email address",
         "validation_min_length": "This field is too short",
+        "user_not_found": "User with this email was not found",
         "email_not_verified": "Your account is not verified",
         "verification_code_resend_too_soon": "You can request a new verification code in a few seconds",
+        "reset_password_code_resend_too_soon": "You can request a new password reset code in a few seconds",
         "invalid_verification_code": "Invalid verification code",
         "verification_code_expired": "Verification code has expired. Please request a new code."
       },
@@ -30,7 +32,8 @@
         "sign_in_success": "You have signed in successfully",
         "sign_up_success": "Your account has been created successfully",
         "verification_code_sent_success": "Verification code sent successfully.",
-        "email_verified_success": "Email verified successfully."
+        "email_verified_success": "Email verified successfully.",
+        "forgot_password_success": "Password reset code sent successfully."
       }
     },
     "toast": {
@@ -120,6 +123,7 @@
       "reset_submit": "Reset password",
       "resend_text": "Didn't receive a code?",
       "resend_action": "Resend code",
+      "retry_hint": "You can request a new code in {{sec}} seconds.",
       "back_to_sign_in": "Back to sign in"
     }
   }
