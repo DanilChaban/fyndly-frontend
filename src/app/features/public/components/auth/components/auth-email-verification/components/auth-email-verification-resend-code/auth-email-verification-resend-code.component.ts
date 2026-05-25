@@ -6,7 +6,7 @@ import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { AuthService } from '@auth/apis/auth.service';
 import { VerificationStatusService } from '@auth/components/auth-email-verification/services/verification-status.service';
 import { VerificationStatus } from '@auth/components/auth-email-verification/enums/verification-status';
-import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
+import { SessionStorageVerificationService } from '@auth/services/session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-email-verification-resend-code',
@@ -17,13 +17,13 @@ import { AuthSessionStorageVerificationService } from '@auth/services/auth-sessi
 })
 export class AuthEmailVerificationResendCodeComponent {
   private readonly authService = inject(AuthService);
-  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
+  private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
   private readonly flToastService = inject(FlToastService);
   private readonly verificationStatusService = inject(VerificationStatusService);
 
   loading = this.authService.resendVerificationCode.resource.isLoading;
 
-  email = computed(() => this.authSessionStorageVerificationService.data()?.email);
+  email = this.sessionStorageVerificationService.email;
 
   retryAfterSeconds = signal<number>(0);
 

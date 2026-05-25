@@ -17,6 +17,7 @@
       [id]="inputId()"
       [placeholder]="placeholder()"
       [formControl]="control()"
+      (input)="onInput($event)"
     />
 
     @if (currentSuffixIcon(); as icon) {

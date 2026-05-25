@@ -26,7 +26,7 @@
     }
   }
 
-  &--verified {
+  &--verified, &--success {
     background: colors.$color-green-3;
   }
 

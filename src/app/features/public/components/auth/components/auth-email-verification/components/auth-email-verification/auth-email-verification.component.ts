@@ -14,7 +14,7 @@ import { VerificationStatusService } from '@auth/components/auth-email-verificat
 import { VerificationStatus } from '@auth/components/auth-email-verification/enums/verification-status';
 import { AuthEmailVerificationHeaderComponent } from '@auth/components/auth-email-verification/components/auth-email-verification-header/auth-email-verification-header.component';
 import { AuthEmailVerificationActionsContinueComponent } from '@auth/components/auth-email-verification/components/actions/auth-email-verification-actions-continue/auth-email-verification-actions-continue.component';
-import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
+import { SessionStorageVerificationService } from '@auth/services/session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-email-verification',
@@ -34,11 +34,11 @@ import { AuthSessionStorageVerificationService } from '@auth/services/auth-sessi
 })
 export class AuthEmailVerificationComponent {
   private readonly authService = inject(AuthService);
-  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
+  private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
   private readonly flToastService = inject(FlToastService);
   private readonly verificationStatusService = inject(VerificationStatusService);
 
-  email = computed(() => this.authSessionStorageVerificationService.data()?.email);
+  email = this.sessionStorageVerificationService.email;
   status = this.verificationStatusService.status;
 
   private form: FormGroup = new FormGroup({});
@@ -54,7 +54,7 @@ export class AuthEmailVerificationComponent {
         }
 
         this.changeVerificationStatus();
-        this.authSessionStorageVerificationService.setVerificationData(email, true);
+        this.sessionStorageVerificationService.setData(email, true);
         this.flToastService.success(`global.validation.server_success.email_verified_success`);
       },
       onError: (_, error) => {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, output, input } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
@@ -15,7 +15,7 @@ import { AuthService } from '@auth/apis/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthForgotPasswordFormComponent {
-  submitClicked = output<string>();
+  submitClicked = output<FormGroup>();
 
   retryAfterSeconds = input(0);
 
@@ -29,12 +29,6 @@ export class AuthForgotPasswordFormComponent {
   });
 
   onSubmit(): void {
-    const email = this.form.get('email')?.value;
-
-    if (!email) {
-      return;
-    }
-
-    this.submitClicked.emit(email);
+    this.submitClicked.emit(this.form);
   }
 }

@@ -3,7 +3,7 @@ import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { apiUrl } from '@core/helpers/api/api-url';
 import { API_ENDPOINTS } from '@core/constants/api-endpoints';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
-import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
+import { SessionStorageVerificationService } from '@auth/services/session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-actions-google',
@@ -14,12 +14,12 @@ import { AuthSessionStorageVerificationService } from '@auth/services/auth-sessi
 })
 export class AuthActionsGoogleComponent {
   private readonly translocoService = inject(TranslocoService);
-  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
+  private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
 
   lang = this.translocoService.activeLang;
 
   signInWithGoogle(): void {
-    this.authSessionStorageVerificationService.clearVerificationData();
+    this.sessionStorageVerificationService.clearData();
     window.location.href = apiUrl(API_ENDPOINTS.auth.google, this.lang());
   }
 }

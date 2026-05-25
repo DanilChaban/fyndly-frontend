@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { SvgIconName } from '@core/icons/types/svg-icon-name';
 import { AuthUiIconStatusComponent } from '@auth/common/ui/auth-ui-icon-status/auth-ui-icon-status.component';
 
@@ -11,4 +11,9 @@ import { AuthUiIconStatusComponent } from '@auth/common/ui/auth-ui-icon-status/a
 })
 export class AuthForgotPasswordIconStatusComponent {
   iconName = input<SvgIconName | null>(null);
+  showSuccess = input<boolean>(false);
+
+  iconClass = computed(() => ({
+    [`auth-ui-icon-status--success`]: this.showSuccess(),
+  }));
 }

@@ -16,7 +16,7 @@ import { FlCardActionsComponent } from '@common/fl-card/components/fl-card-actio
 import { AuthService } from '@auth/apis/auth.service';
 import { AuthSignInFormComponent } from '@auth/components/auth-sign-in/components/forms/auth-sign-in-form/auth-sign-in-form.component';
 import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-switch/auth-actions-switch.component';
-import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
+import { SessionStorageVerificationService } from '@auth/services/session-storage-verification.service';
 
 @Component({
   selector: 'app-auth-sign-in',
@@ -40,7 +40,7 @@ export class AuthSignInComponent implements OnInit {
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly flToastService = inject(FlToastService);
   private readonly authService = inject(AuthService);
-  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
+  private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
 
   private form: FormGroup = new FormGroup({});
 
@@ -51,7 +51,7 @@ export class AuthSignInComponent implements OnInit {
   constructor() {
     handleApiResourceState(this.authService.signIn.resource, {
       onSuccess: () => {
-        this.authSessionStorageVerificationService.clearVerificationData();
+        this.sessionStorageVerificationService.clearData();
         this.flToastService.success(`global.validation.server_success.sign_in_success`);
       },
       onError: (errorCode, error) => {
@@ -100,7 +100,7 @@ export class AuthSignInComponent implements OnInit {
     const verificationEmail = email ?? this.form.getRawValue().email;
 
     if (isEmailNotVerified && verificationEmail) {
-      this.authSessionStorageVerificationService.setVerificationData(verificationEmail, false);
+      this.sessionStorageVerificationService.setData(verificationEmail);
     }
   }
 }

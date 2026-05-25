@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
 
-import { emailVerificationGuardGuard } from '@core/guards/email-verification-guard-guard';
+import { emailVerificationGuard } from '@core/guards/email-verification-guard';
 
-describe('emailVerificationGuardGuard', () => {
+describe('emailVerificationGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) =>
-    TestBed.runInInjectionContext(() => emailVerificationGuardGuard(...guardParameters));
+    TestBed.runInInjectionContext(() => emailVerificationGuard(...guardParameters));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

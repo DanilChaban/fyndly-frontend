@@ -1,13 +1,13 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { VerificationStatus } from '@auth/components/auth-email-verification/enums/verification-status';
-import { AuthSessionStorageVerificationService } from '@auth/services/auth-session-storage-verification.service';
+import { SessionStorageVerificationService } from '@auth/services/session-storage-verification.service';
 
 @Injectable()
 export class VerificationStatusService {
-  private readonly authSessionStorageVerificationService = inject(AuthSessionStorageVerificationService);
+  private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
 
   private verified = computed(() => {
-    return this.authSessionStorageVerificationService.data()?.verified
+    return this.sessionStorageVerificationService.verified()
       ? VerificationStatus.VERIFIED
       : VerificationStatus.NOT_VERIFIED;
   });
