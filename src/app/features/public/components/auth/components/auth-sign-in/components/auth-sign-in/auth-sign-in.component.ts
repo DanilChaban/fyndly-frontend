@@ -17,6 +17,7 @@ import { AuthService } from '@auth/apis/auth.service';
 import { AuthSignInFormComponent } from '@auth/components/auth-sign-in/components/forms/auth-sign-in-form/auth-sign-in-form.component';
 import { AuthActionsSwitchComponent } from '@auth/common/actions/auth-actions-switch/auth-actions-switch.component';
 import { SessionStorageVerificationService } from '@auth/services/session-storage-verification.service';
+import { SessionStorageResetPasswordService } from '@auth/services/session-storage-reset-password.service';
 
 @Component({
   selector: 'app-auth-sign-in',
@@ -41,17 +42,18 @@ export class AuthSignInComponent implements OnInit {
   private readonly flToastService = inject(FlToastService);
   private readonly authService = inject(AuthService);
   private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
+  private readonly sessionStorageResetPasswordService = inject(SessionStorageResetPasswordService);
 
   private form: FormGroup = new FormGroup({});
 
   private queryParams$ = this.activatedRoute.queryParamMap.pipe(takeUntilDestroyed());
 
   showUnverifiedWarning = signal(false);
+  email = signal('');
 
   constructor() {
     handleApiResourceState(this.authService.signIn.resource, {
       onSuccess: () => {
-        this.sessionStorageVerificationService.clearData();
         this.flToastService.success(`global.validation.server_success.sign_in_success`);
       },
       onError: (errorCode, error) => {
@@ -70,6 +72,17 @@ export class AuthSignInComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.subscribeToGoogleParams();
+    this.sessionStorageVerificationService.clearData();
+    this.sessionStorageResetPasswordService.clearData();
+  }
+
+  onSubmit(form: FormGroup): void {
+    this.form = form;
+    this.authService.signIn.execute(form.getRawValue());
+  }
+
+  private subscribeToGoogleParams(): void {
     this.queryParams$.subscribe((params) => {
       if (params.has('error')) {
         const errorCode = params.get('error') as ApiErrorCode;
@@ -86,11 +99,6 @@ export class AuthSignInComponent implements OnInit {
     });
   }
 
-  onSubmit(form: FormGroup): void {
-    this.form = form;
-    this.authService.signIn.execute(form.getRawValue());
-  }
-
   private showWarning(errorCode: ApiErrorCode): void {
     this.showUnverifiedWarning.set(errorCode === 'email_not_verified');
   }
@@ -100,7 +108,7 @@ export class AuthSignInComponent implements OnInit {
     const verificationEmail = email ?? this.form.getRawValue().email;
 
     if (isEmailNotVerified && verificationEmail) {
-      this.sessionStorageVerificationService.setData(verificationEmail);
+      this.email.set(verificationEmail);
     }
   }
 }

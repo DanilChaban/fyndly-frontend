@@ -7,7 +7,7 @@ import { ResetPasswordStorage } from '@auth/types/reset-password-storage';
 export class SessionStorageResetPasswordService {
   private RESET_PASSWORD_EMAIL_KEY = 'reset_password_email';
 
-  private data = signal<ResetPasswordStorage | null>(null);
+  private data = signal<ResetPasswordStorage | null>(this.getData());
 
   email = computed(() => this.data()?.email);
   passwordUpdated = computed(() => this.data()?.passwordUpdated);

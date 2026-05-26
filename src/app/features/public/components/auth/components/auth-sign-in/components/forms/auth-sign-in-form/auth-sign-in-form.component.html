@@ -16,7 +16,7 @@
   />
 
   @if (showUnverifiedWarning()) {
-    <app-auth-sign-in-unverified-account />
+    <app-auth-sign-in-unverified-account [email]="selectedEmail()" />
   }
 
   <div class="auth-sign-in-form__options">

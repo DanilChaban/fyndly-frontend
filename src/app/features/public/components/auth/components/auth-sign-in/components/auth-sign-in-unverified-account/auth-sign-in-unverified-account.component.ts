@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
@@ -16,6 +16,8 @@ import { SessionStorageVerificationService } from '@auth/services/session-storag
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthSignInUnverifiedAccountComponent {
+  email = input<string>('');
+
   private readonly localizedRouterService = inject(LocalizedRouterService);
   private readonly authService = inject(AuthService);
   private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
@@ -23,13 +25,12 @@ export class AuthSignInUnverifiedAccountComponent {
 
   loading = this.authService.resendVerificationCode.resource.isLoading;
 
-  email = this.sessionStorageVerificationService.email;
-
   retryAfterSeconds = signal<number>(0);
 
   constructor() {
     handleApiResourceState(this.authService.resendVerificationCode.resource, {
       onSuccess: () => {
+        this.sessionStorageVerificationService.setData(this.email());
         void this.localizedRouterService.navigate(['verify-email']);
       },
       onError: (errorCode, error) => {

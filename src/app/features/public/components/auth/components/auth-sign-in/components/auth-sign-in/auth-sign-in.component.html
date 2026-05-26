@@ -4,7 +4,11 @@
     <fl-card-subtitle>{{ 'auth.sign_in.description' | transloco }}</fl-card-subtitle>
   </fl-card-header>
   <fl-card-content>
-    <app-auth-sign-in-form [showUnverifiedWarning]="showUnverifiedWarning()" (submitClicked)="onSubmit($event)" />
+    <app-auth-sign-in-form
+      [selectedEmail]="email()"
+      [showUnverifiedWarning]="showUnverifiedWarning()"
+      (submitClicked)="onSubmit($event)"
+    />
   </fl-card-content>
   <fl-card-actions>
     <app-auth-actions-switch

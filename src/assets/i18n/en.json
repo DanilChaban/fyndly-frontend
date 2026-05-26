@@ -27,6 +27,7 @@
         "reset_password_code_resend_too_soon": "You can request a new password reset code in a few seconds",
         "invalid_verification_code": "Invalid verification code",
         "invalid_reset_password_code": "Invalid password reset code",
+        "reset_password_code_expired": "Password reset code has expired. Please request a new code.",
         "new_password_must_be_different": "New password must be different from the current password",
         "verification_code_expired": "Verification code has expired. Please request a new code."
       },

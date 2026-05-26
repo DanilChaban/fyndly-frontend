@@ -29,6 +29,7 @@ import { AuthSignInUnverifiedAccountComponent } from '@auth/components/auth-sign
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthSignInFormComponent {
+  selectedEmail = input('');
   showUnverifiedWarning = input(false);
 
   submitClicked = output<FormGroup>();

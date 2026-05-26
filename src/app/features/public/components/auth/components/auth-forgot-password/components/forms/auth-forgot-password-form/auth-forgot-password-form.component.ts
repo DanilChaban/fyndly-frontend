@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, output, input } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatIcon } from '@angular/material/icon';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
@@ -9,7 +8,7 @@ import { AuthService } from '@auth/apis/auth.service';
 
 @Component({
   selector: 'app-auth-forgot-password-form',
-  imports: [ReactiveFormsModule, TranslocoPipe, FlFormComponent, FlFormInputComponent, FlButtonComponent, MatIcon],
+  imports: [ReactiveFormsModule, TranslocoPipe, FlFormComponent, FlFormInputComponent, FlButtonComponent],
   templateUrl: './auth-forgot-password-form.component.html',
   styleUrl: './auth-forgot-password-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

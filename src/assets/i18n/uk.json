@@ -27,6 +27,7 @@
         "reset_password_code_resend_too_soon": "Ви можете запросити новий код для скидання пароля за кілька секунд",
         "invalid_verification_code": "Некоректний код підтвердження",
         "invalid_reset_password_code": "Некоректний код для скидання пароля",
+        "reset_password_code_expired": "Код для скидання пароля вже недійсний. Будь ласка, запросіть новий.",
         "new_password_must_be_different": "Новий пароль має відрізнятися від поточного",
         "verification_code_expired": "Код підтвердження вже недійсний. Будь ласка, запросіть новий."
       },

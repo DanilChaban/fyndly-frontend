@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
@@ -9,7 +8,7 @@ import { SessionStorageResetPasswordService } from '@auth/services/session-stora
 
 @Component({
   selector: 'app-auth-forgot-password-resend-code',
-  imports: [TranslocoPipe, FlButtonComponent, MatIcon],
+  imports: [TranslocoPipe, FlButtonComponent],
   templateUrl: './auth-forgot-password-resend-code.component.html',
   styleUrl: './auth-forgot-password-resend-code.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

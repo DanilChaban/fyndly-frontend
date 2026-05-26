@@ -22,12 +22,8 @@
   </fl-button>
 
   @if (retryAfterSeconds() !== 0) {
-    <div class="auth-sign-in-unverified-account__retry-hint">
-      <mat-icon class="auth-sign-in-unverified-account__retry-hint__icon" svgIcon="clock-gray" />
-
-      <span class="auth-sign-in-unverified-account__retry-hint__text">
-        {{ 'auth.email_verification.retry_hint' | transloco: { sec: retryAfterSeconds() } }}
-      </span>
-    </div>
+    <span class="auth-sign-in-unverified-account__retry-hint">
+      {{ 'auth.email_verification.retry_hint' | transloco: { sec: retryAfterSeconds() } }}
+    </span>
   }
 </div>
