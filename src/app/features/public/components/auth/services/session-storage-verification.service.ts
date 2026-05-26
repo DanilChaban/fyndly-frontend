@@ -5,9 +5,9 @@ import { VerificationStorage } from '@auth/types/verification-storage';
   providedIn: 'root',
 })
 export class SessionStorageVerificationService {
-  private VERIFICATION_EMAIL_KEY = 'verification_email';
+  private readonly VERIFICATION_EMAIL_KEY = 'verification_email';
 
-  private data = signal<VerificationStorage | null>(null);
+  private data = signal<VerificationStorage | null>(this.getData());
 
   email = computed(() => this.data()?.email);
   verified = computed(() => this.data()?.verified);
