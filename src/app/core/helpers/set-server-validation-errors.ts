@@ -1,5 +1,5 @@
 import { FormGroup } from '@angular/forms';
-import { ServerValidationErrors } from '@core/types/server-validation-error';
+import { ServerValidationErrors } from '@core/types/api/api-server-validation-error';
 
 export function setServerValidationErrors(form: FormGroup, errors: ServerValidationErrors): void {
   errors.forEach(({ field, code }) => {

@@ -1,5 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { ResetPasswordStorage } from '@auth/types/reset-password-storage';
+import { ResetPasswordStorage } from '@auth/types/dto/reset-password-storage';
 
 @Injectable({
   providedIn: 'root',

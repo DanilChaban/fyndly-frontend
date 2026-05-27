@@ -1,5 +1,5 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { VerificationStorage } from '@auth/types/verification-storage';
+import { VerificationStorage } from '@auth/types/dto/verification-storage';
 
 @Injectable({
   providedIn: 'root',
