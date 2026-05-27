@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { createApiMutation } from '@core/helpers/api/api-mutation';
 import { API_ENDPOINTS } from '@core/constants/api-endpoints';
-import { SignInRequestDto } from '@auth/types/sign-in-request.dto';
-import { SignUpRequestDto } from '@auth/types/sign-up-request.dto';
-import { ResendVerificationCodeDto } from '@auth/types/resend-verification-code.dto';
-import { VerifyEmailDto } from '@auth/types/verify-email.dto';
-import { ForgotPasswordDto } from '@auth/types/forgot-password.dto';
-import { ResetPasswordDto } from '@auth/types/reset-password.dto';
+import { SignInRequestDto } from '@auth/types/dto/sign-in-request.dto';
+import { SignUpRequestDto } from '@auth/types/dto/sign-up-request.dto';
+import { ResendVerificationCodeDto } from '@auth/types/dto/resend-verification-code.dto';
+import { VerifyEmailDto } from '@auth/types/dto/verify-email.dto';
+import { ForgotPasswordDto } from '@auth/types/dto/forgot-password.dto';
+import { ResetPasswordDto } from '@auth/types/dto/reset-password.dto';
 
 @Injectable()
 export class AuthService {

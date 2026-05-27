@@ -18,10 +18,11 @@
       "@core/*": ["src/app/core/*"],
       "@public/*": ["src/app/features/public/*"],
       "@private/*": ["src/app/features/private/*"],
-      "@auth/*": ["src/app/features/public/components/auth/*"],
       "@shared/*": ["src/app/shared/*"],
       "@ui/*": ["src/app/shared/fl-ui/*"],
-      "@common/*": ["src/app/shared/fl-common/*"]
+      "@common/*": ["src/app/shared/fl-common/*"],
+      "@auth/*": ["src/app/features/public/components/auth/*"],
+      "@home/*": ["src/app/features/private/components/home/*"],
     }
   },
   "angularCompilerOptions": {
