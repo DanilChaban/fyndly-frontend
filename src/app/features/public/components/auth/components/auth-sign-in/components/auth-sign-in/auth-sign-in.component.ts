@@ -6,6 +6,7 @@ import { TranslocoPipe } from '@jsverse/transloco';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
 import { ApiErrorCode } from '@core/types/api/api-error-code';
 import { setServerValidationErrors } from '@core/helpers/set-server-validation-errors';
+import { LocalizedRouterService } from '@core/services/localized-router.service';
 import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { FlCardComponent } from '@common/fl-card/components/fl-card/fl-card.component';
 import { FlCardHeaderComponent } from '@common/fl-card/components/fl-card-header/fl-card-header.component';
@@ -39,6 +40,7 @@ import { SessionStorageResetPasswordService } from '@auth/services/session-stora
 export class AuthSignInComponent implements OnInit {
   private readonly router = inject(Router);
   private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly localizedRouterService = inject(LocalizedRouterService);
   private readonly flToastService = inject(FlToastService);
   private readonly authService = inject(AuthService);
   private readonly sessionStorageVerificationService = inject(SessionStorageVerificationService);
@@ -55,6 +57,7 @@ export class AuthSignInComponent implements OnInit {
     handleApiResourceState(this.authService.signIn.resource, {
       onSuccess: () => {
         this.flToastService.success(`global.validation.server_success.sign_in_success`);
+        void this.localizedRouterService.navigate(['home']);
       },
       onError: (errorCode, error) => {
         this.showWarning(errorCode);
