@@ -5,10 +5,11 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
 import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { AuthService } from '@auth/apis/auth.service';
 import { SessionStorageResetPasswordService } from '@auth/services/session-storage-reset-password.service';
+import { AuthUiRetryHintComponent } from '@auth/common/ui/auth-ui-retry-hint/auth-ui-retry-hint.component';
 
 @Component({
   selector: 'app-auth-forgot-password-resend-code',
-  imports: [TranslocoPipe, FlButtonComponent],
+  imports: [TranslocoPipe, FlButtonComponent, AuthUiRetryHintComponent],
   templateUrl: './auth-forgot-password-resend-code.component.html',
   styleUrl: './auth-forgot-password-resend-code.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

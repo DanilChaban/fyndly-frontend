@@ -8,10 +8,10 @@ import { FlCardContentComponent } from '@common/fl-card/components/fl-card-conte
 import { FlCardActionsComponent } from '@common/fl-card/components/fl-card-actions/fl-card-actions.component';
 import { AuthForgotPasswordResetFormComponent } from '@auth/components/auth-forgot-password/components/forms/auth-forgot-password-reset-form/auth-forgot-password-reset-form.component';
 import { AuthForgotPasswordHeaderComponent } from '@auth/components/auth-forgot-password/components/auth-forgot-password-header/auth-forgot-password-header.component';
-import { AuthForgotPasswordActionsComponent } from '@auth/components/auth-forgot-password/components/auth-forgot-password-actions/auth-forgot-password-actions.component';
 import { AuthService } from '@auth/apis/auth.service';
 import { SessionStorageResetPasswordService } from '@auth/services/session-storage-reset-password.service';
 import { AuthForgotPasswordResetSuccessComponent } from '@auth/components/auth-forgot-password/components/auth-forgot-password-reset-success/auth-forgot-password-reset-success.component';
+import { AuthForgotPasswordActionsBackwardComponent } from '@auth/components/auth-forgot-password/components/actions/auth-forgot-password-actions-backward/auth-forgot-password-actions-backward.component';
 
 @Component({
   selector: 'app-auth-forgot-password-reset',
@@ -21,8 +21,8 @@ import { AuthForgotPasswordResetSuccessComponent } from '@auth/components/auth-f
     FlCardActionsComponent,
     AuthForgotPasswordHeaderComponent,
     AuthForgotPasswordResetFormComponent,
-    AuthForgotPasswordActionsComponent,
     AuthForgotPasswordResetSuccessComponent,
+    AuthForgotPasswordActionsBackwardComponent,
   ],
   templateUrl: './auth-forgot-password-reset.component.html',
   styleUrl: './auth-forgot-password-reset.component.scss',

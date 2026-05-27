@@ -5,10 +5,18 @@ import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.componen
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 import { AuthService } from '@auth/apis/auth.service';
+import { AuthUiRetryHintComponent } from '@auth/common/ui/auth-ui-retry-hint/auth-ui-retry-hint.component';
 
 @Component({
   selector: 'app-auth-forgot-password-form',
-  imports: [ReactiveFormsModule, TranslocoPipe, FlFormComponent, FlFormInputComponent, FlButtonComponent],
+  imports: [
+    ReactiveFormsModule,
+    TranslocoPipe,
+    FlFormComponent,
+    FlFormInputComponent,
+    FlButtonComponent,
+    AuthUiRetryHintComponent,
+  ],
   templateUrl: './auth-forgot-password-form.component.html',
   styleUrl: './auth-forgot-password-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

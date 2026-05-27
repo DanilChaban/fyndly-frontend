@@ -31,8 +31,8 @@ export class AuthEmailVerificationHeaderComponent {
 
   status = this.verificationStatusService.status;
 
-  VerificationStatus = VerificationStatus;
-
   title = computed(() => VERIFICATION_STATUS_TITLE[this.status()]);
   description = computed(() => VERIFICATION_STATUS_DESCRIPTION[this.status()]);
+
+  VerificationStatus = VerificationStatus;
 }

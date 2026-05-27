@@ -7,10 +7,11 @@ import { FlToastService } from '@ui/fl-toast/services/fl-toast.service';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 import { AuthService } from '@auth/apis/auth.service';
 import { SessionStorageVerificationService } from '@auth/services/session-storage-verification.service';
+import { AuthUiRetryHintComponent } from '@auth/common/ui/auth-ui-retry-hint/auth-ui-retry-hint.component';
 
 @Component({
   selector: 'app-auth-sign-in-unverified-account',
-  imports: [MatIcon, FlButtonComponent, TranslocoPipe],
+  imports: [TranslocoPipe, MatIcon, FlButtonComponent, AuthUiRetryHintComponent],
   templateUrl: './auth-sign-in-unverified-account.component.html',
   styleUrl: './auth-sign-in-unverified-account.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
