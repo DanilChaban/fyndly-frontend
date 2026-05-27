@@ -1,17 +1,17 @@
 <fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
   <fl-form-input
     type="email"
-    [label]="'auth.sign_in.email_label' | transloco"
+    [label]="'auth.sign_in.email_label'"
     [prefixSvgIcon]="'mail'"
-    [placeholder]="'auth.sign_in.email_placeholder' | transloco"
+    [placeholder]="'auth.sign_in.email_placeholder'"
     formControlName="email"
   />
   <fl-form-input
     type="password"
-    [label]="'auth.sign_in.password_label' | transloco"
+    [label]="'auth.sign_in.password_label'"
     [prefixSvgIcon]="'lock'"
     [suffixSvgIcon]="'eye'"
-    [placeholder]="'auth.sign_in.password_placeholder' | transloco"
+    [placeholder]="'auth.sign_in.password_placeholder'"
     formControlName="password"
   />
 
