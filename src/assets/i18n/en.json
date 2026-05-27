@@ -20,11 +20,24 @@
         "passwords_do_not_match": "Passwords do not match",
         "validation_invalid": "Invalid value",
         "validation_email": "Please enter a valid email address",
-        "validation_min_length": "This field is too short"
+        "validation_min_length": "This field is too short",
+        "user_not_found": "User with this email was not found",
+        "email_not_verified": "Your account is not verified",
+        "verification_code_resend_too_soon": "You can request a new verification code in a few seconds",
+        "reset_password_code_resend_too_soon": "You can request a new password reset code in a few seconds",
+        "invalid_verification_code": "Invalid verification code",
+        "invalid_reset_password_code": "Invalid password reset code",
+        "reset_password_code_expired": "Password reset code has expired. Please request a new code.",
+        "new_password_must_be_different": "New password must be different from the current password",
+        "verification_code_expired": "Verification code has expired. Please request a new code."
       },
       "server_success": {
         "sign_in_success": "You have signed in successfully",
-        "sign_up_success": "Your account has been created successfully"
+        "sign_up_success": "Your account has been created successfully",
+        "verification_code_sent_success": "Verification code sent successfully.",
+        "email_verified_success": "Email verified successfully.",
+        "forgot_password_success": "Password reset code sent successfully.",
+        "reset_password_success": "Password reset successfully."
       }
     },
     "toast": {
@@ -56,12 +69,15 @@
       "email_placeholder": "you@example.com",
       "password_label": "Password",
       "password_placeholder": "Enter your password",
-      "remember_me": "Stay signed in for 30 days",
+      "remember_me": "Remember me",
       "forgot_password": "Forgot password?",
       "submit": "Sign in",
       "google": "Continue with Google",
       "switch_text": "Don’t have an account?",
-      "switch_link": "Create account"
+      "switch_link": "Create account",
+      "unverified_account_title": "Your account is not verified",
+      "unverified_account_text": "Please verify your email address to continue using Fyndly.",
+      "unverified_account_action": "Verify account"
     },
     "sign_up": {
       "title": "Create your account",
@@ -78,6 +94,44 @@
       "google": "Continue with Google",
       "switch_text": "Already have an account?",
       "switch_link": "Sign in"
+    },
+    "email_verification": {
+      "title": "Verify your email",
+      "description": "We sent a 6-digit code to your email address.",
+      "expired_title": "Code expired",
+      "expired_description": "For your security, verification codes expire after a short time.",
+      "verified_title": "Email verified",
+      "verified_description": "Your account has been verified successfully.",
+      "submit": "Verify email",
+      "continue": "Continue",
+      "resend_text": "Didn't receive the code?",
+      "resend_action": "Resend code",
+      "retry_hint": "You can request a new code in {{sec}} seconds.",
+      "notice": "The code is valid for 10 minutes.",
+      "secured_notice": "Secured by Fyndly authentication"
+    },
+    "forgot_password": {
+      "title": "Reset your password",
+      "description": "Enter your email address and we'll send you a verification code to reset your password.",
+      "reset_title": "Create a new password",
+      "reset_description": "We sent a verification code to your email. Enter the code and set a new password.",
+      "success_title": "Password updated",
+      "success_description": "Your password has been updated successfully. You can now sign in with your new password.",
+      "success_action": "Go to sign in",
+      "email_label": "Email address",
+      "email_placeholder": "you@example.com",
+      "code_label": "Verification code",
+      "code_placeholder": "6-digit code",
+      "password_label": "New password",
+      "password_placeholder": "Enter new password",
+      "confirm_password_label": "Confirm password",
+      "confirm_password_placeholder": "Confirm new password",
+      "submit": "Send code",
+      "reset_submit": "Reset password",
+      "resend_text": "Didn't receive a code?",
+      "resend_action": "Resend code",
+      "retry_hint": "You can request a new code in {{sec}} seconds.",
+      "back_to_sign_in": "Back to sign in"
     }
   }
 }

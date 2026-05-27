@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButton, MatButtonAppearance } from '@angular/material/button';
 import { SvgIconName } from '@core/icons/types/svg-icon-name';
 import { ButtonVariant } from '@ui/fl-button/types/button-variant';
@@ -9,7 +10,7 @@ import { ButtonType } from '@ui/fl-button/types/button-type';
 
 @Component({
   selector: 'fl-button',
-  imports: [MatButton, NgClass, MatIcon],
+  imports: [MatButton, NgClass, MatIcon, MatProgressSpinnerModule],
   templateUrl: './fl-button.component.html',
   styleUrl: './fl-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,6 +19,7 @@ export class FlButtonComponent {
   appearance = input<MatButtonAppearance>('text');
   variant = input<ButtonVariant>('primary');
   disabled = input<boolean>(false);
+  loading = input(false);
   customStyles = input<string>('');
   type = input<ButtonType>('button');
   prefixIcon = input<SvgIconName | null>(null);
@@ -29,10 +31,11 @@ export class FlButtonComponent {
   buttonClass = computed(() => ({
     [`fl-button fl-button--${this.variant()}`]: true,
     [`fl-button fl-button--${this.size()}`]: true,
+    'fl-button--text-loading': this.variant() === 'text' && this.loading(),
   }));
 
   onClick(): void {
-    if (this.disabled()) {
+    if (this.disabled() || this.loading()) {
       return;
     }
 

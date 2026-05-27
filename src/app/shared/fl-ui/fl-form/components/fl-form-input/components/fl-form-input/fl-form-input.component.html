@@ -1,7 +1,7 @@
 <div class="fl-form-field__wrapper">
   @if (label()) {
     <label class="fl-form-field__wrapper__label" [for]="inputId()">
-      {{ label() }}
+      {{ label() | transloco }}
     </label>
   }
 
@@ -15,8 +15,9 @@
       autocomplete="one-time-code"
       [type]="currentInputType()"
       [id]="inputId()"
-      [placeholder]="placeholder()"
+      [placeholder]="placeholder() | transloco"
       [formControl]="control()"
+      (input)="onInput($event)"
     />
 
     @if (currentSuffixIcon(); as icon) {

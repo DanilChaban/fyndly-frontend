@@ -1,0 +1,75 @@
+@use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
+:host {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.auth-sign-in-unverified-account {
+  &__container {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
+    background-color: colors.$color-gray-1;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid colors.$color-gray-3;
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$color-gray-9;
+    min-width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &__warning {
+    grid-column: 2;
+    grid-row: 1;
+
+    &__title {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    &__text {
+      margin: 0;
+      color: colors.$color-gray-7;
+      line-height: 20px;
+      max-width: 330px;
+    }
+  }
+
+  &__action {
+    display: block;
+    width: 100%;
+    max-width: 187px;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  &__retry-hint {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  @include mobile(down) {
+    &__action {
+      grid-column: 1 / -1;
+      max-width: none;
+    }
+
+    &__retry-hint {
+      grid-column: 1 / -1;
+    }
+  }
+}

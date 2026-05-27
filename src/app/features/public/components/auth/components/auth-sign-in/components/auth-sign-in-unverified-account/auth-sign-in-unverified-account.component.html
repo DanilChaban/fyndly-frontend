@@ -1,0 +1,32 @@
+<div class="auth-sign-in-unverified-account__container">
+  <div class="auth-sign-in-unverified-account__icon-container">
+    <mat-icon [svgIcon]="'unverified-email'" />
+  </div>
+  <div class="auth-sign-in-unverified-account__warning">
+    <p class="auth-sign-in-unverified-account__warning__title">
+      {{ 'auth.sign_in.unverified_account_title' | transloco }}
+    </p>
+    <p class="auth-sign-in-unverified-account__warning__text">
+      {{ 'auth.sign_in.unverified_account_text' | transloco }}
+    </p>
+  </div>
+  <fl-button
+    class="auth-sign-in-unverified-account__action"
+    [loading]="loading()"
+    [disabled]="loading()"
+    (btnClicked)="resendVerificationCode()"
+    [prefixIcon]="'shield-white'"
+    size="small"
+  >
+    {{ 'auth.sign_in.unverified_account_action' | transloco }}
+  </fl-button>
+
+  @if (retryAfterSeconds() !== 0) {
+    <app-auth-ui-retry-hint
+      [customStyles]="'margin: 0; text-align: start;'"
+      class="auth-sign-in-unverified-account__retry-hint"
+      [hint]="'auth.email_verification.retry_hint'"
+      [seconds]="retryAfterSeconds()"
+    />
+  }
+</div>

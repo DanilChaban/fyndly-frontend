@@ -4,17 +4,25 @@
   [ngClass]="buttonClass()"
   [style]="customStyles()"
   [matButton]="appearance()"
-  [disabled]="disabled()"
+  [disabled]="disabled() || loading()"
   [disableRipple]="variant() === 'text'"
   (click)="onClick()"
 >
-  @if (prefixIcon(); as icon) {
-    <mat-icon class="fl-button__icon fl-button__icon--prefix" [svgIcon]="icon" />
-  }
+  <span class="fl-button__inner">
+    <span class="fl-button__content">
+      @if (loading()) {
+        <mat-progress-spinner class="fl-button__spinner" diameter="18" mode="indeterminate" />
+      } @else if (prefixIcon(); as icon) {
+        <mat-icon class="fl-button__icon fl-button__icon--prefix" [svgIcon]="icon" />
+      }
 
-  <ng-content />
+      <span class="fl-button__projected-content">
+        <ng-content />
+      </span>
 
-  @if (suffixIcon(); as icon) {
-    <mat-icon class="fl-button__icon fl-button__icon--suffix" iconPositionEnd [svgIcon]="icon" />
-  }
+      @if (suffixIcon(); as icon) {
+        <mat-icon class="fl-button__icon fl-button__icon--suffix" [svgIcon]="icon" />
+      }
+    </span>
+  </span>
 </button>

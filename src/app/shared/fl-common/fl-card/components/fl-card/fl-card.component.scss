@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 :host {
   display: block;
@@ -16,4 +17,9 @@
   background: colors.$color-white-1;
   border: 1px solid colors.$color-gray-3;
   box-shadow: colors.$box-shadow-1;
+
+  @include mobile(down) {
+    padding: 24px;
+    gap: 24px;
+  }
 }

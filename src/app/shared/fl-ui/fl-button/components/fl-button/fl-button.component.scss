@@ -1,6 +1,7 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
-@mixin button-size($height, $icon-size, $icon-gap) {
+@mixin button-size($height, $icon-size) {
   height: $height;
 
   .fl-button__icon {
@@ -10,43 +11,79 @@
     min-height: $icon-size !important;
     flex: 0 0 $icon-size;
   }
-
-  .fl-button__icon--prefix {
-    margin-right: $icon-gap !important;
-  }
-
-  .fl-button__icon--suffix {
-    margin-left: $icon-gap !important;
-  }
 }
 
 :host {
+  ::ng-deep {
+    .mdc-button__label {
+      display: inline-flex;
+    }
+  }
+
   .fl-button {
     &--text {
       ::ng-deep .mat-mdc-button-persistent-ripple {
         display: none !important;
       }
     }
+
+    &--primary {
+      ::ng-deep .mat-mdc-progress-spinner circle {
+        stroke: colors.$color-white-1;
+      }
+    }
+
+    &--secondary, &--text {
+      ::ng-deep .mat-mdc-progress-spinner circle {
+        stroke: colors.$color-blue-1;
+      }
+    }
   }
 }
 
 .fl-button {
+  --fl-button-content-gap: 12px;
+
   width: 100%;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
 
+  &__inner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--fl-button-content-gap);
+    position: relative;
+    white-space: nowrap;
+  }
+
   &__icon {
     min-height: auto !important;
   }
 
+  &__projected-content {
+    display: inline-flex;
+  }
+
   &--small {
-    @include button-size(38px, 16px, 8px);
+    padding: 0 12px !important;
+    font-weight: 500;
+    --fl-button-content-gap: 8px;
+
+    @include button-size(40px, 16px);
   }
 
   &--large {
-    @include button-size(48px, 20px, 12px);
+    @include button-size(48px, 20px);
   }
 
   &--primary {
@@ -87,15 +124,38 @@
     &:active:not(:disabled) {
       color: colors.$color-blue-3 !important;
     }
+  }
 
-    .fl-button__icon--prefix, .fl-button__icon--suffix {
-      margin-right: 0 !important;
-      margin-left: 0 !important;
+  &--text-loading {
+    .fl-button__projected-content {
+      display: none;
     }
+  }
+
+  &__spinner {
+    flex: 0 0 18px;
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+
+  @include mobile(down) {
+    --fl-button-content-gap: 8px;
+
+    &--small {
+      --fl-button-content-gap: 4px;
+
+      @include button-size(36px, 16px);
+    }
+
+    &--large {
+      @include button-size(44px, 16px);
+    }
+
+    &--text {
+      height: auto;
+    }
   }
 }

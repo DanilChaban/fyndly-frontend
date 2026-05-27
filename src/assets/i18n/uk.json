@@ -20,11 +20,24 @@
         "passwords_do_not_match": "Паролі не збігаються",
         "validation_invalid": "Некоректне значення",
         "validation_email": "Введіть коректну email-адресу",
-        "validation_min_length": "Значення занадто коротке"
+        "validation_min_length": "Значення занадто коротке",
+        "user_not_found": "Користувача з такою email-адресою не знайдено",
+        "email_not_verified": "Ваш акаунт не підтверджено",
+        "verification_code_resend_too_soon": "Ви можете запросити новий код підтвердження за кілька секунд",
+        "reset_password_code_resend_too_soon": "Ви можете запросити новий код для скидання пароля за кілька секунд",
+        "invalid_verification_code": "Некоректний код підтвердження",
+        "invalid_reset_password_code": "Некоректний код для скидання пароля",
+        "reset_password_code_expired": "Код для скидання пароля вже недійсний. Будь ласка, запросіть новий.",
+        "new_password_must_be_different": "Новий пароль має відрізнятися від поточного",
+        "verification_code_expired": "Код підтвердження вже недійсний. Будь ласка, запросіть новий."
       },
       "server_success": {
         "sign_in_success": "Ви успішно увійшли",
-        "sign_up_success": "Акаунт успішно створено"
+        "sign_up_success": "Акаунт успішно створено",
+        "verification_code_sent_success": "Код підтвердження успішно надіслано.",
+        "email_verified_success": "Email успішно підтверджено.",
+        "forgot_password_success": "Код для скидання пароля успішно надіслано.",
+        "reset_password_success": "Пароль успішно скинуто."
       }
     },
     "toast": {
@@ -56,12 +69,15 @@
       "email_placeholder": "you@example.com",
       "password_label": "Пароль",
       "password_placeholder": "Введіть пароль",
-      "remember_me": "Залишатися в системі 30 днів",
+      "remember_me": "Запамʼятати мене",
       "forgot_password": "Забули пароль?",
       "submit": "Увійти",
       "google": "Продовжити з Google",
       "switch_text": "Немає акаунта?",
-      "switch_link": "Створити"
+      "switch_link": "Створити",
+      "unverified_account_title": "Ваш акаунт не підтверджено",
+      "unverified_account_text": "Будь ласка, підтвердіть свою електронну пошту, щоб продовжити користуватися Fyndly.",
+      "unverified_account_action": "Підтвердити акаунт"
     },
     "sign_up": {
       "title": "Створіть акаунт",
@@ -78,6 +94,44 @@
       "google": "Продовжити з Google",
       "switch_text": "Вже маєте акаунт?",
       "switch_link": "Увійти"
+    },
+    "email_verification": {
+      "title": "Підтвердіть email",
+      "description": "Ми надіслали 6-значний код на вашу email-адресу.",
+      "expired_title": "Термін дії коду минув",
+      "expired_description": "З міркувань безпеки коди підтвердження діють лише короткий час.",
+      "verified_title": "Email підтверджено",
+      "verified_description": "Ваш акаунт успішно підтверджено.",
+      "submit": "Підтвердити email",
+      "continue": "Продовжити",
+      "resend_text": "Не отримали код?",
+      "resend_action": "Надіслати повторно",
+      "retry_hint": "Ви можете запросити новий код через {{sec}} секунд.",
+      "notice": "Код дійсний протягом 10 хвилин.",
+      "secured_notice": "Захищено автентифікацією Fyndly"
+    },
+    "forgot_password": {
+      "title": "Скидання пароля",
+      "description": "Введіть свою email-адресу, і ми надішлемо код підтвердження для скидання пароля.",
+      "reset_title": "Створіть новий пароль",
+      "reset_description": "Ми надіслали код підтвердження на вашу email-адресу. Введіть код і задайте новий пароль.",
+      "success_title": "Пароль оновлено",
+      "success_description": "Ваш пароль успішно оновлено. Тепер ви можете увійти з новим паролем.",
+      "success_action": "Перейти до входу",
+      "email_label": "Електронна пошта",
+      "email_placeholder": "you@example.com",
+      "code_label": "Код підтвердження",
+      "code_placeholder": "6-значний код",
+      "password_label": "Новий пароль",
+      "password_placeholder": "Введіть новий пароль",
+      "confirm_password_label": "Підтвердження пароля",
+      "confirm_password_placeholder": "Підтвердіть новий пароль",
+      "submit": "Надіслати код",
+      "reset_submit": "Скинути пароль",
+      "resend_text": "Не отримали код?",
+      "resend_action": "Надіслати повторно",
+      "retry_hint": "Ви можете запросити новий код через {{sec}} секунд.",
+      "back_to_sign_in": "Назад до входу"
     }
   }
 }

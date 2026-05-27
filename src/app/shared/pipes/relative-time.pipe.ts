@@ -3,6 +3,7 @@ import { TranslocoService } from '@jsverse/transloco';
 
 @Pipe({
   name: 'relativeTime',
+  pure: false,
 })
 export class RelativeTimePipe implements PipeTransform {
   private readonly translocoService = inject(TranslocoService);

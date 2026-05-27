@@ -5,6 +5,7 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
 import { FlFormComponent } from '@ui/fl-form/components/fl-form/fl-form.component';
 import { FlFormInputComponent } from '@ui/fl-form/components/fl-form-input/components/fl-form-input/fl-form-input.component';
 import { FlFormPasswordStrengthComponent } from '@ui/fl-form/components/fl-form-password-strength/components/fl-form-password-strength.component';
+import { AuthService } from '@auth/apis/auth.service';
 import { AuthUiDividerComponent } from '@auth/common/ui/auth-ui-divider/auth-ui-divider.component';
 import { AuthActionsGoogleComponent } from '@auth/common/actions/auth-actions-google/auth-actions-google.component';
 
@@ -29,6 +30,9 @@ export class AuthSignUpFormComponent {
   submitClicked = output<FormGroup>();
 
   private readonly formBuilder = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+
+  loading = this.authService.signUp.resource.isLoading;
 
   form = this.formBuilder.group({
     username: ['', Validators.required],

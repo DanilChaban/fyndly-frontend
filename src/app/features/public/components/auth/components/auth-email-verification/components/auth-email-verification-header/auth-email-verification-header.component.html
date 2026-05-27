@@ -1,0 +1,9 @@
+<fl-card-header>
+  <app-auth-email-verification-icon-status />
+  <fl-card-title>{{ title() | transloco }}</fl-card-title>
+  <fl-card-subtitle>{{ description() | transloco }}</fl-card-subtitle>
+
+  @if (status() !== VerificationStatus.VERIFIED) {
+    <app-auth-email-verification-email />
+  }
+</fl-card-header>

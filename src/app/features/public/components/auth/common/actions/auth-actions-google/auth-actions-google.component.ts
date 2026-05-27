@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslocoPipe } from '@jsverse/transloco';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { apiUrl } from '@core/helpers/api/api-url';
 import { API_ENDPOINTS } from '@core/constants/api-endpoints';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
@@ -12,7 +12,11 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthActionsGoogleComponent {
+  private readonly translocoService = inject(TranslocoService);
+
+  lang = this.translocoService.activeLang;
+
   signInWithGoogle(): void {
-    window.location.href = apiUrl(API_ENDPOINTS.auth.google);
+    window.location.href = apiUrl(API_ENDPOINTS.auth.google, this.lang());
   }
 }

@@ -1,0 +1,6 @@
+@use 'utilities/layout/auth-card-layout' as *;
+
+:host {
+  @include auth-card-layout;
+}
+

@@ -1,8 +1,14 @@
+@use 'utilities/media' as *;
+
 .cdk-overlay-pane:has(.fl-toast-panel) {
   position: absolute !important;
   top: calc(var(--public-header-height) + 16px) !important;
   right: 16px;
   left: 16px;
+
+  @include mobile(down) {
+    top: calc(var(--public-header-height-mobile) + 16px) !important;
+  }
 }
 
 .mat-mdc-snack-bar-container.fl-toast-panel {

@@ -1,29 +1,33 @@
 <fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
   <fl-form-input
     type="email"
-    [label]="'auth.sign_in.email_label' | transloco"
+    [label]="'auth.sign_in.email_label'"
     [prefixSvgIcon]="'mail'"
-    [placeholder]="'auth.sign_in.email_placeholder' | transloco"
+    [placeholder]="'auth.sign_in.email_placeholder'"
     formControlName="email"
   />
   <fl-form-input
     type="password"
-    [label]="'auth.sign_in.password_label' | transloco"
+    [label]="'auth.sign_in.password_label'"
     [prefixSvgIcon]="'lock'"
     [suffixSvgIcon]="'eye'"
-    [placeholder]="'auth.sign_in.password_placeholder' | transloco"
+    [placeholder]="'auth.sign_in.password_placeholder'"
     formControlName="password"
   />
+
+  @if (showUnverifiedWarning()) {
+    <app-auth-sign-in-unverified-account [email]="selectedEmail()" />
+  }
 
   <div class="auth-sign-in-form__options">
     <fl-form-checkbox formControlName="rememberMe">{{ 'auth.sign_in.remember_me' | transloco }}</fl-form-checkbox>
 
-    <fl-button variant="text" [customStyles]="'font-weight: 500'">
+    <fl-button (btnClicked)="navigateToForgotPassword()" variant="text" [customStyles]="'font-weight: 500'">
       {{ 'auth.sign_in.forgot_password' | transloco }}
     </fl-button>
   </div>
 
-  <fl-button [disabled]="!form.valid" type="submit" variant="primary">
+  <fl-button [disabled]="!form.valid" [loading]="loading()" type="submit" variant="primary">
     {{ 'auth.sign_in.submit' | transloco }}
   </fl-button>
 </fl-form>
