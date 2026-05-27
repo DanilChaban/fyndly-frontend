@@ -1,5 +1,5 @@
-<span class="auth-actions-switch__text">{{ text() }}</span>
+<span class="auth-actions-switch__text">{{ text() | transloco }}</span>
 
 <fl-button variant="text" (btnClicked)="navigate()">
-  {{ linkText() }}
+  {{ linkText() | transloco }}
 </fl-button>

@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { LocalizedRouterService } from '@core/services/localized-router.service';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 
 @Component({
   selector: 'app-auth-actions-switch',
-  imports: [FlButtonComponent],
+  imports: [TranslocoPipe, FlButtonComponent],
   templateUrl: './auth-actions-switch.component.html',
   styleUrl: './auth-actions-switch.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
