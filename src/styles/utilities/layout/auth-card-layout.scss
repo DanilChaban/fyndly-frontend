@@ -1,0 +1,22 @@
+@use 'utilities/media' as *;
+
+@mixin auth-card-layout {
+  ::ng-deep {
+    .fl-card {
+      gap: 28px !important;
+
+      @include mobile(down) {
+        gap: 24px !important;
+      }
+    }
+
+    .fl-card-title {
+      font-size: 24px !important;
+      text-align: center;
+    }
+
+    .fl-card-subtitle {
+      text-align: center;
+    }
+  }
+}

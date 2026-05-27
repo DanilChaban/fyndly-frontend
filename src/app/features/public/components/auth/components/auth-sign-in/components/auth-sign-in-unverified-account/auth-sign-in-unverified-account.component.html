@@ -15,19 +15,18 @@
     [loading]="loading()"
     [disabled]="loading()"
     (btnClicked)="resendVerificationCode()"
-    [prefixIcon]="'verified-shield-white'"
+    [prefixIcon]="'shield-white'"
     size="small"
   >
     {{ 'auth.sign_in.unverified_account_action' | transloco }}
   </fl-button>
 
   @if (retryAfterSeconds() !== 0) {
-    <div class="auth-sign-in-unverified-account__retry-hint">
-      <mat-icon class="auth-sign-in-unverified-account__retry-hint__icon" svgIcon="clock-gray" />
-
-      <span class="auth-sign-in-unverified-account__retry-hint__text">
-        {{ 'auth.email_verification.retry_hint' | transloco: { sec: retryAfterSeconds() } }}
-      </span>
-    </div>
+    <app-auth-ui-retry-hint
+      [customStyles]="'margin: 0; text-align: start;'"
+      class="auth-sign-in-unverified-account__retry-hint"
+      [hint]="'auth.email_verification.retry_hint'"
+      [seconds]="retryAfterSeconds()"
+    />
   }
 </div>

@@ -29,6 +29,7 @@ export class FlFormInputComponent extends FlFormControlBase implements ControlVa
   label = input<string>('');
   prefixSvgIcon = input<SvgIconName | null>(null);
   suffixSvgIcon = input<SvgIconName | null>(null);
+  maxLength = input<number>();
 
   inputId = computed(() => {
     return `fl-input-${this.formControlName()}`;
@@ -57,6 +58,20 @@ export class FlFormInputComponent extends FlFormControlBase implements ControlVa
       this.isPasswordVisible.update((value) => !value);
       return;
     }
+  }
+
+  onInput(event: Event): void {
+    const maxLength = this.maxLength();
+
+    if (!maxLength) {
+      return;
+    }
+
+    const input = event.target as HTMLInputElement;
+    const value = input.value.replace(/\D/g, '').slice(0, maxLength);
+
+    input.value = value;
+    this.control().setValue(value);
   }
 
   writeValue(): void {}

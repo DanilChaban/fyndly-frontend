@@ -16,13 +16,13 @@
   />
 
   @if (showUnverifiedWarning()) {
-    <app-auth-sign-in-unverified-account />
+    <app-auth-sign-in-unverified-account [email]="selectedEmail()" />
   }
 
   <div class="auth-sign-in-form__options">
     <fl-form-checkbox formControlName="rememberMe">{{ 'auth.sign_in.remember_me' | transloco }}</fl-form-checkbox>
 
-    <fl-button variant="text" [customStyles]="'font-weight: 500'">
+    <fl-button (btnClicked)="navigateToForgotPassword()" variant="text" [customStyles]="'font-weight: 500'">
       {{ 'auth.sign_in.forgot_password' | transloco }}
     </fl-button>
   </div>

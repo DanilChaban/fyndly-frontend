@@ -9,4 +9,5 @@ export type ApiErrorCode =
   | 'username_already_exists'
   | 'invalid_credentials'
   | 'email_not_verified'
+  | 'reset_password_code_expired'
   | 'verification_code_expired';
