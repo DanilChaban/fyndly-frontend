@@ -1,4 +1,4 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
   isDevMode,
@@ -11,12 +11,14 @@ import { provideTransloco } from '@jsverse/transloco';
 import { SvgIconService } from '@core/icons/services/svg-icon.service';
 import { TranslocoHttpLoader } from '@core/i18n/transloco-http-loader';
 import { AVAILABLE_LANGUAGES, DEFAULT_LANGUAGE } from '@core/i18n/constants/constants';
+import { credentialsInterceptor } from '@core/interceptors/credentials-interceptor';
+import { authErrorInterceptor } from '@core/interceptors/auth-error-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch(), withInterceptors([credentialsInterceptor, authErrorInterceptor])),
     provideRouter(routes),
     provideTransloco({
       config: {
