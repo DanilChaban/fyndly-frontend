@@ -1,0 +1,61 @@
+@use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
+.global-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at center, rgba(111, 143, 184, 0.12), transparent 36%), rgba(colors.$color-gray-1, 0.96);
+  backdrop-filter: blur(6px);
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    animation: global-loader-pulse 0.5s ease-in-out infinite;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(31, 42, 68, 0.14));
+    animation: global-loader-rotate 2.8s linear infinite;
+  }
+
+  @include tablet(down) {
+    &__logo {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}
+
+@keyframes global-loader-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes global-loader-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 0.94;
+  }
+}
