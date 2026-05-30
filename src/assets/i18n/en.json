@@ -58,6 +58,13 @@
       "copyright": "© 2025 Fyndly. All rights reserved."
     }
   },
+  "not_found": {
+    "status": "ERROR 404",
+    "title": "Page not found.",
+    "description": "The page you're looking for doesn't exist, was moved, or may have an incorrect URL. Let's get you back on track.",
+    "go_home": "Go to home",
+    "back": "Back"
+  },
   "auth": {
     "common": {
       "divider": "or continue with"

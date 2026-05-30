@@ -6,13 +6,13 @@ import { AuthComponent } from '@auth/components/auth/components/auth/auth.compon
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'sign-in',
-  },
-  {
-    path: '',
     component: AuthComponent,
     children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'sign-in',
+      },
       {
         path: 'sign-in',
         loadComponent: () =>
