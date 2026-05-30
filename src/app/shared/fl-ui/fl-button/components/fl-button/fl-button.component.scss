@@ -2,6 +2,8 @@
 @use 'utilities/media' as *;
 
 @mixin button-size($height, $icon-size) {
+  --fl-button-size: #{$height};
+
   height: $height;
 
   .fl-button__icon {
@@ -45,7 +47,7 @@
   --fl-button-content-gap: 12px;
 
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0;
@@ -72,6 +74,14 @@
 
   &__projected-content {
     display: inline-flex;
+  }
+
+  &:has(.fl-button__projected-content:empty) {
+    --fl-button-content-gap: 0;
+
+    &:not(.fl-button--text) {
+      min-width: var(--fl-button-size);
+    }
   }
 
   &--small {

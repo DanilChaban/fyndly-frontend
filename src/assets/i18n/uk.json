@@ -51,6 +51,12 @@
     "relative_time": {
       "just_now": "щойно",
       "seconds_ago": "{{ seconds }} с тому"
+    },
+    "private": {
+      "header": {
+        "search_placeholder": "Пошук бронювань, клієнтів, послуг...",
+        "logout": "Вийти"
+      }
     }
   },
   "public": {

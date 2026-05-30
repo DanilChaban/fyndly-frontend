@@ -51,6 +51,12 @@
     "relative_time": {
       "just_now": "just now",
       "seconds_ago": "{{ seconds }}s ago"
+    },
+    "private": {
+      "header": {
+        "search_placeholder": "Search bookings, clients, services...",
+        "logout": "Logout"
+      }
     }
   },
   "public": {

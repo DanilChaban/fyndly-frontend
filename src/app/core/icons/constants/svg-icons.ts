@@ -28,4 +28,7 @@ export const SVG_ICONS = [
   'lock-blue',
   'shield-blue',
   'home',
+  'search',
+  'notifications-black',
+  'logout',
 ] as const;

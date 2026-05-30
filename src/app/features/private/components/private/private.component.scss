@@ -1,4 +1,29 @@
-:host {
-  display: block;
-  padding: 24px;
+@use 'utilities/colors' as colors;
+
+.private-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 64px 1fr;
+  grid-template-areas:
+    'header header'
+    'sidebar content';
+
+  &__header {
+    grid-area: header;
+    background-color: colors.$color-white-2;
+    border-bottom: 1px solid colors.$color-gray-3;;
+  }
+
+  &__sidebar {
+    grid-area: sidebar;
+    background-color: colors.$color-white-2;
+    border-right: 1px solid colors.$color-gray-3;;
+  }
+
+  &__content {
+    grid-area: content;
+    padding: 32px;
+    overflow: auto;
+  }
 }

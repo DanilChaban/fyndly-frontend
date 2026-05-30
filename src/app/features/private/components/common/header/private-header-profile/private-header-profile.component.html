@@ -1,0 +1,10 @@
+@if (user(); as user) {
+  <div class="private-header-profile">
+    @if (user.profileUrl) {
+      <img class="private-header-profile__image" [src]="user.profileUrl" alt="profile photo" />
+    } @else {
+      <p class="private-header-profile__image-name">{{ imageName() }}</p>
+    }
+    <p class="private-header-profile__name">{{ user.username }}</p>
+  </div>
+}

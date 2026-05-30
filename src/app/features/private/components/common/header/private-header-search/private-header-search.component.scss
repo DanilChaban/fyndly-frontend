@@ -1,0 +1,10 @@
+:host {
+  width: 100%;
+
+  ::ng-deep fl-form-input .mat-mdc-form-field {
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 384px;
+    --mat-form-field-container-height: 40px;
+  }
+}
