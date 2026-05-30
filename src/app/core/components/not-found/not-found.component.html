@@ -1,0 +1,26 @@
+<div class="not-found">
+  <div class="not-found__content">
+    <div class="not-found__status-container">
+      <div class="not-found__status-container__color"></div>
+      <p class="not-found__status-container__status">{{ 'not_found.status' | transloco }}</p>
+    </div>
+    <p class="not-found__title">{{ 'not_found.title' | transloco }}</p>
+    <p class="not-found__description">
+      {{ 'not_found.description' | transloco }}
+    </p>
+
+    <div class="not-found__button-wrapper">
+      <fl-button (btnClicked)="navigateToHome()" [prefixIcon]="'home'">
+        {{ 'not_found.go_home' | transloco }}
+      </fl-button>
+      <fl-button (btnClicked)="back()" [prefixIcon]="'arrow-backward-blue'" variant="text">
+        {{ 'not_found.back' | transloco }}
+      </fl-button>
+    </div>
+  </div>
+  @if (isMobile()) {
+    <img src="assets/images/not-found-tablet.svg" alt="not found" />
+  } @else {
+    <img class="not-found__image" src="assets/images/not-found.svg" alt="not found" />
+  }
+</div>

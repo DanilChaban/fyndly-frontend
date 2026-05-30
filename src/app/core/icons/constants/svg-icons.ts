@@ -27,4 +27,5 @@ export const SVG_ICONS = [
   'clock-gray',
   'lock-blue',
   'shield-blue',
+  'home',
 ] as const;
