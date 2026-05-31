@@ -56,6 +56,21 @@
       "header": {
         "search_placeholder": "Пошук бронювань, клієнтів, послуг...",
         "logout": "Вийти"
+      },
+      "sidebar": {
+        "sections": {
+          "menu": "Меню",
+          "account": "Акаунт"
+        },
+        "items": {
+          "home": "Головна",
+          "calendar": "Календар",
+          "bookings": "Бронювання",
+          "clients": "Клієнти",
+          "services": "Послуги",
+          "team": "Команда",
+          "settings": "Налаштування"
+        }
       }
     }
   },

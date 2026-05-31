@@ -1,0 +1,9 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  ::ng-deep {
+    .fl-button {
+      color: colors.$color-gray-10 !important;
+    }
+  }
+}

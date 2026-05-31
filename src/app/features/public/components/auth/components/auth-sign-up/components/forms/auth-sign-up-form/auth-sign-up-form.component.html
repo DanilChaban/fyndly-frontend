@@ -1,7 +1,7 @@
 <fl-form [formGroup]="form" (ngSubmit)="onSubmit()">
   <fl-form-input
     [label]="'auth.sign_up.username_label'"
-    [prefixSvgIcon]="'user-gray'"
+    [prefixSvgIcon]="'user'"
     [placeholder]="'auth.sign_up.username_placeholder'"
     formControlName="username"
   />
@@ -36,7 +36,7 @@
     [loading]="loading()"
     variant="primary"
     [disabled]="!form.valid"
-    [suffixIcon]="'arrow-forward-white'"
+    [suffixIcon]="'arrow-forward'"
   >
     {{ 'auth.sign_up.submit' | transloco }}
   </fl-button>

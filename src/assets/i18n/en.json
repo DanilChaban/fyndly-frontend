@@ -56,6 +56,21 @@
       "header": {
         "search_placeholder": "Search bookings, clients, services...",
         "logout": "Logout"
+      },
+      "sidebar": {
+        "sections": {
+          "menu": "Menu",
+          "account": "Account"
+        },
+        "items": {
+          "home": "Home",
+          "calendar": "Calendar",
+          "bookings": "Bookings",
+          "clients": "Clients",
+          "services": "Services",
+          "team": "Team",
+          "settings": "Settings"
+        }
       }
     }
   },

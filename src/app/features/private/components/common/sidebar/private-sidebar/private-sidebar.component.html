@@ -1,1 +1,23 @@
-<p>private-sidebar works!</p>
+<nav class="private-sidebar">
+  @for (section of sections; track section.title) {
+    <section class="private-sidebar__section">
+      <p class="private-sidebar__section-title">{{ section.title | transloco }}</p>
+
+      <ul class="private-sidebar__list">
+        @for (item of section.items; track item.label) {
+          <li class="private-sidebar__item">
+            <a
+              class="private-sidebar__link"
+              routerLinkActive="private-sidebar__link--active"
+              [routerLink]="['/', activeLang(), item.route]"
+              [routerLinkActiveOptions]="{ exact: item.exact }"
+            >
+              <mat-icon class="private-sidebar__icon" [svgIcon]="item.icon" />
+              <span class="private-sidebar__label">{{ item.label | transloco }}</span>
+            </a>
+          </li>
+        }
+      </ul>
+    </section>
+  }
+</nav>

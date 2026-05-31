@@ -24,18 +24,22 @@
 
     &--success {
       background-color: colors.$color-green-2;
+      color: colors.$color-green-1;
     }
 
     &--error {
       background-color: colors.$color-red-2;
+      color: colors.$color-red-1;
     }
 
     &--warning {
       background-color: colors.$color-orange-2;
+      color: colors.$color-orange-1;
     }
 
     &--info {
       background-color: colors.$color-blue-4;
+      color: colors.$color-blue-1;
     }
   }
 
@@ -70,6 +74,10 @@
     line-height: 16px;
   }
 
+  &__close {
+    flex: 0 0 auto;
+  }
+
   @include mobile(down) {
     gap: 12px;
     width: 100%;
@@ -91,6 +99,14 @@
     &__time {
       font-size: 10px;
       line-height: 24px;
+    }
+  }
+}
+
+:host {
+  ::ng-deep {
+    .fl-toast__close .fl-button {
+      color: colors.$color-gray-2 !important;
     }
   }
 }

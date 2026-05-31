@@ -14,6 +14,7 @@
   &__icon {
     width: 28px;
     height: 28px;
+    color: colors.$color-blue-1;
   }
 
   @include mobile(down) {
@@ -26,15 +27,28 @@
     }
   }
 
-  &--verified, &--success {
+  &--verified,
+  &--success {
     background: colors.$color-green-3;
+
+    .auth-ui-icon-status__icon {
+      color: colors.$color-green-1;
+    }
   }
 
   &--not-verified {
     background: colors.$color-blue-5;
+
+    .auth-ui-icon-status__icon {
+      color: colors.$color-blue-1;
+    }
   }
 
   &--expired {
     background: colors.$color-orange-3;
+
+    .auth-ui-icon-status__icon {
+      color: colors.$color-orange-1;
+    }
   }
 }

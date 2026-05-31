@@ -28,6 +28,10 @@
     border-radius: 8px;
     grid-column: 1;
     grid-row: 1;
+
+    mat-icon {
+      color: colors.$color-orange-1;
+    }
   }
 
   &__warning {
