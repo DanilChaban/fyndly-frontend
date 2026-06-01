@@ -1,0 +1,11 @@
+@if (type() === 'input') {
+  <fl-form [formGroup]="form">
+    <fl-form-input
+      [prefixSvgIcon]="'search'"
+      [formControlName]="'search'"
+      [placeholder]="'global.private.header.search_placeholder'"
+    />
+  </fl-form>
+} @else {
+  <fl-button [prefixIcon]="'search'" size="small" variant="secondary" />
+}

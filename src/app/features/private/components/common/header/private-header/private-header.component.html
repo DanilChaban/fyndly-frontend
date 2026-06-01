@@ -1,0 +1,35 @@
+@let tablet = isTablet();
+
+<div class="private-header">
+  <div class="private-header__left">
+    @if (tablet) {
+      <app-private-header-burger />
+    }
+
+    <app-private-logo />
+
+    @if (!tablet) {
+      <app-private-header-search type="input" />
+    }
+  </div>
+
+  <div class="private-header__right">
+    @if (tablet) {
+      <app-private-header-search type="button" />
+    } @else {
+      <fl-language-selector />
+    }
+
+    <app-private-header-notifications />
+
+    @if (!tablet) {
+      <div class="private-header__divider"></div>
+    }
+
+    <app-private-header-profile />
+
+    @if (!tablet) {
+      <app-private-logout />
+    }
+  </div>
+</div>

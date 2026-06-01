@@ -1,0 +1,12 @@
+.private-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+}

@@ -51,6 +51,27 @@
     "relative_time": {
       "just_now": "just now",
       "seconds_ago": "{{ seconds }}s ago"
+    },
+    "private": {
+      "header": {
+        "search_placeholder": "Search bookings, clients, services..."
+      },
+      "sidebar": {
+        "sections": {
+          "menu": "Menu",
+          "account": "Account"
+        },
+        "items": {
+          "home": "Home",
+          "calendar": "Calendar",
+          "bookings": "Bookings",
+          "clients": "Clients",
+          "services": "Services",
+          "team": "Team",
+          "settings": "Settings"
+        }
+      },
+      "logout": "Logout"
     }
   },
   "public": {

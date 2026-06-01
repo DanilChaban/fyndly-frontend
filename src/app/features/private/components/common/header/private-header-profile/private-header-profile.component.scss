@@ -1,0 +1,40 @@
+@use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
+.private-header-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 12px 3px 4px;
+  border: 1px solid colors.$color-gray-3;
+  border-radius: 24px;
+
+  &__name {
+    margin: 0;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  &__image-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: colors.$color-blue-6;
+    color: colors.$color-blue-7;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  @include mobile(down) {
+    padding: 4px;
+
+    &__name {
+      display: none;
+    }
+  }
+}

@@ -1,1 +1,18 @@
-<router-outlet />
+<div class="private-layout">
+  <app-private-header class="private-layout__header" />
+
+  <mat-sidenav-container class="private-layout__container">
+    <mat-sidenav
+      class="private-layout__sidenav"
+      [mode]="isTablet() ? 'over' : 'side'"
+      [opened]="!isTablet() || opened()"
+      (openedChange)="sidenavChanged($event)"
+    >
+      <app-private-sidenav />
+    </mat-sidenav>
+
+    <mat-sidenav-content class="private-layout__content">
+      <router-outlet />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

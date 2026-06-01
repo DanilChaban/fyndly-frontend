@@ -9,5 +9,5 @@
     </div>
     <p class="fl-toast__message">{{ data.message | transloco }}</p>
   </div>
-  <fl-button [prefixIcon]="'close-gray'" [variant]="'text'" (btnClicked)="close()" />
+  <fl-button class="fl-toast__close" [prefixIcon]="'close'" [variant]="'text'" (btnClicked)="close()" />
 </div>

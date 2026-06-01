@@ -2,9 +2,9 @@ import { SvgIconName } from '@core/icons/types/svg-icon-name';
 import { VerificationStatus } from '@auth/components/auth-email-verification/enums/verification-status';
 
 export const VERIFICATION_STATUS_ICON: Record<VerificationStatus, SvgIconName> = {
-  [VerificationStatus.NOT_VERIFIED]: 'email-blue',
-  [VerificationStatus.EXPIRED]: 'clock-orange',
-  [VerificationStatus.VERIFIED]: 'checkmark-green',
+  [VerificationStatus.NOT_VERIFIED]: 'email',
+  [VerificationStatus.EXPIRED]: 'clock',
+  [VerificationStatus.VERIFIED]: 'checkmark',
 };
 
 export const VERIFICATION_STATUS_TITLE: Record<VerificationStatus, string> = {

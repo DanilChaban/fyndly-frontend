@@ -8,6 +8,7 @@ export const API_ENDPOINTS = {
     forgotPassword: 'forgot-password',
     resendResetPasswordCode: 'resend-reset-password-code',
     resetPassword: 'reset-password',
+    logout: 'logout',
   },
   user: {
     me: 'user/me',

@@ -26,4 +26,6 @@ export class AuthService {
   resetPassword = createApiMutation<ResetPasswordDto>('POST', API_ENDPOINTS.auth.resetPassword);
 
   resendResendPasswordCode = createApiMutation<ForgotPasswordDto>('POST', API_ENDPOINTS.auth.resendResetPasswordCode);
+
+  logout = createApiMutation('POST', API_ENDPOINTS.auth.logout);
 }

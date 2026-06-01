@@ -1,0 +1,42 @@
+@use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.private-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 24px;
+  width: 100%;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 24px;
+    background-color: colors.$color-gray-3;
+  }
+
+  @include mobile(down) {
+    gap: 24px;
+
+    &__left {
+      justify-content: space-between;
+    }
+  }
+}

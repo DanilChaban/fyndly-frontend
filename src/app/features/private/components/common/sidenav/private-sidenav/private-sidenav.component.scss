@@ -1,0 +1,26 @@
+@use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.private-sidenav {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid colors.$color-gray-3;
+    padding-top: 16px;
+    padding-bottom: 2px;
+  }
+}

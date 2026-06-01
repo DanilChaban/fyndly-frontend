@@ -1,4 +1,48 @@
-:host {
-  display: block;
-  padding: 24px;
+@use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
+
+.private-layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 64px minmax(0, 1fr);
+  grid-template-areas:
+    'header'
+    'body';
+
+  &__header {
+    grid-area: header;
+    background-color: colors.$color-white-2;
+    border-bottom: 1px solid colors.$color-gray-3;
+  }
+
+  &__container {
+    grid-area: body;
+    min-height: 0;
+    background: colors.$color-gray-1;
+  }
+
+  &__sidenav {
+    width: 240px;
+    padding: 24px;
+    border: 1px solid colors.$color-gray-3;
+    border-left: none;
+    background: colors.$color-white-1;
+
+    @include mobile(down) {
+      width: 300px;
+      max-width: 82vw;
+      border-radius: 0 24px 24px 0;
+    }
+  }
+
+  &__content {
+    padding: 32px;
+    overflow: auto;
+    background: colors.$color-gray-1;
+
+    @include mobile(down) {
+      padding: 24px 20px;
+    }
+  }
 }
