@@ -1,7 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { LocalizedRouterService } from '@core/services/localized-router.service';
 import { handleApiResourceState } from '@core/helpers/api/handle-api-resource-state';
+import { ButtonVariant } from '@ui/fl-button/types/button-variant';
+import { ButtonSize } from '@ui/fl-button/types/button-size';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
 import { AuthService } from '@auth/apis/auth.service';
 
@@ -14,6 +16,9 @@ import { AuthService } from '@auth/apis/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrivateLogoutComponent {
+  buttonVariant = input<ButtonVariant>('text');
+  buttonSize = input<ButtonSize>('small');
+
   private readonly authService = inject(AuthService);
   private readonly localizedRouterService = inject(LocalizedRouterService);
 
