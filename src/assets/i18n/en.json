@@ -54,8 +54,7 @@
     },
     "private": {
       "header": {
-        "search_placeholder": "Search bookings, clients, services...",
-        "logout": "Logout"
+        "search_placeholder": "Search bookings, clients, services..."
       },
       "sidebar": {
         "sections": {
@@ -71,7 +70,8 @@
           "team": "Team",
           "settings": "Settings"
         }
-      }
+      },
+      "logout": "Logout"
     }
   },
   "public": {

@@ -3,13 +3,12 @@
 
   <mat-sidenav-container class="private-layout__container">
     <mat-sidenav
-      #sidebar
-      class="private-layout__sidebar"
+      class="private-layout__sidenav"
       [mode]="isTablet() ? 'over' : 'side'"
       [opened]="!isTablet() || opened()"
-      (openedChange)="setSidebarOpened($event)"
+      (openedChange)="sidenavChanged($event)"
     >
-      <app-private-sidebar />
+      <app-private-sidenav />
     </mat-sidenav>
 
     <mat-sidenav-content class="private-layout__content">

@@ -54,8 +54,7 @@
     },
     "private": {
       "header": {
-        "search_placeholder": "Пошук бронювань, клієнтів, послуг...",
-        "logout": "Вийти"
+        "search_placeholder": "Пошук бронювань, клієнтів, послуг..."
       },
       "sidebar": {
         "sections": {
@@ -71,7 +70,8 @@
           "team": "Команда",
           "settings": "Налаштування"
         }
-      }
+      },
+      "logout": "Вийти"
     }
   },
   "public": {

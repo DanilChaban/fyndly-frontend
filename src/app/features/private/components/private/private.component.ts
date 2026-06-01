@@ -3,8 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { ViewportService } from '@core/services/viewport.service';
 import { PrivateHeaderComponent } from '@private/components/common/header/private-header/private-header.component';
-import { PrivateSidebarComponent } from '@private/components/common/sidebar/private-sidebar/private-sidebar.component';
 import { SidenavService } from '@private/services/sidenav.service';
+import { PrivateSidenavComponent } from '@private/components/common/sidenav/private-sidenav/private-sidenav.component';
 
 @Component({
   selector: 'app-private',
@@ -14,7 +14,7 @@ import { SidenavService } from '@private/services/sidenav.service';
     MatSidenavContent,
     MatSidenav,
     PrivateHeaderComponent,
-    PrivateSidebarComponent,
+    PrivateSidenavComponent,
   ],
   templateUrl: './private.component.html',
   styleUrl: './private.component.scss',
@@ -28,7 +28,7 @@ export class PrivateComponent {
   isTablet = this.viewportService.isTablet;
   opened = this.sidenavService.opened;
 
-  setSidebarOpened(opened: boolean): void {
+  sidenavChanged(opened: boolean): void {
     if (this.isTablet()) {
       this.sidenavService.open(opened);
     }

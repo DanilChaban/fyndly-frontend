@@ -6,14 +6,14 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
 import { AuthService } from '@auth/apis/auth.service';
 
 @Component({
-  selector: 'app-private-header-logout',
+  selector: 'app-private-logout',
   imports: [TranslocoPipe, FlButtonComponent],
-  templateUrl: './private-header-logout.component.html',
-  styleUrl: './private-header-logout.component.scss',
+  templateUrl: './private-logout.component.html',
+  styleUrl: './private-logout.component.scss',
   providers: [AuthService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PrivateHeaderLogoutComponent {
+export class PrivateLogoutComponent {
   private readonly authService = inject(AuthService);
   private readonly localizedRouterService = inject(LocalizedRouterService);
 

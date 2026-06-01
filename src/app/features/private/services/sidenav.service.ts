@@ -11,4 +11,8 @@ export class SidenavService {
   toggle(): void {
     this.opened.update((value) => !value);
   }
+
+  close(): void {
+    this.opened.set(false);
+  }
 }

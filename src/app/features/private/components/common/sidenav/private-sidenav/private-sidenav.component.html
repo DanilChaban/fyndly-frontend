@@ -1,0 +1,18 @@
+@let tablet = isTablet();
+
+@if (tablet) {
+  <div class="private-sidenav__top">
+    <app-private-logo />
+
+    <fl-button size="small" variant="secondary" prefixIcon="close" (btnClicked)="closeSidenav()" />
+  </div>
+}
+
+<app-private-sidebar />
+
+@if (tablet) {
+  <div class="private-sidenav__bottom">
+    <fl-language-selector />
+    <app-private-logout />
+  </div>
+}
