@@ -1,0 +1,13 @@
+<fl-button
+  class="private-header-burger"
+  [class.private-header-burger--opened]="isSidebarOpened()"
+  (btnClicked)="toggleSidebarPanel()"
+  size="small"
+  variant="text"
+>
+  <span class="private-header-burger__lines">
+    @for (line of lines; track line) {
+      <span class="private-header-burger__line"></span>
+    }
+  </span>
+</fl-button>

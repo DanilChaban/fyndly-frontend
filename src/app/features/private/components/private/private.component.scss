@@ -1,4 +1,5 @@
 @use 'utilities/colors' as colors;
+@use 'utilities/media' as *;
 
 .private-layout {
   display: grid;
@@ -25,5 +26,15 @@
     grid-area: content;
     padding: 32px;
     overflow: auto;
+  }
+
+  @include tablet(down) {
+    grid-template-areas:
+    'header header'
+    'content content';
+
+    &__sidebar {
+      display: none;
+    }
   }
 }
