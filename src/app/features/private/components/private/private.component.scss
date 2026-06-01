@@ -4,37 +4,44 @@
 .private-layout {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 260px 1fr;
-  grid-template-rows: 64px 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 64px minmax(0, 1fr);
   grid-template-areas:
-    'header header'
-    'sidebar content';
+    'header'
+    'body';
 
   &__header {
     grid-area: header;
     background-color: colors.$color-white-2;
-    border-bottom: 1px solid colors.$color-gray-3;;
+    border-bottom: 1px solid colors.$color-gray-3;
+  }
+
+  &__container {
+    grid-area: body;
+    min-height: 0;
+    background: colors.$color-gray-1;
   }
 
   &__sidebar {
-    grid-area: sidebar;
-    background-color: colors.$color-white-2;
-    border-right: 1px solid colors.$color-gray-3;;
+    width: 240px;
+    border-right: 1px solid colors.$color-gray-3;
+    background: colors.$color-white-1;
+
+    @include mobile(down) {
+      width: 300px;
+      max-width: 82vw;
+      border-radius: 0 24px 24px 0;
+      border-right: none;
+    }
   }
 
   &__content {
-    grid-area: content;
     padding: 32px;
     overflow: auto;
-  }
+    background: colors.$color-gray-1;
 
-  @include tablet(down) {
-    grid-template-areas:
-    'header header'
-    'content content';
-
-    &__sidebar {
-      display: none;
+    @include mobile(down) {
+      padding: 24px 20px;
     }
   }
 }

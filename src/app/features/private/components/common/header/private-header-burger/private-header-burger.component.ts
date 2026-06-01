@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.component';
+import { SidenavService } from '@private/services/sidenav.service';
 
 @Component({
   selector: 'app-private-header-burger',
@@ -9,11 +10,13 @@ import { FlButtonComponent } from '@ui/fl-button/components/fl-button/fl-button.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrivateHeaderBurgerComponent {
+  private readonly sidenavService = inject(SidenavService);
+
   lines = Array.from({ length: 3 }, (_, index) => index);
 
-  isSidebarOpened = signal(false);
+  opened = this.sidenavService.opened;
 
   toggleSidebarPanel(): void {
-    this.isSidebarOpened.update((value) => !value);
+    this.sidenavService.toggle();
   }
 }

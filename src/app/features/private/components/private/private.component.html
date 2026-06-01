@@ -1,9 +1,19 @@
 <div class="private-layout">
   <app-private-header class="private-layout__header" />
 
-  <app-private-sidebar class="private-layout__sidebar" />
+  <mat-sidenav-container class="private-layout__container">
+    <mat-sidenav
+      #sidebar
+      class="private-layout__sidebar"
+      [mode]="isTablet() ? 'over' : 'side'"
+      [opened]="!isTablet() || opened()"
+      (openedChange)="setSidebarOpened($event)"
+    >
+      <app-private-sidebar />
+    </mat-sidenav>
 
-  <main class="private-layout__content">
-    <router-outlet />
-  </main>
+    <mat-sidenav-content class="private-layout__content">
+      <router-outlet />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
