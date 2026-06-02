@@ -22,6 +22,12 @@ export const SIDEBAR_SECTIONS: Sidebar[] = [
     title: 'global.private.sidebar.sections.account',
     items: [
       {
+        label: 'global.private.sidebar.items.profile',
+        icon: 'profile',
+        route: 'profile',
+        exact: true,
+      },
+      {
         label: 'global.private.sidebar.items.settings',
         icon: 'settings',
         route: 'settings',

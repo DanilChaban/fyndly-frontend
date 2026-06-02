@@ -30,4 +30,5 @@ export const SVG_ICONS = [
   'home',
   'settings',
   'calendar',
+  'profile',
 ] as const;

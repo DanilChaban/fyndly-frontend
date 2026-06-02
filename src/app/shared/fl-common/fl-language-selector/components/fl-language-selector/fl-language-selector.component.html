@@ -10,7 +10,7 @@
   {{ selectedLanguage() }}
 </fl-button>
 
-<fl-menu #languageMenu>
+<fl-menu #languageMenu [yPosition]="'above'">
   @for (option of LANGUAGES_MENU; track option.code) {
     <fl-menu-item (itemClicked)="selectLanguageItem(option)" [active]="selectedCode() === option.code">
       {{ option.name }}
