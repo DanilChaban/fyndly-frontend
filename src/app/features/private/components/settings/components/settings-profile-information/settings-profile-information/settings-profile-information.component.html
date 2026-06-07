@@ -1,0 +1,23 @@
+<fl-card>
+  @if (user(); as user) {
+    <div class="settings-profile-information">
+      <app-settings-profile-information-cover-photo />
+
+      <div class="settings-profile-information__body">
+        <app-settings-profile-information-profile [profileUrl]="user.profileUrl" />
+
+        <fl-card-header>
+          <fl-card-title>
+            {{ 'global.private.settings.profile_information.title' | transloco }}
+          </fl-card-title>
+          <fl-card-subtitle>
+            {{ 'global.private.settings.profile_information.description' | transloco }}
+          </fl-card-subtitle>
+        </fl-card-header>
+
+        <fl-card-content></fl-card-content>
+        <fl-card-actions></fl-card-actions>
+      </div>
+    </div>
+  }
+</fl-card>

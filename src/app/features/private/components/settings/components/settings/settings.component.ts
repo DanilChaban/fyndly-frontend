@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SettingsProfileInformationComponent } from '@settings/components/settings-profile-information/settings-profile-information.component';
+import { SettingsProfileInformationComponent } from '@settings/components/settings-profile-information/settings-profile-information/settings-profile-information.component';
 
 @Component({
   selector: 'app-settings',

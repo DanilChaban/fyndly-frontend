@@ -78,7 +78,14 @@
           "settings": "Settings"
         }
       },
-      "logout": "Logout"
+      "logout": "Logout",
+      "settings": {
+        "profile_information": {
+          "title": "Profile information",
+          "description": "This information will be displayed on your public Fyndly profile.",
+          "change_cover": "Change cover"
+        }
+      }
     }
   },
   "public": {

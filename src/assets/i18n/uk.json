@@ -78,7 +78,14 @@
           "settings": "Налаштування"
         }
       },
-      "logout": "Вийти"
+      "logout": "Вийти",
+      "settings": {
+        "profile_information": {
+          "title": "Інформація профілю",
+          "description": "Ця інформація відображатиметься у вашому публічному профілі Fyndly.",
+          "change_cover": "Змінити обкладинку"
+        }
+      }
     }
   },
   "public": {

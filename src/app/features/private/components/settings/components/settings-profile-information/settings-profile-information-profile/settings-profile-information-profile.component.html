@@ -1,0 +1,9 @@
+<div class="settings-profile-information-profile">
+  @if (profileUrl()) {
+    <img class="settings-profile-information__image" [src]="profileUrl()" alt="profile" />
+  } @else {
+    <mat-icon svgIcon="profile" />
+  }
+
+  <fl-button size="small" prefixIcon="camera" />
+</div>

@@ -1,0 +1,23 @@
+:host {
+  ::ng-deep {
+    .fl-card {
+      overflow: hidden;
+      padding: 0 !important;
+    }
+
+    .fl-card-title {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      line-height: 28px !important;
+      letter-spacing: 0 !important;
+    }
+  }
+}
+
+.settings-profile-information {
+  &__body {
+    position: relative;
+    padding: 80px 32px 32px;
+  }
+}
+
