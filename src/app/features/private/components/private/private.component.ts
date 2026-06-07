@@ -1,10 +1,12 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { Data, RouterOutlet } from '@angular/router';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { ViewportService } from '@core/services/viewport.service';
 import { PrivateHeaderComponent } from '@private/components/common/header/private-header/private-header.component';
 import { SidenavService } from '@private/services/sidenav.service';
 import { PrivateSidenavComponent } from '@private/components/common/sidenav/private-sidenav/private-sidenav.component';
+import { PrivateContentHeaderComponent } from '@private/components/common/ui/private-content-header/private-content-header.component';
+import { ContentHeaderData } from '@private/types/content-header-data';
 
 @Component({
   selector: 'app-private',
@@ -13,6 +15,7 @@ import { PrivateSidenavComponent } from '@private/components/common/sidenav/priv
     MatSidenavContainer,
     MatSidenavContent,
     MatSidenav,
+    PrivateContentHeaderComponent,
     PrivateHeaderComponent,
     PrivateSidenavComponent,
   ],
@@ -27,10 +30,18 @@ export class PrivateComponent {
 
   isTablet = this.viewportService.isTablet;
   opened = this.sidenavService.opened;
+  contentHeaderData = signal<ContentHeaderData>({});
 
   sidenavChanged(opened: boolean): void {
     if (this.isTablet()) {
       this.sidenavService.open(opened);
     }
+  }
+
+  contentActivated(data: Data): void {
+    this.contentHeaderData.set({
+      title: data['title'],
+      description: data['description'],
+    });
   }
 }

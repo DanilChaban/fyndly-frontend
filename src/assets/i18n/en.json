@@ -53,6 +53,12 @@
       "seconds_ago": "{{ seconds }}s ago"
     },
     "private": {
+      "routes": {
+        "settings": {
+          "title": "Settings",
+          "description": "Manage your profile information and account security."
+        }
+      },
       "header": {
         "search_placeholder": "Search bookings, clients, services..."
       },

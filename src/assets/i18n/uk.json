@@ -53,6 +53,12 @@
       "seconds_ago": "{{ seconds }} с тому"
     },
     "private": {
+      "routes": {
+        "settings": {
+          "title": "Налаштування",
+          "description": "Керуйте інформацією профілю та безпекою акаунта."
+        }
+      },
       "header": {
         "search_placeholder": "Пошук бронювань, клієнтів, послуг..."
       },

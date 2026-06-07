@@ -7,5 +7,5 @@ import { User } from '@core/types/user';
   providedIn: 'root',
 })
 export class UserService {
-  me = apiGetResource<User>(() => API_ENDPOINTS.user.me);
+  user = apiGetResource<User>(() => API_ENDPOINTS.user);
 }

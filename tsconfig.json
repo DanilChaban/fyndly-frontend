@@ -23,6 +23,7 @@
       "@common/*": ["src/app/shared/fl-common/*"],
       "@auth/*": ["src/app/features/public/components/auth/*"],
       "@home/*": ["src/app/features/private/components/home/*"],
+      "@settings/*": ["src/app/features/private/components/settings/*"]
     }
   },
   "angularCompilerOptions": {
