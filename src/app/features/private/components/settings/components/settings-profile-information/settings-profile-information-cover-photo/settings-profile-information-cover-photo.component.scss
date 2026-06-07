@@ -1,0 +1,15 @@
+.settings-profile-information-cover-photo {
+  position: relative;
+  height: 176px;
+  background-image: url('/assets/images/cover-background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__change-cover {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: max-content;
+  }
+}

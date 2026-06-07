@@ -11,7 +11,7 @@ import { UserService } from '@core/services/api/user.service';
 export class PrivateHeaderProfileComponent {
   private readonly userService = inject(UserService);
 
-  user = this.userService.me.value;
+  user = this.userService.user.value;
 
   imageName = computed(() => this.user()?.username?.slice(0, 2).toUpperCase());
 }

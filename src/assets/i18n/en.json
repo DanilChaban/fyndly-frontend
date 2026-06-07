@@ -53,6 +53,12 @@
       "seconds_ago": "{{ seconds }}s ago"
     },
     "private": {
+      "routes": {
+        "settings": {
+          "title": "Settings",
+          "description": "Manage your profile information and account security."
+        }
+      },
       "header": {
         "search_placeholder": "Search bookings, clients, services..."
       },
@@ -72,7 +78,14 @@
           "settings": "Settings"
         }
       },
-      "logout": "Logout"
+      "logout": "Logout",
+      "settings": {
+        "profile_information": {
+          "title": "Profile information",
+          "description": "This information will be displayed on your public Fyndly profile.",
+          "change_cover": "Change cover"
+        }
+      }
     }
   },
   "public": {

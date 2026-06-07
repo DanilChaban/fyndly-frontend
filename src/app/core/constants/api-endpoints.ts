@@ -10,7 +10,5 @@ export const API_ENDPOINTS = {
     resetPassword: 'reset-password',
     logout: 'logout',
   },
-  user: {
-    me: 'user/me',
-  },
+  user: 'user',
 };

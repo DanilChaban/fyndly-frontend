@@ -12,9 +12,9 @@ export const authGuard: CanActivateFn = (route) => {
 
   const access = route.data['access'] as AuthAccess;
 
-  userService.me.reload();
+  userService.user.reload();
 
-  return toObservable(userService.me.status).pipe(
+  return toObservable(userService.user.status).pipe(
     filter((status) => status !== 'loading' && status !== 'reloading'),
     take(1),
     map((status) => {

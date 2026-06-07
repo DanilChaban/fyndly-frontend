@@ -1,0 +1,41 @@
+@use 'utilities/colors' as colors;
+
+:host {
+  ::ng-deep {
+
+    fl-button {
+      position: absolute;
+      bottom: 0;
+      right: -10px;
+    }
+
+    .fl-button--small {
+      --fl-button-size: 32px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid colors.$color-white-1;
+    }
+  }
+}
+
+.settings-profile-information-profile {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -50px;
+  left: 32px;
+  width: 96px;
+  height: 96px;
+  border: 4px solid colors.$color-white-1;
+  border-radius: 50%;
+  background: colors.$color-blue-6;
+  box-shadow: colors.$box-shadow-1;
+
+  mat-icon {
+    width: 48px;
+    height: 48px;
+    color: colors.$color-gray-10;
+  }
+}

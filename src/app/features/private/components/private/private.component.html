@@ -12,7 +12,8 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="private-layout__content">
-      <router-outlet />
+      <app-private-content-header [data]="contentHeaderData()" />
+      <router-outlet #outlet="outlet" (activate)="contentActivated(outlet.activatedRouteData)" />
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

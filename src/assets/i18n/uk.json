@@ -53,6 +53,12 @@
       "seconds_ago": "{{ seconds }} с тому"
     },
     "private": {
+      "routes": {
+        "settings": {
+          "title": "Налаштування",
+          "description": "Керуйте інформацією профілю та безпекою акаунта."
+        }
+      },
       "header": {
         "search_placeholder": "Пошук бронювань, клієнтів, послуг..."
       },
@@ -72,7 +78,14 @@
           "settings": "Налаштування"
         }
       },
-      "logout": "Вийти"
+      "logout": "Вийти",
+      "settings": {
+        "profile_information": {
+          "title": "Інформація профілю",
+          "description": "Ця інформація відображатиметься у вашому публічному профілі Fyndly.",
+          "change_cover": "Змінити обкладинку"
+        }
+      }
     }
   },
   "public": {
